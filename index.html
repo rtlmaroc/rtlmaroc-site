@@ -155,6 +155,11 @@ h3{font:600 1.125rem/1.3 var(--sans);margin:0 0 6px}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:22px;height:5px;border-radius:3px;display:inline-block}
 .map-note{font-size:14px;color:var(--muted);margin:10px 0 0}
+.map-img{width:100%;height:auto;display:block;border-radius:3px;background:#0A1826}
+.legend .lg-main{background:#fff;box-shadow:0 0 0 1px var(--line)}
+.legend .lg-part{background:repeating-linear-gradient(90deg,#FFB81C 0 6px,transparent 6px 10px)}
+.legend .lg-hub{width:12px;height:12px;border-radius:50%;background:#E03A2F;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+
 
 .why{list-style:none;margin:0;padding:0;display:grid;gap:0}
 .why li{padding:18px 0;border-top:1px solid var(--line)}
@@ -531,7 +536,7 @@ fr: {
   linesEy: "Groupage et complet", linesH: "Nos lignes", linesSub: "Quatre façons d’amener votre marchandise d’Europe au Maroc.", more: "Voir la ligne",
   whyH: "Pourquoi RTL Maroc",
   why: [["Départs à jours fixes","Vous savez quand part votre marchandise, sans attendre qu’un camion se remplisse."],["Délais annoncés","48 h depuis l’Espagne et le Portugal, 72 h depuis l’Italie."],["Plateformes en Europe","Madrid, Barcelone, Alicante, Porto, Lisbonne et Milan."],["Deux bureaux au Maroc","Casablanca et Tanger, avec livraison directe sur les MEAD."]],
-  mapH: "Le corridor Europe–Maroc", mapNote: "Toutes nos lignes fonctionnent dans les deux sens.",
+  mapH: "Le corridor Europe–Maroc", mapNote: "Toutes nos lignes fonctionnent dans les deux sens.", legMain: "Lignes régulières RTL", legPart: "Réseau de partenaires", legHub: "Hubs MEAD Tanger · Casablanca",
   contactEy: "Contact", contactH: "Parlons de votre prochain envoi", contactLead: "Un commercial vous répond avec un devis. Donnez-nous l’origine, la destination, le poids et le volume.",
   phone: "Téléphone", email: "E-mail", copy: "Copier", copied: "Copié", offices: {casa: "Casablanca", tng: "Tanger"}, officesH: "Nos bureaux",
   facts: ["Départs","Transit","Enlèvement","Livraison"], back: "Toutes les lignes",
@@ -562,7 +567,7 @@ es: {
   linesEy: "Grupaje y completo", linesH: "Nuestras líneas", linesSub: "Cuatro formas de llevar su mercancía de Europa a Marruecos.", more: "Ver la línea",
   whyH: "Por qué RTL Maroc",
   why: [["Salidas en días fijos","Sabe cuándo sale su mercancía, sin esperar a que se llene un camión."],["Plazos anunciados","48 h desde España y Portugal, 72 h desde Italia."],["Plataformas en Europa","Madrid, Barcelona, Alicante, Oporto, Lisboa y Milán."],["Dos oficinas en Marruecos","Casablanca y Tánger, con entrega directa en los MEAD."]],
-  mapH: "El corredor Europa–Marruecos", mapNote: "Todas nuestras líneas funcionan en ambos sentidos.",
+  mapH: "El corredor Europa–Marruecos", mapNote: "Todas nuestras líneas funcionan en ambos sentidos.", legMain: "Líneas regulares RTL", legPart: "Red de socios", legHub: "Hubs MEAD Tánger · Casablanca",
   contactEy: "Contacto", contactH: "Hablemos de su próximo envío", contactLead: "Un comercial le responde con un presupuesto. Indíquenos origen, destino, peso y volumen.",
   phone: "Teléfono", email: "Correo", copy: "Copiar", copied: "Copiado", offices: {casa: "Casablanca", tng: "Tánger"}, officesH: "Nuestras oficinas",
   facts: ["Salidas","Tránsito","Recogida","Entrega"], back: "Todas las líneas",
@@ -593,7 +598,7 @@ pt: {
   linesEy: "Grupagem e completo", linesH: "As nossas linhas", linesSub: "Quatro formas de levar a sua mercadoria da Europa para Marrocos.", more: "Ver a linha",
   whyH: "Porquê a RTL Maroc",
   why: [["Partidas em dias fixos","Sabe quando a sua mercadoria parte, sem esperar que um camião encha."],["Prazos anunciados","48 h a partir de Espanha e Portugal, 72 h a partir de Itália."],["Plataformas na Europa","Madrid, Barcelona, Alicante, Porto, Lisboa e Milão."],["Dois escritórios em Marrocos","Casablanca e Tânger, com entrega direta nos MEAD."]],
-  mapH: "O corredor Europa–Marrocos", mapNote: "Todas as nossas linhas funcionam nos dois sentidos.",
+  mapH: "O corredor Europa–Marrocos", mapNote: "Todas as nossas linhas funcionam nos dois sentidos.", legMain: "Linhas regulares RTL", legPart: "Rede de parceiros", legHub: "Hubs MEAD Tânger · Casablanca",
   contactEy: "Contacto", contactH: "Vamos falar do seu próximo envio", contactLead: "Um comercial responde-lhe com um orçamento. Indique a origem, o destino, o peso e o volume.",
   phone: "Telefone", email: "E-mail", copy: "Copiar", copied: "Copiado", offices: {casa: "Casablanca", tng: "Tânger"}, officesH: "Os nossos escritórios",
   facts: ["Partidas","Trânsito","Recolha","Entrega"], back: "Todas as linhas",
@@ -624,7 +629,7 @@ it: {
   linesEy: "Groupage e completo", linesH: "Le nostre linee", linesSub: "Quattro modi per portare la vostra merce dall’Europa al Marocco.", more: "Vedi la linea",
   whyH: "Perché RTL Maroc",
   why: [["Partenze a giorni fissi","Sapete quando parte la vostra merce, senza aspettare che un camion si riempia."],["Tempi dichiarati","48 h da Spagna e Portogallo, 72 h dall’Italia."],["Piattaforme in Europa","Madrid, Barcellona, Alicante, Porto, Lisbona e Milano."],["Due uffici in Marocco","Casablanca e Tangeri, con consegna diretta ai MEAD."]],
-  mapH: "Il corridoio Europa–Marocco", mapNote: "Tutte le nostre linee funzionano in entrambi i sensi.",
+  mapH: "Il corridoio Europa–Marocco", mapNote: "Tutte le nostre linee funzionano in entrambi i sensi.", legMain: "Linee regolari RTL", legPart: "Rete di partner", legHub: "Hub MEAD Tangeri · Casablanca",
   contactEy: "Contatti", contactH: "Parliamo della vostra prossima spedizione", contactLead: "Un commerciale vi risponde con un preventivo. Indicateci origine, destinazione, peso e volume.",
   phone: "Telefono", email: "E-mail", copy: "Copia", copied: "Copiato", offices: {casa: "Casablanca", tng: "Tangeri"}, officesH: "I nostri uffici",
   facts: ["Partenze","Transit time","Ritiro","Consegna"], back: "Tutte le linee",
@@ -655,7 +660,7 @@ en: {
   linesEy: "Groupage and full truck", linesH: "Our lines", linesSub: "Four ways to move your goods from Europe to Morocco.", more: "See the line",
   whyH: "Why RTL Maroc",
   why: [["Fixed departure days","You know when your goods leave, without waiting for a truck to fill up."],["Stated transit times","48 h from Spain and Portugal, 72 h from Italy."],["Platforms in Europe","Madrid, Barcelona, Alicante, Porto, Lisbon and Milan."],["Two offices in Morocco","Casablanca and Tangier, with direct delivery to the MEAD customs terminals."]],
-  mapH: "The Europe–Morocco corridor", mapNote: "All our lines run in both directions.",
+  mapH: "The Europe–Morocco corridor", mapNote: "All our lines run in both directions.", legMain: "RTL regular lines", legPart: "Partner network", legHub: "MEAD hubs Tangier · Casablanca",
   contactEy: "Contact", contactH: "Let’s talk about your next shipment", contactLead: "A sales rep will reply with a quote. Tell us the origin, destination, weight and volume.",
   phone: "Phone", email: "Email", copy: "Copy", copied: "Copied", offices: {casa: "Casablanca", tng: "Tangier"}, officesH: "Our offices",
   facts: ["Departures","Transit","Pickup","Delivery"], back: "All lines",
@@ -686,7 +691,7 @@ ar: {
   linesEy: "شحن مجمّع وشاحنة كاملة", linesH: "خطوطنا", linesSub: "أربع طرق لنقل بضائعكم من أوروبا إلى المغرب.", more: "تفاصيل الخط",
   whyH: "لماذا RTL Maroc",
   why: [["انطلاق في أيام ثابتة","تعرفون موعد انطلاق بضاعتكم دون انتظار امتلاء الشاحنة."],["آجال معلنة","48 ساعة من إسبانيا والبرتغال، و72 ساعة من إيطاليا."],["منصات في أوروبا","مدريد وبرشلونة وأليكانتي وبورتو ولشبونة وميلانو."],["مكتبان في المغرب","الدار البيضاء وطنجة، مع التسليم المباشر في مساحات التخليص الجمركي (MEAD)."]],
-  mapH: "ممر أوروبا–المغرب", mapNote: "جميع خطوطنا تعمل في الاتجاهين.",
+  mapH: "ممر أوروبا–المغرب", mapNote: "جميع خطوطنا تعمل في الاتجاهين.", legMain: "خطوط RTL المنتظمة", legPart: "شبكة الشركاء", legHub: "مراكز MEAD طنجة · الدار البيضاء",
   contactEy: "اتصل بنا", contactH: "لنتحدث عن شحنتكم القادمة", contactLead: "يرد عليكم أحد مستشارينا التجاريين بعرض سعر. أرسلوا لنا نقطة الانطلاق والوجهة والوزن والحجم.",
   phone: "الهاتف", email: "البريد الإلكتروني", copy: "نسخ", copied: "تم النسخ", offices: {casa: "الدار البيضاء", tng: "طنجة"}, officesH: "مكاتبنا",
   facts: ["الانطلاق","مدة العبور","الاستلام","التسليم"], back: "جميع الخطوط",
@@ -914,26 +919,8 @@ function board(t) {
     <p class="board-note">${esc(t.boardNote)}</p></div>`;
 }
 
-function mapSvg() {
-  return `<svg viewBox="0 0 600 340" role="img" aria-label="Porto, Lisboa, Madrid, Barcelona, Alicante, Milano → Tanger, Casablanca">
-    <path class="sea" d="M20 238 C 150 226, 300 236, 580 222"/>
-    <path class="l-pt" d="M80 70 L66 140 L150 218 L215 262"/>
-    <path class="l-es" d="M335 78 L205 112 L208 205 L215 262"/>
-    <path class="l-es" d="M285 176 L230 215 L215 262"/>
-    <path class="l-it" d="M525 44 L430 150 L262 222 L215 262"/>
-    <path class="trunk" d="M215 262 L152 314"/>
-    <g>
-      <circle class="st" cx="80" cy="70" r="7"/><circle class="st" cx="66" cy="140" r="7"/>
-      <circle class="st" cx="205" cy="112" r="7"/><circle class="st" cx="335" cy="78" r="7"/>
-      <circle class="st" cx="285" cy="176" r="7"/><circle class="st" cx="525" cy="44" r="7"/>
-      <circle class="hub" cx="215" cy="262" r="10"/><circle class="hub" cx="152" cy="314" r="10"/>
-    </g>
-    <g class="lbl">
-      <text class="city" x="94" y="66">Porto</text><text class="city" x="80" y="136">Lisboa</text>
-      <text class="city" x="146" y="102">Madrid</text><text class="city" x="348" y="74">Barcelona</text>
-      <text class="city" x="298" y="180">Alicante</text><text class="city" x="440" y="36">Milano · Tribiano</text>
-      <text class="city" x="232" y="268">Tanger · MEAD</text><text class="city" x="170" y="324">Casablanca · MEAD</text>
-    </g></svg>`;
+function mapSvg(t) {
+  return `<a href="images/carte-flux.svg" target="_blank" rel="noopener"><img class="map-img" src="images/carte-flux.svg" width="800" height="691" alt="${esc(t.mapH)}" loading="lazy"></a>`;
 }
 
 function contactBlock(t) {
@@ -979,7 +966,7 @@ function home(t) {
     <section class="wrap sec split about" id="societe"><div><p class="eyebrow">${esc(t.aboutEy)}</p><h2>${esc(t.aboutH)}</h2>${t.aboutP.map(x => `<p>${esc(x)}</p>`).join("")}<h3 style="margin-top:28px">${esc(t.agentsH)}</h3><ul class="agents">${agents}</ul></div>
       <figure class="photo"><div class="ph"><img src="images/truck-jcl.jpg" alt="${esc(t.alt[2])}" loading="lazy"></div><figcaption>${esc(t.cap)}</figcaption></figure></section>
     <section class="wrap sec" id="destinations" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.destEy)}</p><h2>${esc(t.destH)}</h2><p>${esc(t.destSub)}</p></div>
-      <div class="dest-wrap"><div class="map">${mapSvg()}<div class="legend"><span><i style="background:var(--red)"></i>${esc(t.nav[0])}</span><span><i style="background:var(--ink)"></i>${esc(t.nav[1])}</span><span><i style="background:#D99A00"></i>${esc(t.nav[2])}</span></div><p class="map-note">${esc(t.mapNote)}</p></div><div class="dests">${dests}</div></div></section>
+      <div class="dest-wrap"><div class="map">${mapSvg(t)}<div class="legend"><span><i class="lg-main"></i>${esc(t.legMain)}</span><span><i class="lg-part"></i>${esc(t.legPart)}</span><span><i class="lg-hub"></i>${esc(t.legHub)}</span></div><p class="map-note">${esc(t.mapNote)}</p></div><div class="dests">${dests}</div></div></section>
     <section class="wrap sec" id="secteurs" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.secEy)}</p><h2>${esc(t.secH)}</h2><p>${esc(t.secSub)}</p></div><ul class="b-tags">${sectors}</ul></section>
     <div id="contact">${contactBlock(t)}</div>`;
 }
