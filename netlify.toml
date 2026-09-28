@@ -1,12 +1,7 @@
 [build]
   publish = "."
 
-# Redirige rtlmaroc.com (sans www) vers https://www.rtlmaroc.com
-[[redirects]]
-  from = "https://rtlmaroc.com/*"
-  to = "https://www.rtlmaroc.com/:splat"
-  status = 301
-  force = true
+# La redirection rtlmaroc.com <-> www est gérée par Netlify (domaine principal : Domain management).
 
 [[headers]]
   for = "/*"

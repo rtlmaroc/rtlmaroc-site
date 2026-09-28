@@ -4,7 +4,7 @@ Site vitrine de www.rtlmaroc.com (design « Nuit », 6 langues : FR, ES, PT, IT,
 
 - `index.html` : tout le site (contenu, styles, traductions, formulaire de devis WhatsApp/e-mail)
 - `images/` : logo, symbole, badge « 8 ans », photos flotte
-- `netlify.toml` : hébergement Netlify, redirection rtlmaroc.com → www
+- `netlify.toml` : hébergement Netlify (en-têtes, cache)
 - `robots.txt`, `sitemap.xml` : référencement
 
 Chaque modification poussée sur la branche `main` est publiée automatiquement par Netlify.
