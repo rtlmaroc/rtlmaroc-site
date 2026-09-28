@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="RTL Maroc (Round Trip Logistics) : groupage et camions complets Europe–Maroc. Espagne et Portugal en 48 h, Italie en 72 h, livraison MEAD Tanger et Casablanca.">
+<meta property="og:title" content="RTL Maroc | Groupage Europe–Maroc">
+<meta property="og:description" content="Groupage Espagne, Portugal, Italie vers Casablanca et Tanger. Départs fixes, transit garanti.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rtlmaroc.com/">
+<link rel="icon" type="image/png" href="images/symbol.png">
+<meta property="og:image" content="https://www.rtlmaroc.com/images/truck-red.jpg">
+<link rel="canonical" href="https://www.rtlmaroc.com/">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>RTL Maroc | Groupage Europe–Maroc</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F2F3F5; --surface:#FFFFFF; --ink:#15171B; --muted:#586070; --line:#D9DCE1;
+  --red:#E03A2F; --red-soft:#FDECEA; --on-red:#FFFFFF;
+  --board:#16181D; --board-ink:#E8EAED; --board-dim:#848B96; --amber:#FFB81C; --board-line:#2A2E36;
+  --wa:#1C8C4E;
+  --display:"Anton","IBM Plex Sans Arabic","Arial Narrow",Impact,sans-serif;
+  --sans:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1114; --surface:#181B20; --ink:#ECEEF1; --muted:#9AA1AC; --line:#2B2F37;
+    --red:#F04A3E; --red-soft:#3A1614; --on-red:#FFFFFF;
+    --board:#08090B; --board-ink:#E8EAED; --board-dim:#7D8490; --board-line:#23262D;
+    --wa:#27A862;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1114; --surface:#181B20; --ink:#ECEEF1; --muted:#9AA1AC; --line:#2B2F37;
+  --red:#F04A3E; --red-soft:#3A1614; --on-red:#FFFFFF;
+  --board:#08090B; --board-ink:#E8EAED; --board-dim:#7D8490; --board-line:#23262D;
+  --wa:#27A862;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+@media (max-width:480px){.wrap{padding-inline:16px}}
+[dir="rtl"] .arr{display:inline-block;transform:scaleX(-1)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-top:4px solid var(--red);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand svg{width:34px;height:24px}
+.brand b{font:400 28px/1 var(--display);letter-spacing:.02em}
+.brand small{display:block;font:500 10px/1.2 var(--mono);color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:4px;margin-inline-start:auto}
+.nav a{font:600 15px/1 var(--sans);text-decoration:none;padding:10px 10px;border-radius:4px;color:var(--ink)}
+.nav a:hover{background:var(--bg)}
+.nav a.on{color:var(--red)}
+.nav a.cta{background:var(--red);color:var(--on-red);padding-inline:16px;margin-inline-start:6px}
+.nav a.cta:hover{filter:brightness(1.08)}
+.lang{display:flex;align-items:center;gap:6px}
+.lang select{font:500 13px/1 var(--mono);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 6px}
+.menu-btn{display:none;margin-inline-start:auto;background:none;border:1px solid var(--line);border-radius:4px;color:var(--ink);font:600 14px var(--sans);padding:8px 12px;cursor:pointer}
+@media (max-width:960px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 16px 16px;gap:2px}
+  .nav.open{display:flex}
+  .nav a{padding:14px 8px}
+  .nav a.cta{margin:8px 0 0;text-align:center}
+  .lang{margin-inline-start:0}
+}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:64px 56px}
+.kicker{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 16px}
+h1,h2,h3{text-wrap:balance}
+h1{font:400 clamp(2.3rem,4.4vw,3.7rem)/1.02 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0 0 20px}
+.lead{font-size:1.125rem;color:var(--muted);max-width:34em;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 16px/1 var(--sans);padding:15px 22px;border-radius:4px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.red{background:var(--red);color:var(--on-red)}
+.btn.red:hover{filter:brightness(1.08)}
+.btn.ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn.ghost:hover{background:var(--ink);color:var(--surface)}
+.btn.wa{background:var(--wa);color:#fff}
+[dir="rtl"] h1{text-transform:none;line-height:1.25;font-size:clamp(2rem,4.2vw,3.3rem)}
+[dir="rtl"] .kicker,[dir="rtl"] .eyebrow,[dir="rtl"] .brand small{letter-spacing:0}
+
+/* Departures board */
+.board{background:var(--board);color:var(--board-ink);border-radius:6px;padding:22px 22px 16px;box-shadow:0 18px 40px -24px rgba(0,0,0,.55)}
+.board-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.board-title{font:400 22px/1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+[dir="rtl"] .board-title{text-transform:none;letter-spacing:0}
+.live{display:inline-flex;align-items:center;gap:8px;font:500 11px var(--mono);color:var(--board-dim);letter-spacing:.1em}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.board table{width:100%;border-collapse:collapse;font-family:var(--mono)}
+.board th{font:500 11px/1.2 var(--mono);color:var(--board-dim);text-transform:uppercase;letter-spacing:.1em;text-align:start;padding:8px 6px;border-bottom:1px solid var(--board-line)}
+[dir="rtl"] .board th{letter-spacing:0}
+.board td{padding:13px 6px;font-size:13.5px;border-bottom:1px solid var(--board-line);font-size:14px;vertical-align:middle}
+.board tr:last-child td{border-bottom:0}
+.board .code{display:inline-block;min-width:44px;text-align:center;background:var(--red);color:#fff;font:500 12px/1 var(--mono);padding:6px 6px;border-radius:3px;margin-inline-end:10px}
+.board .ln{font-family:var(--sans);font-weight:600;color:var(--board-ink);white-space:nowrap}
+.board td:first-child a{display:flex;align-items:center}
+.board .am{white-space:nowrap}
+.board .am{color:var(--amber);font-variant-numeric:tabular-nums}
+.board a{text-decoration:none}
+.board a:hover .ln{text-decoration:underline}
+.board-note{font:400 12px/1.4 var(--sans);color:var(--board-dim);margin:12px 0 0}
+.tbl{overflow-x:auto}
+@media (max-width:520px){.board .col-arr{display:none}.board td,.board th{padding-inline:4px}.board .code{min-width:38px;margin-inline-end:6px}}
+
+/* Sections */
+.sec{padding-block:64px}
+.sec-head{max-width:640px;margin-bottom:32px}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h2{font:400 clamp(2rem,3.6vw,2.9rem)/1 var(--display);text-transform:uppercase;margin:0 0 12px}
+[dir="rtl"] h2{text-transform:none;line-height:1.3}
+.sec-head p{color:var(--muted);margin:0}
+h3{font:600 1.125rem/1.3 var(--sans);margin:0 0 6px}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1040px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px;text-decoration:none;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--red);transform:translateY(-2px)}
+.chip{align-self:flex-start;font:500 12px/1 var(--mono);background:var(--ink);color:var(--surface);padding:6px 8px;border-radius:3px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.meta{display:flex;gap:18px;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font:500 13px/1.3 var(--mono)}
+.meta span{display:flex;flex-direction:column;gap:2px}
+.meta small{font:400 11px var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.more{font:600 14px var(--sans);color:var(--red)}
+
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+@media (max-width:900px){.split,.hero{grid-template-columns:1fr;gap:36px}.hero{padding-block:40px}}
+.map{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px}
+.map svg{width:100%;height:auto;display:block}
+.map .city{font:500 12px var(--mono);fill:var(--ink)}
+.map .sea{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:3 5}
+.map .st{fill:var(--surface);stroke:var(--ink);stroke-width:2.5}
+.map .hub{fill:var(--red);stroke:var(--surface);stroke-width:3}
+.l-es{stroke:var(--red)} .l-pt{stroke:var(--ink)} .l-it{stroke:#D99A00}
+.map path{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.map .trunk{stroke:var(--red);stroke-width:8}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font:500 13px var(--sans);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:22px;height:5px;border-radius:3px;display:inline-block}
+.map-note{font-size:14px;color:var(--muted);margin:10px 0 0}
+
+.why{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.why li{padding:18px 0;border-top:1px solid var(--line)}
+.why li:last-child{border-bottom:1px solid var(--line)}
+.why p{margin:0;color:var(--muted)}
+
+/* Contact band */
+.band{background:var(--board);color:var(--board-ink)}
+.band .sec-head p{color:var(--board-dim)}
+.band .eyebrow{color:var(--amber)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:900px){.contact{grid-template-columns:1fr;gap:28px}}
+.rows{display:grid;gap:0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--board-line);flex-wrap:wrap}
+.row small{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--board-dim);margin-bottom:4px}
+[dir="rtl"] .row small{letter-spacing:0}
+.row .v{font:500 18px/1.3 var(--mono);user-select:all;direction:ltr;unicode-bidi:embed}
+.copy{font:600 13px var(--sans);background:transparent;color:var(--board-ink);border:1px solid var(--board-line);border-radius:4px;padding:8px 12px;cursor:pointer}
+.copy:hover{border-color:var(--amber);color:var(--amber)}
+.offices{display:grid;gap:14px}
+.office{border:1px solid var(--board-line);border-radius:4px;padding:18px}
+.office h3{font:400 22px/1 var(--display);text-transform:uppercase;margin:0 0 8px;color:var(--board-ink)}
+[dir="rtl"] .office h3{text-transform:none}
+.office p{margin:0;color:var(--board-dim)}
+.band .btns{margin-top:24px}
+
+/* Line page */
+.crumb{font:500 13px var(--mono);color:var(--muted);text-decoration:none;display:inline-flex;gap:6px;margin-bottom:24px}
+.crumb:hover{color:var(--red)}
+.line-hero{padding-block:44px 8px}
+.line-hero .code-big{font:400 clamp(4rem,11vw,8rem)/.8 var(--display);color:var(--red);margin:0 0 12px;letter-spacing:-.01em}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:4px;margin-top:32px}
+.facts div{padding:20px;border-inline-start:1px solid var(--line)}
+.facts div:first-child{border-inline-start:0}
+.facts small{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+[dir="rtl"] .facts small{letter-spacing:0}
+.facts strong{font:400 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
+[dir="rtl"] .facts strong{font:700 20px/1.3 var(--sans)}
+@media (max-width:760px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-inline-start:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:20px}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:500 13px var(--mono);color:var(--red);margin-bottom:10px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:32px}}
+.docs{list-style:none;margin:0;padding:0}
+.docs li{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.docs li::before{content:"";flex:0 0 14px;height:14px;margin-top:5px;border:2px solid var(--red);border-radius:2px}
+details{border-top:1px solid var(--line);padding:4px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:500 20px/1 var(--mono);color:var(--red)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 16px;color:var(--muted)}
+
+/* Quote form */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:28px}
+@media (max-width:640px){.form{grid-template-columns:1fr;padding:20px}}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label,.f legend{font:600 14px var(--sans)}
+.f input,.f select,.f textarea{font:400 16px var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:12px;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--red);outline-offset:0;border-color:transparent}
+.f textarea{min-height:96px;resize:vertical}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:480px){.trio{grid-template-columns:1fr}}
+fieldset.f{border:0;padding:0;margin:0}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{display:flex;align-items:center;gap:8px;font:500 15px var(--sans);border:1px solid var(--line);border-radius:4px;padding:10px 14px;cursor:pointer;background:var(--bg)}
+.seg input{accent-color:var(--red);width:auto}
+.err{grid-column:1/-1;color:var(--red);font-weight:600;margin:0}
+.result{margin-top:20px;background:var(--red-soft);border:1px solid var(--red);border-radius:4px;padding:22px}
+.result p{margin:0 0 14px;font-weight:600}
+.result pre{white-space:pre-wrap;font:400 14px/1.5 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px;margin:0 0 16px;max-height:260px;overflow:auto}
+.result .btn.ghost{padding:13px 18px}
+.side-note{color:var(--muted);font-size:15px}
+.side-note .v{font:500 16px var(--mono);color:var(--ink);direction:ltr;unicode-bidi:embed}
+
+
+/* ===== v3 layout ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.util{background:var(--board);color:var(--board-dim);font:500 12px var(--mono)}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:38px}
+.util .v{direction:ltr;unicode-bidi:embed}
+.util .sep{margin-inline:8px}
+.util select{background:transparent;color:var(--board-ink);border:1px solid var(--board-line);font:500 12px var(--mono);padding:5px 6px;border-radius:4px}
+.util select option{color:#15171B;background:#fff}
+@media (max-width:560px){.util-c .sep,.util-c .v:last-child{display:none}}
+.top{border-top:0}
+.nav a{font-size:14.5px;text-transform:uppercase;letter-spacing:.03em}
+[dir="rtl"] .nav a{text-transform:none;letter-spacing:0;font-size:15px}
+@media (max-width:1120px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 16px 16px;gap:2px}
+  .nav.open{display:flex}
+  .nav a{padding:14px 8px}
+  .nav a.cta{margin:8px 0 0;text-align:center}
+}
+.hero-x{position:relative;height:clamp(480px,74vh,700px);background:#0B0C0E;overflow:hidden;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;display:flex;align-items:flex-end}
+.slide.on{opacity:1;z-index:1}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,9,11,.82) 0%,rgba(8,9,11,.5) 45%,rgba(8,9,11,.05) 80%),linear-gradient(0deg,rgba(8,9,11,.7) 0%,transparent 45%)}
+[dir="rtl"] .slide::after{background:linear-gradient(270deg,rgba(8,9,11,.82) 0%,rgba(8,9,11,.5) 45%,rgba(8,9,11,.05) 80%),linear-gradient(0deg,rgba(8,9,11,.7) 0%,transparent 45%)}
+.slide-txt{position:relative;z-index:2;width:100%;padding-bottom:128px}
+.slide-txt .kicker{color:#FF7A6E}
+.slide-txt h1,.slide-txt .h1{font:400 clamp(2.3rem,5vw,4.2rem)/1.02 var(--display);text-transform:uppercase;margin:0 0 16px;max-width:15em;text-wrap:balance;color:#fff}
+[dir="rtl"] .slide-txt h1,[dir="rtl"] .slide-txt .h1{font-family:var(--sans);font-weight:700;text-transform:none;line-height:1.3;font-size:clamp(1.9rem,4vw,3.1rem)}
+.slide-txt .lead{color:rgba(255,255,255,.86);max-width:32em}
+.hero-ui{position:absolute;z-index:3;inset-inline:0;bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.btn.light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.7)}
+.btn.light:hover{background:#fff;color:#15171B}
+.dots{display:flex;gap:8px}
+.dot{width:34px;height:5px;border:0;border-radius:3px;background:rgba(255,255,255,.4);cursor:pointer;padding:0}
+.dot.on{background:#fff}
+@media (max-width:600px){.slide-txt{padding-bottom:150px}.hero-ui{bottom:28px}.dots{order:-1}}
+.figs{background:var(--red);color:#fff}
+.figs .stats{border:0}
+.figs .stat{border-color:rgba(255,255,255,.28)}
+.figs .stat b{color:#fff}
+.figs .stat span{color:rgba(255,255,255,.88)}
+@media (max-width:760px){.figs .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.28)}}
+.dest-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+@media (max-width:900px){.dest-wrap{grid-template-columns:1fr}}
+.dest-wrap>*{min-width:0}
+.dests{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:420px){.dests{grid-template-columns:1fr}}
+.dest{display:flex;flex-direction:column;gap:4px;padding:16px 18px;background:var(--bg);border:1px solid var(--line);border-radius:4px;text-decoration:none;transition:border-color .15s}
+.dest:hover{border-color:var(--red)}
+.dest small{font:500 11px var(--mono);letter-spacing:.1em;color:var(--red)}
+.dest strong{font:400 1.5rem/1.1 var(--display);text-transform:uppercase}
+[dir="rtl"] .dest strong{font:700 1.2rem/1.3 var(--sans)}
+.dest span{font-size:14px;color:var(--muted)}
+.dest:first-child{grid-column:1/-1;background:var(--red);border-color:var(--red);color:#fff}
+.dest:first-child small,.dest:first-child span{color:rgba(255,255,255,.88)}
+.sectors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
+.sectors li{padding:26px 22px;border-bottom:1px solid var(--line);border-inline-end:1px solid var(--line);font:600 1.0625rem/1.3 var(--sans);display:flex;flex-direction:column;gap:14px;min-height:120px;background:var(--surface)}
+.sectors small{font:500 12px var(--mono);color:var(--red)}
+@media (max-width:900px){.sectors{grid-template-columns:repeat(2,1fr)}}
+.fleet-band{position:relative;min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#0B0C0E}
+.fleet-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.fleet-band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,11,.88) 0%,rgba(8,9,11,.35) 50%,transparent 75%)}
+.fleet-txt{position:relative;z-index:1;padding-block:48px;width:100%}
+.fleet-txt .eyebrow{color:#FF7A6E}
+.fleet-txt h2{color:#fff}
+.fleet-txt p:last-child{max-width:40em;color:rgba(255,255,255,.86);margin:0}
+.foot{padding-block:0}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:32px;padding-block:56px 32px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid>*{min-width:0}
+.foot-logo{height:48px;width:auto;margin-bottom:14px}
+.foot h4{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--board-ink);margin:0 0 14px}
+[dir="rtl"] .foot h4{letter-spacing:0}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.foot a{text-decoration:none;color:var(--board-dim)}
+.foot a:hover{color:#fff}
+.foot p{margin:0 0 8px}
+.foot strong{color:var(--board-ink)}
+.foot .v{direction:ltr;unicode-bidi:embed;color:var(--board-ink)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--board-line);padding-block:20px calc(20px + env(safe-area-inset-bottom,0px))}
+
+
+/* ===== Proposition B : Nuit ===== */
+:root:not(#_){color-scheme:dark;--bg:#0D0E11;--surface:#17191E;--ink:#F2F2F0;--muted:#9CA1AA;--line:#2A2D34;--red:#EE4035;--red-soft:#3A1614;--board:#08090B;--board-ink:#EDEDED;--board-dim:#8A909A;--board-line:#24272E;--wa:#27A862}
+.logo-l{display:none!important}.logo-d{display:block!important}
+.util{background:#000}
+.top{background:rgba(13,14,17,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.nav a:hover{background:var(--surface)}
+.b-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px}
+.b-hero>*{min-width:0}
+.b-hero h1{font:400 clamp(2.8rem,6.4vw,5.8rem)/.93 var(--display);text-transform:uppercase;margin:0 0 22px}
+[dir="rtl"] .b-hero h1{font:700 clamp(2.1rem,4.4vw,3.5rem)/1.25 var(--sans)}
+.b-hero-img{margin:0;aspect-ratio:4/5;border-radius:4px;overflow:hidden;max-width:100%}
+.b-hero-img img{width:100%;height:100%;object-fit:cover;object-position:68% center}
+@media (max-width:900px){.b-hero{grid-template-columns:1fr;gap:28px;padding-block:36px}.b-hero-img{aspect-ratio:4/3}}
+.b-marquee{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding-block:16px}
+.b-track{display:inline-flex;gap:28px;padding-inline-end:28px;animation:mq 38s linear infinite;font:400 clamp(1.5rem,2.8vw,2.2rem)/1 var(--display);text-transform:uppercase}
+[dir="rtl"] .b-track{font:700 1.4rem/1.2 var(--sans);animation-direction:reverse}
+.b-track i{font-style:normal;opacity:.55}
+@keyframes mq{to{transform:translateX(-50%)}}
+.b-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:56px;border-bottom:1px solid var(--line)}
+.b-stats .stat{border:0!important;padding:0!important}
+.b-stats .stat b{font:400 clamp(3.2rem,6vw,5.4rem)/1 var(--display);color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.b-stats .stat:first-child b{color:var(--red);-webkit-text-stroke:0}
+@media (max-width:760px){.b-stats{grid-template-columns:1fr 1fr;row-gap:32px}}
+.b-rows{border-top:1px solid var(--line)}
+.b-row{display:grid;grid-template-columns:96px 1fr 160px 130px 32px;gap:20px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}
+.b-row:hover{background:var(--surface)}
+.b-code{font:400 2.4rem/1 var(--display);color:var(--red)}
+.b-name{font:600 1.25rem/1.3 var(--sans);display:flex;flex-direction:column;gap:4px}
+.b-name small{font:400 15px/1.4 var(--sans);color:var(--muted)}
+.b-v{font:500 15px var(--mono);color:var(--amber);display:flex;flex-direction:column;gap:4px}
+.b-v small{font:500 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.b-go{font-size:1.4rem;color:var(--red)}
+@media (max-width:760px){.b-row{grid-template-columns:64px 1fr;row-gap:10px}.b-v{grid-column:2}.b-go{display:none}.b-code{font-size:1.8rem}}
+.b-tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.b-tags li{border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:500;background:var(--surface)}
+
+
+/* ===== B affiné : lisibilité ===== */
+:root:not(#_){--display:"Barlow Condensed","IBM Plex Sans Arabic","Arial Narrow",sans-serif;--muted:#B9BEC6;--board-dim:#A3A9B3;--ink:#F4F4F2}
+body{font-size:17px;line-height:1.7;font-weight:400;letter-spacing:.005em}
+.lead{color:#D3D6DB;font-weight:300;font-size:1.2rem;line-height:1.65}
+p{color:inherit}
+h1,h2,.b-hero h1,.fleet-txt h2{font-weight:400!important;letter-spacing:.015em}
+.b-hero h1{font-size:clamp(2.6rem,5.2vw,4.6rem);line-height:1.02}
+h2{font-size:clamp(2rem,3.4vw,2.9rem)!important;line-height:1.05!important}
+h3,.b-name,.agents strong,.dest strong{font-weight:500!important}
+.b-name{font-size:1.15rem}
+.b-name small,.sec-head p,.about p+p,.agents span,.dest span,.map-note,.why p,.steps p,.docs li,details p{color:var(--muted)!important;font-weight:400}
+.about p:first-of-type{font-weight:300;font-size:1.25rem;color:var(--ink)}
+.b-stats .stat b{font:300 clamp(3rem,5.4vw,4.8rem)/1 var(--display)!important;color:var(--ink)!important;-webkit-text-stroke:0!important}
+.b-stats .stat:first-child b{color:var(--red)!important}
+.b-stats .stat span{color:var(--muted);font-size:15px}
+.b-track{font:400 clamp(1.4rem,2.4vw,1.9rem)/1 var(--display)!important;letter-spacing:.06em}
+.b-code{font:300 2.4rem/1 var(--display)}
+.eyebrow,.kicker{font-weight:500;color:#C9CDD3}
+.kicker{color:#FF8378}
+.nav a{font-weight:500}
+.btn{font-weight:500}
+.dest strong{font:400 1.55rem/1.1 var(--display)}
+.office h3,.board-title{font-weight:400!important}
+.band .sec-head p,.office p{color:var(--board-dim)}
+.fleet-txt p:last-child{color:#E2E4E8}
+[dir="rtl"] .b-hero h1,[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .dest strong,[dir="rtl"] .b-track{font-family:var(--sans)!important;font-weight:500!important;letter-spacing:0}
+[dir="rtl"] body{line-height:1.85}
+
+
+/* ===== 8 ans déjà ===== */
+.eight{display:inline-block;white-space:nowrap;font:400 1em/1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.eight img{display:inline-block;height:.8em;width:auto;vertical-align:baseline;margin-inline-end:.2em}
+.eight-t{font:inherit}
+.eight.e-top{font-size:clamp(2rem,3.2vw,2.8rem);margin-bottom:14px}
+.eight.big{font-size:clamp(2.2rem,3.8vw,3.3rem);font-weight:300}
+.b-stats .stat b{font-size:clamp(2.2rem,3.8vw,3.3rem)!important}
+.stat-8{gap:6px!important}
+@media (min-width:761px){.b-stats{grid-template-columns:1.35fr 1fr 1fr 1fr}}
+.b-stats .stat .eight.big{font-size:clamp(2.2rem,3.8vw,3.3rem)!important;color:var(--ink)!important;line-height:1}
+.b-stats .stat .eight .eight-t{font-size:inherit!important;color:inherit!important}
+[dir="rtl"] .eight{font-family:var(--sans);font-weight:500;text-transform:none;letter-spacing:0}
+
+
+/* ===== Texte d'accueil ===== */
+.b-stats>*{min-width:0}
+@media (max-width:760px){.stat-8{grid-column:1/-1}}
+.h-points{list-style:none;margin:8px 0 24px;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.h-points li{display:grid;grid-template-columns:14px 1fr;column-gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.h-points li::before{content:"";width:10px;height:10px;background:var(--red);margin-top:.55em;grid-row:span 2}
+.h-points strong{font:400 1.55rem/1.15 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.h-points span{color:var(--muted);font-size:1.02rem;line-height:1.5;margin-top:2px}
+.h-para{font-weight:300;font-size:1.12rem;line-height:1.7;color:#D3D6DB;margin:0 0 18px;max-width:34em}
+.h-close{font:400 clamp(1.5rem,2.4vw,1.95rem)/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--red);margin:0 0 26px}
+[dir="rtl"] .h-points strong,[dir="rtl"] .h-close{font-family:var(--sans);font-weight:600;text-transform:none;letter-spacing:0;font-size:1.25rem;line-height:1.5}
+
+
+.b-hero{align-items:start!important}
+.b-hero-img{position:sticky;top:calc(96px + env(safe-area-inset-top,0px))}
+@media (max-width:900px){.b-hero-img{position:static}}
+.h-title{font:400 clamp(1.9rem,3.2vw,2.7rem)/1.08 var(--display)!important;text-transform:uppercase;letter-spacing:.02em;margin:6px 0 20px!important;max-width:18em}
+.h-intro{font-size:1.06rem;line-height:1.7;color:#D3D6DB;font-weight:300;margin:0 0 14px;max-width:36em}
+.h-intro:last-of-type{color:var(--ink);font-weight:400;margin-bottom:10px}
+[dir="rtl"] .h-title{font:600 clamp(1.6rem,2.8vw,2.2rem)/1.4 var(--sans)!important;text-transform:none}
+
+/* Footer and float */
+.foot{background:var(--board);color:var(--board-dim);border-top:1px solid var(--board-line);font-size:14px}
+
+.float{position:fixed;inset-inline-end:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;font:600 15px var(--sans);padding:13px 18px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.float svg{width:20px;height:20px}
+main{min-height:60vh}
+/* Brand + company presentation */
+.logo{height:44px;width:auto;display:block}
+.logo-d{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo-l{display:none}:root:not([data-theme="light"]) .logo-d{display:block}}
+:root[data-theme="dark"] .logo-l{display:none}
+:root[data-theme="dark"] .logo-d{display:block}
+@media (max-width:480px){.logo{height:36px}}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .board-title,[dir="rtl"] .office h3,[dir="rtl"] .code-big,[dir="rtl"] .stat b,[dir="rtl"] .dest-panel li{font-family:var(--sans);font-weight:700}
+.hero-img{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--line)}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.stat{padding:24px 20px;border-inline-start:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.stat:first-child{border-inline-start:0;padding-inline-start:0}
+.stat b{font:400 clamp(2.4rem,4vw,3.4rem)/1 var(--display);color:var(--red);font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:15px;line-height:1.35}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-inline-start:0;padding-inline-start:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+.about p{margin:0 0 14px;max-width:36em;font-size:1.0625rem}
+.about p:first-of-type{font-size:1.25rem;color:var(--ink)}
+.about p+p{color:var(--muted)}
+.dest-panel{background:var(--red);color:#fff;border-radius:6px;padding:28px 32px;position:relative;overflow:hidden}
+.dest-panel small{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+[dir="rtl"] .dest-panel small{letter-spacing:0}
+.dest-panel ul{list-style:none;margin:14px 0 0;padding:0}
+.dest-panel li{font:400 clamp(1.6rem,3vw,2.2rem)/1.15 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.dest-panel img{position:absolute;inset-inline-end:-40px;bottom:-40px;width:220px;opacity:.16;filter:brightness(0) invert(1)}
+.fleet-img{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:16/8;max-width:100%;background:var(--line)}
+.fleet-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block}
+@media (max-width:600px){.fleet-img{aspect-ratio:4/3}}
+.fleet-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:28px}
+.fleet-head p{margin:0;color:var(--muted)}
+@media (max-width:860px){.fleet-head{grid-template-columns:1fr;gap:12px}}
+.agents{list-style:none;margin:24px 0 0;padding:0}
+.agents li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.agents li:last-child{border-bottom:1px solid var(--line)}
+.agents .c{font:500 12px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+[dir="rtl"] .agents .c{letter-spacing:0}
+.agents strong{display:block;font-weight:600;font-size:1.0625rem}
+.agents span{color:var(--muted);font-size:15px}
+@media (max-width:480px){.agents li{grid-template-columns:1fr;gap:4px}}
+.photo{margin:0}
+.photo .ph{border-radius:6px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.lines-top{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:end;margin-bottom:32px}
+.lines-top .sec-head{margin-bottom:0}
+@media (max-width:900px){.lines-top{grid-template-columns:1fr;gap:24px}}
+.hero>*,.split>*,.lines-top>*,.contact>*,.two>*{min-width:0}
+@media (max-width:520px){.board .am{white-space:normal}.board .ln{white-space:normal}}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+
+</style>
+
+<div class="util"><div class="wrap">
+  <span class="util-c"><span class="v">+212 522 240 435</span><span class="sep">·</span><span class="v">contact@rtlmaroc.com</span></span>
+  <span class="lang"><label for="lang-sel" class="sr">Langue</label><select id="lang-sel"></select></span>
+</div></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="Round Trip Logistics – RTL Maroc">
+      <img class="logo logo-l" src="images/logo.png" alt="Round Trip Logistics" width="620" height="169">
+      <img class="logo logo-d" src="images/logo-dark.png" alt="" width="620" height="169">
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav"></nav>
+  </div>
+</header>
+<main id="app"></main>
+<footer class="foot" id="foot"></footer>
+<a class="float" id="float" href="https://wa.me/212661955694" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+/* ===== Coordonnées : à modifier ici si besoin ===== */
+const CFG = {
+  phone: "+212 661 955 694",
+  fixed: "+212 522 240 435 / +212 522 245 053",
+  wa: "212661955694",
+  email: "sales.manager@rtlmaroc.com",
+  offices: [
+    {k: "casa", addr: "Espace Idriss, 353 Boulevard Mohammed V, Étage 4, Appt 6, Casablanca"},
+    {k: "tng", addr: "Rue Jordanie, Résidence Yamna 2, E.S n° 24, Tanger"}
+  ]
+};
+const LINES = ["es", "pt", "it", "ftl"];
+const CODE = {es: "ES", pt: "PT", it: "IT", ftl: "FTL"};
+const ROUTE = {espagne: "es", portugal: "pt", italie: "it", complet: "ftl"};
+const SLUG = {es: "espagne", pt: "portugal", it: "italie", ftl: "complet"};
+const HOURS = {es: 48, pt: 48, it: 72};
+const LANGS = [["fr","Français"],["es","Español"],["pt","Português"],["it","Italiano"],["en","English"],["ar","العربية"]];
+
+const T = {
+fr: {
+  nav: ["Espagne","Portugal","Italie","Complet","Contact","Demander un devis"], lang: "Langue", h: "h",
+  kicker: "Commissionnaire de transport international · Europe ⇄ Maroc",
+  h1: "Votre groupage Europe–Maroc. Départs fixes, transit garanti.",
+  lead: "Groupage et camions complets depuis l’Espagne, le Portugal et l’Italie vers Casablanca et Tanger. Et dans l’autre sens, du Maroc vers l’Europe.",
+  cta: "Demander un devis",
+  board: "Départs réguliers", cols: ["Ligne","Départs","Transit","Arrivée"], boardNote: "Jours indicatifs, confirmés à la réservation.",
+  linesEy: "Groupage et complet", linesH: "Nos lignes", linesSub: "Quatre façons d’amener votre marchandise d’Europe au Maroc.", more: "Voir la ligne",
+  whyH: "Pourquoi RTL Maroc",
+  why: [["Départs à jours fixes","Vous savez quand part votre marchandise, sans attendre qu’un camion se remplisse."],["Délais annoncés","48 h depuis l’Espagne et le Portugal, 72 h depuis l’Italie."],["Plateformes en Europe","Madrid, Barcelone, Alicante, Porto, Lisbonne et Milan."],["Deux bureaux au Maroc","Casablanca et Tanger, avec livraison directe sur les MEAD."]],
+  mapH: "Le corridor Europe–Maroc", mapNote: "Toutes nos lignes fonctionnent dans les deux sens.",
+  contactEy: "Contact", contactH: "Parlons de votre prochain envoi", contactLead: "Un commercial vous répond avec un devis. Donnez-nous l’origine, la destination, le poids et le volume.",
+  phone: "Téléphone", email: "E-mail", copy: "Copier", copied: "Copié", offices: {casa: "Casablanca", tng: "Tanger"}, officesH: "Nos bureaux",
+  facts: ["Départs","Transit","Enlèvement","Livraison"], back: "Toutes les lignes",
+  howH: "Comment se passe un envoi",
+  steps: [["Demande de devis","Origine, destination, poids, volume et nature de la marchandise."],["Enlèvement","Nous récupérons la marchandise chez votre fournisseur."],["Transport","Consolidation sur notre plateforme et départ au jour prévu."],["Douane et livraison","Arrivée au MEAD, dédouanement coordonné avec votre transitaire, puis livraison."]],
+  docsH: "Documents à prévoir", docs: ["Facture commerciale","Liste de colisage (poids et volume par colis)","Certificat EUR.1 si la marchandise est d’origine européenne","Coordonnées de l’importateur au Maroc (ICE)"],
+  faqH: "Questions fréquentes",
+  faq: [["Comment est calculé le prix ?","Selon le poids, le volume et les villes d’enlèvement et de livraison. Envoyez-nous ces éléments et nous revenons vers vous avec un devis."],["Qui s’occupe du dédouanement ?","Nous coordonnons le passage en douane sur les MEAD de Tanger et Casablanca avec votre transitaire ou un transitaire partenaire."],["Transportez-vous aussi du Maroc vers l’Europe ?","Oui. Nos lignes fonctionnent dans les deux sens."]],
+  lineCta: "Demander un devis pour cette ligne",
+  lines: {
+    es: {name: "Groupage Espagne – Maroc", short: "Enlèvement dans toute l’Espagne, 48 h de transit.", lead: "Enlèvement dans toute l’Espagne via nos plateformes de Madrid (Coslada), Barcelone et Alicante. Départs directs vers les MEAD de Tanger et Casablanca.", dep: "Réguliers", pick: "Toute l’Espagne", del: "MEAD Tanger · Casablanca"},
+    pt: {name: "Groupage Portugal – Maroc", short: "Mercredi et vendredi, 48 h de transit.", lead: "Ligne groupage Porto / Lisbonne ⇄ Casablanca / Tanger, opérée avec notre partenaire au Portugal.", dep: "Mer · Ven", pick: "Porto · Lisbonne", del: "Casablanca · Tanger"},
+    it: {name: "Groupage Italie – Maroc", short: "2 départs par semaine, 72 h de transit.", lead: "Consolidation sur notre plateforme de Tribiano (Milan), qui reçoit aussi les marchandises d’Europe de l’Est.", dep: "2 / semaine", pick: "Italie · Europe de l’Est", del: "Casablanca · Tanger"},
+    ftl: {name: "Camion complet Europe – Maroc", short: "Un camion dédié, dans les deux sens.", lead: "Camion complet dédié entre l’Europe et le Maroc, dans les deux sens, pour vos volumes importants.", dep: "À la demande", tt: "Selon trajet", pick: "Toute l’Europe", del: "Tout le Maroc"}
+  },
+  quoteH: "Demande de devis", quoteLead: "Remplissez ce formulaire. Votre demande est préparée pour l’envoyer par WhatsApp ou par e-mail à notre équipe commerciale.",
+  q: {company: "Société", name: "Nom et prénom", phone: "Téléphone", email: "E-mail", from: "Enlèvement", to: "Livraison", mode: "Type d’envoi", group: "Groupage", full: "Camion complet", pal: "Palettes", kg: "Poids total (kg)", m3: "Volume (m³)", goods: "Marchandise", msg: "Précisions (adresse, date souhaitée…)", submit: "Préparer ma demande", err: "Indiquez votre nom, un téléphone ou un e-mail, et le lieu d’enlèvement.", ready: "Votre demande est prête. Choisissez comment l’envoyer :", wa: "Envoyer sur WhatsApp", mail: "Envoyer par e-mail", copyText: "Copier le texte", orDirect: "Vous préférez appeler ?"},
+  fromOpts: ["Espagne","Portugal","Italie","Autre pays d’Europe","Maroc"], toOpts: ["Casablanca","Tanger","Autre ville du Maroc","Europe"],
+  intro: "Demande de devis RTL Maroc", foot: "RTL Maroc · Round Trip Logistics · Commissionnaire de transport international"
+},
+es: {
+  nav: ["España","Portugal","Italia","Completo","Contacto","Pedir presupuesto"], lang: "Idioma", h: "h",
+  kicker: "Transitario internacional · Europa ⇄ Marruecos",
+  h1: "Su grupaje Europa–Marruecos. Salidas fijas, tránsito garantizado.",
+  lead: "Grupaje y camiones completos desde España, Portugal e Italia hacia Casablanca y Tánger. Y en sentido contrario, de Marruecos a Europa.",
+  cta: "Pedir presupuesto",
+  board: "Salidas regulares", cols: ["Línea","Salidas","Tránsito","Llegada"], boardNote: "Días orientativos, confirmados en la reserva.",
+  linesEy: "Grupaje y completo", linesH: "Nuestras líneas", linesSub: "Cuatro formas de llevar su mercancía de Europa a Marruecos.", more: "Ver la línea",
+  whyH: "Por qué RTL Maroc",
+  why: [["Salidas en días fijos","Sabe cuándo sale su mercancía, sin esperar a que se llene un camión."],["Plazos anunciados","48 h desde España y Portugal, 72 h desde Italia."],["Plataformas en Europa","Madrid, Barcelona, Alicante, Oporto, Lisboa y Milán."],["Dos oficinas en Marruecos","Casablanca y Tánger, con entrega directa en los MEAD."]],
+  mapH: "El corredor Europa–Marruecos", mapNote: "Todas nuestras líneas funcionan en ambos sentidos.",
+  contactEy: "Contacto", contactH: "Hablemos de su próximo envío", contactLead: "Un comercial le responde con un presupuesto. Indíquenos origen, destino, peso y volumen.",
+  phone: "Teléfono", email: "Correo", copy: "Copiar", copied: "Copiado", offices: {casa: "Casablanca", tng: "Tánger"}, officesH: "Nuestras oficinas",
+  facts: ["Salidas","Tránsito","Recogida","Entrega"], back: "Todas las líneas",
+  howH: "Cómo funciona un envío",
+  steps: [["Solicitud de presupuesto","Origen, destino, peso, volumen y tipo de mercancía."],["Recogida","Recogemos la mercancía en su proveedor."],["Transporte","Consolidación en nuestra plataforma y salida el día previsto."],["Aduana y entrega","Llegada al MEAD, despacho coordinado con su agente de aduanas y entrega."]],
+  docsH: "Documentos necesarios", docs: ["Factura comercial","Lista de bultos (peso y volumen por bulto)","Certificado EUR.1 si la mercancía es de origen europeo","Datos del importador en Marruecos (ICE)"],
+  faqH: "Preguntas frecuentes",
+  faq: [["¿Cómo se calcula el precio?","Según el peso, el volumen y las ciudades de recogida y entrega. Envíenos estos datos y le respondemos con un presupuesto."],["¿Quién se encarga del despacho de aduanas?","Coordinamos el despacho en los MEAD de Tánger y Casablanca con su agente de aduanas o un agente colaborador."],["¿También transportan de Marruecos a Europa?","Sí. Nuestras líneas funcionan en ambos sentidos."]],
+  lineCta: "Pedir presupuesto para esta línea",
+  lines: {
+    es: {name: "Grupaje España – Marruecos", short: "Recogida en toda España, 48 h de tránsito.", lead: "Recogida en toda España a través de nuestras plataformas de Madrid (Coslada), Barcelona y Alicante. Salidas directas hacia los MEAD de Tánger y Casablanca.", dep: "Regulares", pick: "Toda España", del: "MEAD Tánger · Casablanca"},
+    pt: {name: "Grupaje Portugal – Marruecos", short: "Miércoles y viernes, 48 h de tránsito.", lead: "Línea de grupaje Oporto / Lisboa ⇄ Casablanca / Tánger, operada con nuestro socio en Portugal.", dep: "Mié · Vie", pick: "Oporto · Lisboa", del: "Casablanca · Tánger"},
+    it: {name: "Grupaje Italia – Marruecos", short: "2 salidas por semana, 72 h de tránsito.", lead: "Consolidación en nuestra plataforma de Tribiano (Milán), que también recibe mercancía de Europa del Este.", dep: "2 / semana", pick: "Italia · Europa del Este", del: "Casablanca · Tánger"},
+    ftl: {name: "Camión completo Europa – Marruecos", short: "Un camión dedicado, en ambos sentidos.", lead: "Camión completo dedicado entre Europa y Marruecos, en ambos sentidos, para sus grandes volúmenes.", dep: "A petición", tt: "Según ruta", pick: "Toda Europa", del: "Todo Marruecos"}
+  },
+  quoteH: "Solicitud de presupuesto", quoteLead: "Rellene este formulario. Su solicitud queda preparada para enviarla por WhatsApp o por correo a nuestro equipo comercial.",
+  q: {company: "Empresa", name: "Nombre y apellidos", phone: "Teléfono", email: "Correo", from: "Recogida", to: "Entrega", mode: "Tipo de envío", group: "Grupaje", full: "Camión completo", pal: "Palés", kg: "Peso total (kg)", m3: "Volumen (m³)", goods: "Mercancía", msg: "Detalles (dirección, fecha deseada…)", submit: "Preparar mi solicitud", err: "Indique su nombre, un teléfono o correo, y el lugar de recogida.", ready: "Su solicitud está lista. Elija cómo enviarla:", wa: "Enviar por WhatsApp", mail: "Enviar por correo", copyText: "Copiar el texto", orDirect: "¿Prefiere llamar?"},
+  fromOpts: ["España","Portugal","Italia","Otro país de Europa","Marruecos"], toOpts: ["Casablanca","Tánger","Otra ciudad de Marruecos","Europa"],
+  intro: "Solicitud de presupuesto RTL Maroc", foot: "RTL Maroc · Round Trip Logistics · Transitario internacional"
+},
+pt: {
+  nav: ["Espanha","Portugal","Itália","Completo","Contacto","Pedir orçamento"], lang: "Idioma", h: "h",
+  kicker: "Transitário internacional · Europa ⇄ Marrocos",
+  h1: "A sua grupagem Europa–Marrocos. Partidas fixas, trânsito garantido.",
+  lead: "Grupagem e camiões completos de Espanha, Portugal e Itália para Casablanca e Tânger. E no sentido inverso, de Marrocos para a Europa.",
+  cta: "Pedir orçamento",
+  board: "Partidas regulares", cols: ["Linha","Partidas","Trânsito","Chegada"], boardNote: "Dias indicativos, confirmados na reserva.",
+  linesEy: "Grupagem e completo", linesH: "As nossas linhas", linesSub: "Quatro formas de levar a sua mercadoria da Europa para Marrocos.", more: "Ver a linha",
+  whyH: "Porquê a RTL Maroc",
+  why: [["Partidas em dias fixos","Sabe quando a sua mercadoria parte, sem esperar que um camião encha."],["Prazos anunciados","48 h a partir de Espanha e Portugal, 72 h a partir de Itália."],["Plataformas na Europa","Madrid, Barcelona, Alicante, Porto, Lisboa e Milão."],["Dois escritórios em Marrocos","Casablanca e Tânger, com entrega direta nos MEAD."]],
+  mapH: "O corredor Europa–Marrocos", mapNote: "Todas as nossas linhas funcionam nos dois sentidos.",
+  contactEy: "Contacto", contactH: "Vamos falar do seu próximo envio", contactLead: "Um comercial responde-lhe com um orçamento. Indique a origem, o destino, o peso e o volume.",
+  phone: "Telefone", email: "E-mail", copy: "Copiar", copied: "Copiado", offices: {casa: "Casablanca", tng: "Tânger"}, officesH: "Os nossos escritórios",
+  facts: ["Partidas","Trânsito","Recolha","Entrega"], back: "Todas as linhas",
+  howH: "Como funciona um envio",
+  steps: [["Pedido de orçamento","Origem, destino, peso, volume e tipo de mercadoria."],["Recolha","Recolhemos a mercadoria no seu fornecedor."],["Transporte","Consolidação na nossa plataforma e partida no dia previsto."],["Alfândega e entrega","Chegada ao MEAD, desalfandegamento coordenado com o seu despachante e entrega."]],
+  docsH: "Documentos necessários", docs: ["Fatura comercial","Packing list (peso e volume por volume)","Certificado EUR.1 se a mercadoria for de origem europeia","Dados do importador em Marrocos (ICE)"],
+  faqH: "Perguntas frequentes",
+  faq: [["Como é calculado o preço?","Com base no peso, no volume e nas cidades de recolha e entrega. Envie-nos estes dados e respondemos com um orçamento."],["Quem trata do desalfandegamento?","Coordenamos o desalfandegamento nos MEAD de Tânger e Casablanca com o seu despachante ou um despachante parceiro."],["Também transportam de Marrocos para a Europa?","Sim. As nossas linhas funcionam nos dois sentidos."]],
+  lineCta: "Pedir orçamento para esta linha",
+  lines: {
+    es: {name: "Grupagem Espanha – Marrocos", short: "Recolha em toda a Espanha, 48 h de trânsito.", lead: "Recolha em toda a Espanha através das nossas plataformas de Madrid (Coslada), Barcelona e Alicante. Partidas diretas para os MEAD de Tânger e Casablanca.", dep: "Regulares", pick: "Toda a Espanha", del: "MEAD Tânger · Casablanca"},
+    pt: {name: "Grupagem Portugal – Marrocos", short: "Quarta e sexta-feira, 48 h de trânsito.", lead: "Linha de grupagem Porto / Lisboa ⇄ Casablanca / Tânger, operada com o nosso parceiro em Portugal.", dep: "Qua · Sex", pick: "Porto · Lisboa", del: "Casablanca · Tânger"},
+    it: {name: "Grupagem Itália – Marrocos", short: "2 partidas por semana, 72 h de trânsito.", lead: "Consolidação na nossa plataforma de Tribiano (Milão), que também recebe mercadoria da Europa de Leste.", dep: "2 / semana", pick: "Itália · Europa de Leste", del: "Casablanca · Tânger"},
+    ftl: {name: "Camião completo Europa – Marrocos", short: "Um camião dedicado, nos dois sentidos.", lead: "Camião completo dedicado entre a Europa e Marrocos, nos dois sentidos, para os seus grandes volumes.", dep: "A pedido", tt: "Conforme o trajeto", pick: "Toda a Europa", del: "Todo Marrocos"}
+  },
+  quoteH: "Pedido de orçamento", quoteLead: "Preencha este formulário. O seu pedido fica preparado para enviar por WhatsApp ou por e-mail à nossa equipa comercial.",
+  q: {company: "Empresa", name: "Nome completo", phone: "Telefone", email: "E-mail", from: "Recolha", to: "Entrega", mode: "Tipo de envio", group: "Grupagem", full: "Camião completo", pal: "Paletes", kg: "Peso total (kg)", m3: "Volume (m³)", goods: "Mercadoria", msg: "Detalhes (morada, data pretendida…)", submit: "Preparar o meu pedido", err: "Indique o seu nome, um telefone ou e-mail, e o local de recolha.", ready: "O seu pedido está pronto. Escolha como o enviar:", wa: "Enviar por WhatsApp", mail: "Enviar por e-mail", copyText: "Copiar o texto", orDirect: "Prefere telefonar?"},
+  fromOpts: ["Espanha","Portugal","Itália","Outro país da Europa","Marrocos"], toOpts: ["Casablanca","Tânger","Outra cidade de Marrocos","Europa"],
+  intro: "Pedido de orçamento RTL Maroc", foot: "RTL Maroc · Round Trip Logistics · Transitário internacional"
+},
+it: {
+  nav: ["Spagna","Portogallo","Italia","Completo","Contatti","Richiedi un preventivo"], lang: "Lingua", h: "h",
+  kicker: "Spedizioniere internazionale · Europa ⇄ Marocco",
+  h1: "Il vostro groupage Europa–Marocco. Partenze fisse, transit time garantito.",
+  lead: "Groupage e carichi completi da Spagna, Portogallo e Italia verso Casablanca e Tangeri. E in senso inverso, dal Marocco all’Europa.",
+  cta: "Richiedi un preventivo",
+  board: "Partenze regolari", cols: ["Linea","Partenze","Transit","Arrivo"], boardNote: "Giorni indicativi, confermati alla prenotazione.",
+  linesEy: "Groupage e completo", linesH: "Le nostre linee", linesSub: "Quattro modi per portare la vostra merce dall’Europa al Marocco.", more: "Vedi la linea",
+  whyH: "Perché RTL Maroc",
+  why: [["Partenze a giorni fissi","Sapete quando parte la vostra merce, senza aspettare che un camion si riempia."],["Tempi dichiarati","48 h da Spagna e Portogallo, 72 h dall’Italia."],["Piattaforme in Europa","Madrid, Barcellona, Alicante, Porto, Lisbona e Milano."],["Due uffici in Marocco","Casablanca e Tangeri, con consegna diretta ai MEAD."]],
+  mapH: "Il corridoio Europa–Marocco", mapNote: "Tutte le nostre linee funzionano in entrambi i sensi.",
+  contactEy: "Contatti", contactH: "Parliamo della vostra prossima spedizione", contactLead: "Un commerciale vi risponde con un preventivo. Indicateci origine, destinazione, peso e volume.",
+  phone: "Telefono", email: "E-mail", copy: "Copia", copied: "Copiato", offices: {casa: "Casablanca", tng: "Tangeri"}, officesH: "I nostri uffici",
+  facts: ["Partenze","Transit time","Ritiro","Consegna"], back: "Tutte le linee",
+  howH: "Come funziona una spedizione",
+  steps: [["Richiesta di preventivo","Origine, destinazione, peso, volume e tipo di merce."],["Ritiro","Ritiriamo la merce presso il vostro fornitore."],["Trasporto","Consolidamento nella nostra piattaforma e partenza nel giorno previsto."],["Dogana e consegna","Arrivo al MEAD, sdoganamento coordinato con il vostro spedizioniere doganale e consegna."]],
+  docsH: "Documenti necessari", docs: ["Fattura commerciale","Packing list (peso e volume per collo)","Certificato EUR.1 se la merce è di origine europea","Dati dell’importatore in Marocco (ICE)"],
+  faqH: "Domande frequenti",
+  faq: [["Come viene calcolato il prezzo?","In base a peso, volume e città di ritiro e consegna. Inviateci questi dati e vi rispondiamo con un preventivo."],["Chi si occupa dello sdoganamento?","Coordiniamo lo sdoganamento ai MEAD di Tangeri e Casablanca con il vostro spedizioniere doganale o un partner."],["Trasportate anche dal Marocco all’Europa?","Sì. Le nostre linee funzionano in entrambi i sensi."]],
+  lineCta: "Richiedi un preventivo per questa linea",
+  lines: {
+    es: {name: "Groupage Spagna – Marocco", short: "Ritiro in tutta la Spagna, 48 h di transit time.", lead: "Ritiro in tutta la Spagna tramite le nostre piattaforme di Madrid (Coslada), Barcellona e Alicante. Partenze dirette verso i MEAD di Tangeri e Casablanca.", dep: "Regolari", pick: "Tutta la Spagna", del: "MEAD Tangeri · Casablanca"},
+    pt: {name: "Groupage Portogallo – Marocco", short: "Mercoledì e venerdì, 48 h di transit time.", lead: "Linea groupage Porto / Lisbona ⇄ Casablanca / Tangeri, operata con il nostro partner in Portogallo.", dep: "Mer · Ven", pick: "Porto · Lisbona", del: "Casablanca · Tangeri"},
+    it: {name: "Groupage Italia – Marocco", short: "2 partenze a settimana, 72 h di transit time.", lead: "Consolidamento nella nostra piattaforma di Tribiano (Milano), che riceve anche merce dall’Europa dell’Est.", dep: "2 / settimana", pick: "Italia · Europa dell’Est", del: "Casablanca · Tangeri"},
+    ftl: {name: "Carico completo Europa – Marocco", short: "Un camion dedicato, in entrambi i sensi.", lead: "Camion completo dedicato tra Europa e Marocco, in entrambi i sensi, per i vostri grandi volumi.", dep: "Su richiesta", tt: "Secondo il percorso", pick: "Tutta Europa", del: "Tutto il Marocco"}
+  },
+  quoteH: "Richiesta di preventivo", quoteLead: "Compilate questo modulo. La richiesta viene preparata per inviarla via WhatsApp o e-mail al nostro team commerciale.",
+  q: {company: "Azienda", name: "Nome e cognome", phone: "Telefono", email: "E-mail", from: "Ritiro", to: "Consegna", mode: "Tipo di spedizione", group: "Groupage", full: "Carico completo", pal: "Pallet", kg: "Peso totale (kg)", m3: "Volume (m³)", goods: "Merce", msg: "Dettagli (indirizzo, data desiderata…)", submit: "Prepara la richiesta", err: "Indicate nome, un telefono o e-mail e il luogo di ritiro.", ready: "La richiesta è pronta. Scegliete come inviarla:", wa: "Invia su WhatsApp", mail: "Invia per e-mail", copyText: "Copia il testo", orDirect: "Preferite chiamare?"},
+  fromOpts: ["Spagna","Portogallo","Italia","Altro paese europeo","Marocco"], toOpts: ["Casablanca","Tangeri","Altra città del Marocco","Europa"],
+  intro: "Richiesta di preventivo RTL Maroc", foot: "RTL Maroc · Round Trip Logistics · Spedizioniere internazionale"
+},
+en: {
+  nav: ["Spain","Portugal","Italy","Full truck","Contact","Request a quote"], lang: "Language", h: "h",
+  kicker: "International freight forwarder · Europe ⇄ Morocco",
+  h1: "Your Europe–Morocco groupage. Fixed departures, guaranteed transit.",
+  lead: "Groupage and full truckloads from Spain, Portugal and Italy to Casablanca and Tangier. And the other way, from Morocco to Europe.",
+  cta: "Request a quote",
+  board: "Regular departures", cols: ["Line","Departures","Transit","Arrival"], boardNote: "Days are indicative and confirmed at booking.",
+  linesEy: "Groupage and full truck", linesH: "Our lines", linesSub: "Four ways to move your goods from Europe to Morocco.", more: "See the line",
+  whyH: "Why RTL Maroc",
+  why: [["Fixed departure days","You know when your goods leave, without waiting for a truck to fill up."],["Stated transit times","48 h from Spain and Portugal, 72 h from Italy."],["Platforms in Europe","Madrid, Barcelona, Alicante, Porto, Lisbon and Milan."],["Two offices in Morocco","Casablanca and Tangier, with direct delivery to the MEAD customs terminals."]],
+  mapH: "The Europe–Morocco corridor", mapNote: "All our lines run in both directions.",
+  contactEy: "Contact", contactH: "Let’s talk about your next shipment", contactLead: "A sales rep will reply with a quote. Tell us the origin, destination, weight and volume.",
+  phone: "Phone", email: "Email", copy: "Copy", copied: "Copied", offices: {casa: "Casablanca", tng: "Tangier"}, officesH: "Our offices",
+  facts: ["Departures","Transit","Pickup","Delivery"], back: "All lines",
+  howH: "How a shipment works",
+  steps: [["Quote request","Origin, destination, weight, volume and type of goods."],["Pickup","We collect the goods from your supplier."],["Transport","Consolidation at our platform and departure on the scheduled day."],["Customs and delivery","Arrival at the MEAD, clearance coordinated with your customs broker, then delivery."]],
+  docsH: "Documents to prepare", docs: ["Commercial invoice","Packing list (weight and volume per package)","EUR.1 certificate if the goods are of EU origin","Importer details in Morocco (ICE)"],
+  faqH: "Frequently asked questions",
+  faq: [["How is the price calculated?","Based on weight, volume, and the pickup and delivery cities. Send us these details and we will reply with a quote."],["Who handles customs clearance?","We coordinate clearance at the Tangier and Casablanca MEAD with your customs broker or a partner broker."],["Do you also ship from Morocco to Europe?","Yes. All our lines run in both directions."]],
+  lineCta: "Request a quote for this line",
+  lines: {
+    es: {name: "Spain – Morocco groupage", short: "Pickup anywhere in Spain, 48 h transit.", lead: "Pickup anywhere in Spain through our platforms in Madrid (Coslada), Barcelona and Alicante. Direct departures to the Tangier and Casablanca MEAD.", dep: "Regular", pick: "All of Spain", del: "MEAD Tangier · Casablanca"},
+    pt: {name: "Portugal – Morocco groupage", short: "Wednesday and Friday, 48 h transit.", lead: "Groupage line Porto / Lisbon ⇄ Casablanca / Tangier, run with our partner in Portugal.", dep: "Wed · Fri", pick: "Porto · Lisbon", del: "Casablanca · Tangier"},
+    it: {name: "Italy – Morocco groupage", short: "2 departures a week, 72 h transit.", lead: "Consolidation at our Tribiano (Milan) platform, which also receives goods from Eastern Europe.", dep: "2 / week", pick: "Italy · Eastern Europe", del: "Casablanca · Tangier"},
+    ftl: {name: "Full truck Europe – Morocco", short: "A dedicated truck, both directions.", lead: "A dedicated full truck between Europe and Morocco, in both directions, for your larger volumes.", dep: "On request", tt: "Depends on route", pick: "All of Europe", del: "All of Morocco"}
+  },
+  quoteH: "Quote request", quoteLead: "Fill in this form. Your request is prepared so you can send it to our sales team by WhatsApp or email.",
+  q: {company: "Company", name: "Full name", phone: "Phone", email: "Email", from: "Pickup", to: "Delivery", mode: "Shipment type", group: "Groupage", full: "Full truck", pal: "Pallets", kg: "Total weight (kg)", m3: "Volume (m³)", goods: "Goods", msg: "Details (address, preferred date…)", submit: "Prepare my request", err: "Enter your name, a phone or email, and the pickup location.", ready: "Your request is ready. Choose how to send it:", wa: "Send on WhatsApp", mail: "Send by email", copyText: "Copy the text", orDirect: "Prefer to call?"},
+  fromOpts: ["Spain","Portugal","Italy","Other European country","Morocco"], toOpts: ["Casablanca","Tangier","Other city in Morocco","Europe"],
+  intro: "RTL Maroc quote request", foot: "RTL Maroc · Round Trip Logistics · International freight forwarder"
+},
+ar: {
+  nav: ["إسبانيا","البرتغال","إيطاليا","شاحنة كاملة","اتصل بنا","اطلبوا عرض سعر"], lang: "اللغة", h: "ساعة",
+  kicker: "وكيل شحن دولي · أوروبا ⇄ المغرب",
+  h1: "شحنكم المجمّع بين أوروبا والمغرب. مواعيد انطلاق ثابتة ومدة عبور مضمونة.",
+  lead: "شحن مجمّع وشاحنات كاملة من إسبانيا والبرتغال وإيطاليا نحو الدار البيضاء وطنجة، وفي الاتجاه المعاكس من المغرب نحو أوروبا.",
+  cta: "اطلبوا عرض سعر",
+  board: "رحلات منتظمة", cols: ["الخط","الانطلاق","العبور","الوصول"], boardNote: "الأيام تقريبية وتُؤكَّد عند الحجز.",
+  linesEy: "شحن مجمّع وشاحنة كاملة", linesH: "خطوطنا", linesSub: "أربع طرق لنقل بضائعكم من أوروبا إلى المغرب.", more: "تفاصيل الخط",
+  whyH: "لماذا RTL Maroc",
+  why: [["انطلاق في أيام ثابتة","تعرفون موعد انطلاق بضاعتكم دون انتظار امتلاء الشاحنة."],["آجال معلنة","48 ساعة من إسبانيا والبرتغال، و72 ساعة من إيطاليا."],["منصات في أوروبا","مدريد وبرشلونة وأليكانتي وبورتو ولشبونة وميلانو."],["مكتبان في المغرب","الدار البيضاء وطنجة، مع التسليم المباشر في مساحات التخليص الجمركي (MEAD)."]],
+  mapH: "ممر أوروبا–المغرب", mapNote: "جميع خطوطنا تعمل في الاتجاهين.",
+  contactEy: "اتصل بنا", contactH: "لنتحدث عن شحنتكم القادمة", contactLead: "يرد عليكم أحد مستشارينا التجاريين بعرض سعر. أرسلوا لنا نقطة الانطلاق والوجهة والوزن والحجم.",
+  phone: "الهاتف", email: "البريد الإلكتروني", copy: "نسخ", copied: "تم النسخ", offices: {casa: "الدار البيضاء", tng: "طنجة"}, officesH: "مكاتبنا",
+  facts: ["الانطلاق","مدة العبور","الاستلام","التسليم"], back: "جميع الخطوط",
+  howH: "كيف تتم الشحنة",
+  steps: [["طلب عرض سعر","نقطة الانطلاق والوجهة والوزن والحجم ونوع البضاعة."],["الاستلام","نستلم البضاعة من مورّدكم."],["النقل","تجميع البضاعة في منصتنا والانطلاق في اليوم المحدد."],["الجمارك والتسليم","الوصول إلى MEAD، والتخليص الجمركي بالتنسيق مع معشّركم، ثم التسليم."]],
+  docsH: "الوثائق المطلوبة", docs: ["الفاتورة التجارية","قائمة التعبئة (الوزن والحجم لكل طرد)","شهادة EUR.1 إذا كانت البضاعة من أصل أوروبي","بيانات المستورد في المغرب (ICE)"],
+  faqH: "أسئلة شائعة",
+  faq: [["كيف يُحتسب السعر؟","حسب الوزن والحجم ومدينتي الاستلام والتسليم. أرسلوا لنا هذه المعطيات وسنرد عليكم بعرض سعر."],["من يتكفل بالتخليص الجمركي؟","ننسق التخليص الجمركي في MEAD طنجة والدار البيضاء مع معشّركم أو مع معشّر شريك."],["هل تنقلون أيضًا من المغرب إلى أوروبا؟","نعم، جميع خطوطنا تعمل في الاتجاهين."]],
+  lineCta: "اطلبوا عرض سعر لهذا الخط",
+  lines: {
+    es: {name: "شحن مجمّع إسبانيا – المغرب", short: "استلام من كل أنحاء إسبانيا، 48 ساعة عبور.", lead: "استلام من كل أنحاء إسبانيا عبر منصاتنا في مدريد (كوسلادا) وبرشلونة وأليكانتي، مع انطلاق مباشر نحو MEAD طنجة والدار البيضاء.", dep: "منتظمة", pick: "كل إسبانيا", del: "MEAD طنجة · الدار البيضاء"},
+    pt: {name: "شحن مجمّع البرتغال – المغرب", short: "الأربعاء والجمعة، 48 ساعة عبور.", lead: "خط شحن مجمّع بورتو / لشبونة ⇄ الدار البيضاء / طنجة، بالتعاون مع شريكنا في البرتغال.", dep: "الأربعاء · الجمعة", pick: "بورتو · لشبونة", del: "الدار البيضاء · طنجة"},
+    it: {name: "شحن مجمّع إيطاليا – المغرب", short: "رحلتان في الأسبوع، 72 ساعة عبور.", lead: "تجميع البضائع في منصتنا بتريبيانو (ميلانو)، التي تستقبل أيضًا البضائع القادمة من أوروبا الشرقية.", dep: "رحلتان أسبوعيًا", pick: "إيطاليا · أوروبا الشرقية", del: "الدار البيضاء · طنجة"},
+    ftl: {name: "شاحنة كاملة أوروبا – المغرب", short: "شاحنة مخصصة لكم في الاتجاهين.", lead: "شاحنة كاملة مخصصة بين أوروبا والمغرب في الاتجاهين، لشحناتكم الكبيرة.", dep: "حسب الطلب", tt: "حسب المسار", pick: "كل أوروبا", del: "كل المغرب"}
+  },
+  quoteH: "طلب عرض سعر", quoteLead: "املؤوا هذه الاستمارة، وسيُجهَّز طلبكم لإرساله عبر واتساب أو البريد الإلكتروني إلى فريقنا التجاري.",
+  q: {company: "الشركة", name: "الاسم الكامل", phone: "الهاتف", email: "البريد الإلكتروني", from: "الاستلام", to: "التسليم", mode: "نوع الشحنة", group: "شحن مجمّع", full: "شاحنة كاملة", pal: "عدد المنصات", kg: "الوزن الإجمالي (كغ)", m3: "الحجم (م³)", goods: "نوع البضاعة", msg: "تفاصيل (العنوان، التاريخ المرغوب…)", submit: "تجهيز طلبي", err: "أدخلوا الاسم ورقم الهاتف أو البريد الإلكتروني ومكان الاستلام.", ready: "طلبكم جاهز. اختاروا طريقة الإرسال:", wa: "إرسال عبر واتساب", mail: "إرسال بالبريد الإلكتروني", copyText: "نسخ النص", orDirect: "تفضلون الاتصال؟"},
+  fromOpts: ["إسبانيا","البرتغال","إيطاليا","بلد أوروبي آخر","المغرب"], toOpts: ["الدار البيضاء","طنجة","مدينة أخرى في المغرب","أوروبا"],
+  intro: "طلب عرض سعر RTL Maroc", foot: "RTL Maroc · Round Trip Logistics · وكيل شحن دولي"
+}
+};
+
+
+/* ===== Présentation société (6 langues) ===== */
+const AGENTS = ["Mars Logistics · Illaexport · Intraco", "JCL Logística", "Groupe Di Martino"];
+const EXTRA = {
+fr: {kicker2: "Round Trip Logistics · Depuis 2018", aboutEy: "Qui sommes-nous", aboutH: "L’aller et le retour entre l’Europe et le Maroc",
+  aboutP: ["Round Trip Logistics (RTL Maroc) a été créée le 29 mai 2018 à Casablanca par une équipe jeune et dynamique.","Ses dirigeants cumulent plus de 20 ans d’expérience à des postes de responsabilité au sein de multinationales du transport et de la logistique.","Cette expérience est au service des importateurs et des exportateurs qui attendent un transport fiable, suivi et à l’heure."],
+  stats: [["2018","Création, le 29 mai"],["20+","Années d’expérience en multinationales"],["20","Camions en propre, environ"],["7","Destinations desservies"]],
+  destsH: "Nos destinations", dests: ["Maroc","Espagne","Portugal","Italie","France","Maghreb","Europe de l’Est"],
+  fleetEy: "Notre flotte", fleetH: "Une vingtaine de camions en propre", fleetP: "Des tracteurs récents, à nos couleurs, qui roulent chaque semaine entre l’Europe et le Maroc. Avoir nos propres camions nous permet de tenir les jours de départ et les délais annoncés.",
+  agentsEy: "Notre réseau", agentsH: "Des agents solides, de renommée internationale", agentsP: "En Europe, des partenaires reconnus enlèvent, consolident et chargent votre marchandise sur nos camions.",
+  agents: ["Madrid (Coslada) · Barcelone · Alicante","Porto · Lisbonne","Tribiano (Milan) · Europe de l’Est"],
+  alt: ["Camion Round Trip Logistics avec semi-remorque rouge","Trois tracteurs Round Trip Logistics","Camion Round Trip Logistics tractant une remorque de notre partenaire JCL Logística"],
+  cap: "Avec notre partenaire JCL Logística, sur la ligne Portugal – Maroc.", std: "Standard"},
+es: {kicker2: "Round Trip Logistics · Desde 2018", aboutEy: "Quiénes somos", aboutH: "La ida y la vuelta entre Europa y Marruecos",
+  aboutP: ["Round Trip Logistics (RTL Maroc) fue creada el 29 de mayo de 2018 en Casablanca por un equipo joven y dinámico.","Sus directivos suman más de 20 años de experiencia en puestos de responsabilidad en multinacionales del transporte y la logística.","Esa experiencia está al servicio de importadores y exportadores que esperan un transporte fiable, seguido y puntual."],
+  stats: [["2018","Fundación, el 29 de mayo"],["20+","Años de experiencia en multinacionales"],["20","Camiones propios, aproximadamente"],["7","Destinos servidos"]],
+  destsH: "Nuestros destinos", dests: ["Marruecos","España","Portugal","Italia","Francia","Magreb","Europa del Este"],
+  fleetEy: "Nuestra flota", fleetH: "Una veintena de camiones propios", fleetP: "Tractoras recientes, con nuestros colores, que circulan cada semana entre Europa y Marruecos. Tener camiones propios nos permite cumplir los días de salida y los plazos anunciados.",
+  agentsEy: "Nuestra red", agentsH: "Agentes sólidos, de renombre internacional", agentsP: "En Europa, socios reconocidos recogen, consolidan y cargan su mercancía en nuestros camiones.",
+  agents: ["Madrid (Coslada) · Barcelona · Alicante","Oporto · Lisboa","Tribiano (Milán) · Europa del Este"],
+  alt: ["Camión Round Trip Logistics con semirremolque rojo","Tres tractoras Round Trip Logistics","Camión Round Trip Logistics con un remolque de nuestro socio JCL Logística"],
+  cap: "Con nuestro socio JCL Logística, en la línea Portugal – Marruecos.", std: "Centralita"},
+pt: {kicker2: "Round Trip Logistics · Desde 2018", aboutEy: "Quem somos", aboutH: "A ida e a volta entre a Europa e Marrocos",
+  aboutP: ["A Round Trip Logistics (RTL Maroc) foi criada a 29 de maio de 2018 em Casablanca por uma equipa jovem e dinâmica.","Os seus dirigentes somam mais de 20 anos de experiência em cargos de responsabilidade em multinacionais do transporte e da logística.","Essa experiência está ao serviço de importadores e exportadores que esperam um transporte fiável, acompanhado e pontual."],
+  stats: [["2018","Criação, a 29 de maio"],["20+","Anos de experiência em multinacionais"],["20","Camiões próprios, aproximadamente"],["7","Destinos servidos"]],
+  destsH: "Os nossos destinos", dests: ["Marrocos","Espanha","Portugal","Itália","França","Magrebe","Europa de Leste"],
+  fleetEy: "A nossa frota", fleetH: "Cerca de vinte camiões próprios", fleetP: "Tratores recentes, com as nossas cores, que circulam todas as semanas entre a Europa e Marrocos. Ter camiões próprios permite-nos cumprir os dias de partida e os prazos anunciados.",
+  agentsEy: "A nossa rede", agentsH: "Agentes sólidos, de renome internacional", agentsP: "Na Europa, parceiros reconhecidos recolhem, consolidam e carregam a sua mercadoria nos nossos camiões.",
+  agents: ["Madrid (Coslada) · Barcelona · Alicante","Porto · Lisboa","Tribiano (Milão) · Europa de Leste"],
+  alt: ["Camião Round Trip Logistics com semirreboque vermelho","Três tratores Round Trip Logistics","Camião Round Trip Logistics com um reboque do nosso parceiro JCL Logística"],
+  cap: "Com o nosso parceiro JCL Logística, na linha Portugal – Marrocos.", std: "Geral"},
+it: {kicker2: "Round Trip Logistics · Dal 2018", aboutEy: "Chi siamo", aboutH: "Andata e ritorno tra Europa e Marocco",
+  aboutP: ["Round Trip Logistics (RTL Maroc) è stata fondata il 29 maggio 2018 a Casablanca da un team giovane e dinamico.","I suoi dirigenti hanno oltre 20 anni di esperienza in ruoli di responsabilità presso multinazionali del trasporto e della logistica.","Questa esperienza è al servizio di importatori ed esportatori che vogliono un trasporto affidabile, seguito e puntuale."],
+  stats: [["2018","Fondazione, il 29 maggio"],["20+","Anni di esperienza in multinazionali"],["20","Camion di proprietà, circa"],["7","Destinazioni servite"]],
+  destsH: "Le nostre destinazioni", dests: ["Marocco","Spagna","Portogallo","Italia","Francia","Maghreb","Europa dell’Est"],
+  fleetEy: "La nostra flotta", fleetH: "Una ventina di camion di proprietà", fleetP: "Trattori recenti, con i nostri colori, che viaggiano ogni settimana tra Europa e Marocco. Avere camion di proprietà ci permette di rispettare i giorni di partenza e i tempi dichiarati.",
+  agentsEy: "La nostra rete", agentsH: "Agenti solidi, di fama internazionale", agentsP: "In Europa, partner riconosciuti ritirano, consolidano e caricano la vostra merce sui nostri camion.",
+  agents: ["Madrid (Coslada) · Barcellona · Alicante","Porto · Lisbona","Tribiano (Milano) · Europa dell’Est"],
+  alt: ["Camion Round Trip Logistics con semirimorchio rosso","Tre trattori Round Trip Logistics","Camion Round Trip Logistics con un rimorchio del nostro partner JCL Logística"],
+  cap: "Con il nostro partner JCL Logística, sulla linea Portogallo – Marocco.", std: "Centralino"},
+en: {kicker2: "Round Trip Logistics · Since 2018", aboutEy: "About us", aboutH: "There and back between Europe and Morocco",
+  aboutP: ["Round Trip Logistics (RTL Maroc) was founded on 29 May 2018 in Casablanca by a young, driven team.","Its managers bring more than 20 years of experience in senior roles at multinational transport and logistics companies.","That experience serves importers and exporters who expect reliable, tracked and on-time transport."],
+  stats: [["2018","Founded on 29 May"],["20+","Years of experience at multinationals"],["20","Trucks we own, approximately"],["7","Destinations served"]],
+  destsH: "Our destinations", dests: ["Morocco","Spain","Portugal","Italy","France","Maghreb","Eastern Europe"],
+  fleetEy: "Our fleet", fleetH: "About twenty trucks of our own", fleetP: "Recent tractor units in our colours, on the road every week between Europe and Morocco. Owning our trucks lets us keep to departure days and stated transit times.",
+  agentsEy: "Our network", agentsH: "Solid agents with an international reputation", agentsP: "In Europe, well-known partners collect, consolidate and load your goods onto our trucks.",
+  agents: ["Madrid (Coslada) · Barcelona · Alicante","Porto · Lisbon","Tribiano (Milan) · Eastern Europe"],
+  alt: ["Round Trip Logistics truck with a red semi-trailer","Three Round Trip Logistics tractor units","Round Trip Logistics truck pulling a trailer from our partner JCL Logística"],
+  cap: "With our partner JCL Logística on the Portugal – Morocco line.", std: "Main line"},
+ar: {kicker2: "Round Trip Logistics · منذ 2018", aboutEy: "من نحن", aboutH: "الذهاب والإياب بين أوروبا والمغرب",
+  aboutP: ["تأسست شركة Round Trip Logistics (RTL Maroc) في 29 ماي 2018 بالدار البيضاء على يد فريق شاب وديناميكي.","يتمتع مسيّروها بأكثر من 20 سنة من الخبرة في مناصب المسؤولية داخل شركات متعددة الجنسيات في قطاع النقل واللوجستيك.","نضع هذه الخبرة في خدمة المستوردين والمصدّرين الذين يبحثون عن نقل موثوق ومتابَع وفي الموعد."],
+  stats: [["2018","سنة التأسيس، 29 ماي"],["+20","سنة من الخبرة في شركات متعددة الجنسيات"],["20","شاحنة في ملكيتنا تقريبًا"],["7","وجهات نخدمها"]],
+  destsH: "وجهاتنا", dests: ["المغرب","إسبانيا","البرتغال","إيطاليا","فرنسا","المغرب العربي","أوروبا الشرقية"],
+  fleetEy: "أسطولنا", fleetH: "حوالي عشرين شاحنة في ملكيتنا", fleetP: "جرارات حديثة بألواننا تسير كل أسبوع بين أوروبا والمغرب. امتلاكنا لشاحناتنا يمكّننا من احترام أيام الانطلاق والآجال المعلنة.",
+  agentsEy: "شبكتنا", agentsH: "وكلاء موثوقون ذوو سمعة دولية", agentsP: "في أوروبا، يتكفل شركاء معروفون باستلام بضاعتكم وتجميعها وشحنها على شاحناتنا.",
+  agents: ["مدريد (كوسلادا) · برشلونة · أليكانتي","بورتو · لشبونة","تريبيانو (ميلانو) · أوروبا الشرقية"],
+  alt: ["شاحنة Round Trip Logistics بمقطورة حمراء","ثلاث جرارات Round Trip Logistics","شاحنة Round Trip Logistics تجر مقطورة شريكنا JCL Logística"],
+  cap: "مع شريكنا JCL Logística على خط البرتغال – المغرب.", std: "الهاتف الثابت"}
+};
+for (const l in EXTRA) Object.assign(T[l], EXTRA[l]);
+
+const EXTRA2 = {
+fr: {navB: ["Transports","Destinations","Secteurs","Flotte","Société","Contact"], transEy: "Transports",
+  slides: [["Transport et logistique entre l’Europe et le Maroc","Groupage et camions complets, départs à jours fixes depuis l’Espagne, le Portugal et l’Italie."],["Une vingtaine de camions en propre","Nos tracteurs roulent chaque semaine sur le corridor Europe–Maroc."],["Des agents de renommée internationale","Des partenaires solides en Espagne, au Portugal et en Italie."]],
+  destEy: "Lignes et destinations", destH: "Nos destinations", destSub: "Des lignes régulières vers le Maroc et un réseau qui couvre l’Europe et le Maghreb.",
+  destNotes: ["Casablanca, Tanger et tout le Maroc","Enlèvement partout, 48 h","Mercredi et vendredi, 48 h","2 départs par semaine, 72 h","Camion complet sur demande","Sur demande","Via notre plateforme de Milan"],
+  secEy: "Secteurs", secH: "Des solutions pour chaque secteur", secSub: "Nous transportons pour les importateurs, distributeurs et industriels, quelle que soit leur activité.",
+  sectors: ["Automobile et pièces","Agroalimentaire","Textile et habillement","Mobilier et décoration","Équipements industriels","Matériel médical","Optique","Matériaux de construction"],
+  footCols: ["Nos lignes","La société","Contact"]},
+es: {navB: ["Transportes","Destinos","Sectores","Flota","Empresa","Contacto"], transEy: "Transportes",
+  slides: [["Transporte y logística entre Europa y Marruecos","Grupaje y camiones completos, salidas en días fijos desde España, Portugal e Italia."],["Una veintena de camiones propios","Nuestras tractoras circulan cada semana por el corredor Europa–Marruecos."],["Agentes de renombre internacional","Socios sólidos en España, Portugal e Italia."]],
+  destEy: "Líneas y destinos", destH: "Nuestros destinos", destSub: "Líneas regulares hacia Marruecos y una red que cubre Europa y el Magreb.",
+  destNotes: ["Casablanca, Tánger y todo Marruecos","Recogida en toda España, 48 h","Miércoles y viernes, 48 h","2 salidas por semana, 72 h","Camión completo a petición","A petición","Vía nuestra plataforma de Milán"],
+  secEy: "Sectores", secH: "Soluciones para cada sector", secSub: "Transportamos para importadores, distribuidores e industriales, sea cual sea su actividad.",
+  sectors: ["Automoción y recambios","Agroalimentario","Textil y moda","Mueble y decoración","Equipos industriales","Material médico","Óptica","Materiales de construcción"],
+  footCols: ["Nuestras líneas","La empresa","Contacto"]},
+pt: {navB: ["Transportes","Destinos","Setores","Frota","Empresa","Contacto"], transEy: "Transportes",
+  slides: [["Transporte e logística entre a Europa e Marrocos","Grupagem e camiões completos, partidas em dias fixos de Espanha, Portugal e Itália."],["Cerca de vinte camiões próprios","Os nossos tratores circulam todas as semanas no corredor Europa–Marrocos."],["Agentes de renome internacional","Parceiros sólidos em Espanha, Portugal e Itália."]],
+  destEy: "Linhas e destinos", destH: "Os nossos destinos", destSub: "Linhas regulares para Marrocos e uma rede que cobre a Europa e o Magrebe.",
+  destNotes: ["Casablanca, Tânger e todo Marrocos","Recolha em toda a Espanha, 48 h","Quarta e sexta-feira, 48 h","2 partidas por semana, 72 h","Camião completo a pedido","A pedido","Via a nossa plataforma de Milão"],
+  secEy: "Setores", secH: "Soluções para cada setor", secSub: "Transportamos para importadores, distribuidores e industriais, seja qual for a sua atividade.",
+  sectors: ["Automóvel e peças","Agroalimentar","Têxtil e vestuário","Mobiliário e decoração","Equipamentos industriais","Material médico","Ótica","Materiais de construção"],
+  footCols: ["As nossas linhas","A empresa","Contacto"]},
+it: {navB: ["Trasporti","Destinazioni","Settori","Flotta","Azienda","Contatti"], transEy: "Trasporti",
+  slides: [["Trasporti e logistica tra Europa e Marocco","Groupage e carichi completi, partenze a giorni fissi da Spagna, Portogallo e Italia."],["Una ventina di camion di proprietà","I nostri trattori viaggiano ogni settimana sul corridoio Europa–Marocco."],["Agenti di fama internazionale","Partner solidi in Spagna, Portogallo e Italia."]],
+  destEy: "Linee e destinazioni", destH: "Le nostre destinazioni", destSub: "Linee regolari verso il Marocco e una rete che copre Europa e Maghreb.",
+  destNotes: ["Casablanca, Tangeri e tutto il Marocco","Ritiro in tutta la Spagna, 48 h","Mercoledì e venerdì, 48 h","2 partenze a settimana, 72 h","Carico completo su richiesta","Su richiesta","Tramite la nostra piattaforma di Milano"],
+  secEy: "Settori", secH: "Soluzioni per ogni settore", secSub: "Trasportiamo per importatori, distributori e industrie, qualunque sia la loro attività.",
+  sectors: ["Automotive e ricambi","Agroalimentare","Tessile e abbigliamento","Arredamento e design","Macchinari industriali","Dispositivi medici","Ottica","Materiali da costruzione"],
+  footCols: ["Le nostre linee","L’azienda","Contatti"]},
+en: {navB: ["Transport","Destinations","Sectors","Fleet","Company","Contact"], transEy: "Transport",
+  slides: [["Transport and logistics between Europe and Morocco","Groupage and full truckloads, fixed departure days from Spain, Portugal and Italy."],["About twenty trucks of our own","Our tractor units run the Europe–Morocco corridor every week."],["Agents with an international reputation","Solid partners in Spain, Portugal and Italy."]],
+  destEy: "Lines and destinations", destH: "Our destinations", destSub: "Regular lines to Morocco and a network covering Europe and the Maghreb.",
+  destNotes: ["Casablanca, Tangier and all of Morocco","Pickup anywhere in Spain, 48 h","Wednesday and Friday, 48 h","2 departures a week, 72 h","Full truck on request","On request","Through our Milan platform"],
+  secEy: "Sectors", secH: "Solutions for every sector", secSub: "We move goods for importers, distributors and manufacturers in every line of business.",
+  sectors: ["Automotive and parts","Food and beverage","Textiles and fashion","Furniture and decor","Industrial equipment","Medical equipment","Optics","Building materials"],
+  footCols: ["Our lines","Company","Contact"]},
+ar: {navB: ["النقل","الوجهات","القطاعات","الأسطول","الشركة","اتصل بنا"], transEy: "النقل",
+  slides: [["النقل واللوجستيك بين أوروبا والمغرب","شحن مجمّع وشاحنات كاملة، بمواعيد انطلاق ثابتة من إسبانيا والبرتغال وإيطاليا."],["حوالي عشرين شاحنة في ملكيتنا","جراراتنا تسير كل أسبوع على ممر أوروبا–المغرب."],["وكلاء ذوو سمعة دولية","شركاء موثوقون في إسبانيا والبرتغال وإيطاليا."]],
+  destEy: "الخطوط والوجهات", destH: "وجهاتنا", destSub: "خطوط منتظمة نحو المغرب وشبكة تغطي أوروبا والمغرب العربي.",
+  destNotes: ["الدار البيضاء وطنجة وكل المغرب","استلام من كل إسبانيا، 48 ساعة","الأربعاء والجمعة، 48 ساعة","رحلتان في الأسبوع، 72 ساعة","شاحنة كاملة حسب الطلب","حسب الطلب","عبر منصتنا في ميلانو"],
+  secEy: "القطاعات", secH: "حلول لكل قطاع", secSub: "ننقل لفائدة المستوردين والموزعين والصناعيين مهما كان نشاطهم.",
+  sectors: ["السيارات وقطع الغيار","الصناعات الغذائية","النسيج والملابس","الأثاث والديكور","التجهيزات الصناعية","المعدات الطبية","البصريات","مواد البناء"],
+  footCols: ["خطوطنا","الشركة","اتصل بنا"]}
+};
+for (const l in EXTRA2) Object.assign(T[l], EXTRA2[l]);
+
+const EXTRA3 = {
+  fr: {years: "ans déjà", kicker2: "Round Trip Logistics · 8 ans déjà", since: "Créée le 29 mai 2018"},
+  es: {years: "años ya", kicker2: "Round Trip Logistics · 8 años ya", since: "Fundada el 29 de mayo de 2018"},
+  pt: {years: "anos já", kicker2: "Round Trip Logistics · 8 anos já", since: "Criada a 29 de maio de 2018"},
+  it: {years: "anni già", kicker2: "Round Trip Logistics · già 8 anni", since: "Fondata il 29 maggio 2018"},
+  en: {years: "years already", kicker2: "Round Trip Logistics · 8 years already", since: "Founded on 29 May 2018"},
+  ar: {years: "سنوات من العطاء", kicker2: "Round Trip Logistics · 8 سنوات من العطاء", since: "تأسست في 29 ماي 2018"}
+};
+for (const l in EXTRA3) Object.assign(T[l], EXTRA3[l]);
+const eight = (t, cls) => `<span class="eight ${cls || ""}"><img src="images/eight.png" alt="8" width="210" height="400"><span class="eight-t">${esc(t.years)}</span></span>`;
+
+const EXTRA4 = {
+  fr: {pts: [["Du colis au complet","Groupage, lot partiel ou remorque complète"],["Un équipement adapté","Semi-remorques tôlées ou bâchées"],["Une flotte fiable","Véhicules en propre ou en partenariat exclusif avec des opérateurs internationaux reconnus"]],
+    para: "Chez RTL Maroc, chaque envoi est traité avec rigueur, réactivité et un suivi attentif, pour que votre marchandise arrive à bon port, en toute sérénité.", close: "Confiez-nous vos marchandises, nous nous occupons du reste."},
+  es: {pts: [["Del bulto al camión completo","Grupaje, carga parcial o remolque completo"],["Un equipo adaptado","Semirremolques furgón o de lona"],["Una flota fiable","Vehículos propios o en colaboración exclusiva con operadores internacionales reconocidos"]],
+    para: "En RTL Maroc, cada envío se gestiona con rigor, rapidez de respuesta y un seguimiento atento, para que su mercancía llegue a buen puerto, con total tranquilidad.", close: "Confíenos su mercancía, nosotros nos encargamos del resto."},
+  pt: {pts: [["Do volume à carga completa","Grupagem, carga parcial ou reboque completo"],["Um equipamento adequado","Semirreboques de caixa fechada ou de lona"],["Uma frota fiável","Veículos próprios ou em parceria exclusiva com operadores internacionais reconhecidos"]],
+    para: "Na RTL Maroc, cada envio é tratado com rigor, rapidez e um acompanhamento atento, para que a sua mercadoria chegue a bom porto, com toda a tranquilidade.", close: "Confie-nos a sua mercadoria, nós tratamos do resto."},
+  it: {pts: [["Dal collo al carico completo","Groupage, carico parziale o rimorchio completo"],["Attrezzature adatte","Semirimorchi furgonati o centinati"],["Una flotta affidabile","Mezzi di proprietà o in partnership esclusiva con operatori internazionali riconosciuti"]],
+    para: "In RTL Maroc, ogni spedizione è gestita con rigore, reattività e un monitoraggio attento, perché la vostra merce arrivi a destinazione in tutta serenità.", close: "Affidateci la vostra merce, al resto pensiamo noi."},
+  en: {pts: [["From parcels to full loads","Groupage, part load or full trailer"],["The right equipment","Box or curtain-sided semi-trailers"],["A reliable fleet","Our own vehicles, or exclusive partnerships with recognised international operators"]],
+    para: "At RTL Maroc, every shipment is handled with rigour, responsiveness and close tracking, so your goods arrive safely and without worry.", close: "Hand us your goods, we take care of the rest."},
+  ar: {pts: [["من الطرد إلى الشحنة الكاملة","شحن مجمّع أو حمولة جزئية أو مقطورة كاملة"],["معدات ملائمة","نصف مقطورات مغلقة أو مغطاة بالقماش"],["أسطول موثوق","شاحنات في ملكيتنا أو بشراكة حصرية مع مشغلين دوليين معروفين"]],
+    para: "في RTL Maroc، نتعامل مع كل شحنة بدقة وسرعة استجابة ومتابعة حريصة، لتصل بضاعتكم إلى وجهتها بكل اطمئنان.", close: "ائتمنونا على بضائعكم، ونحن نتكفل بالباقي."}
+};
+for (const l in EXTRA4) Object.assign(T[l], EXTRA4[l]);
+
+const EXTRA5 = {
+  fr: {hTitle: "RTL Maroc – Votre partenaire en transport routier international", hIntro: [
+    "Fondée par une équipe jeune et dynamique, RTL Maroc est spécialisée dans le transport routier international entre le Maroc et l’Europe, principalement vers et depuis l’Italie, la France, l’Espagne et le Portugal.",
+    "Grâce à un réseau de partenaires solides, nous desservons également l’Europe de l’Est, l’Allemagne, le Benelux et les pays scandinaves à travers nos lignes de groupage direct.",
+    "Nous proposons une gamme complète de services, conçue pour s’adapter à vos besoins et répondre à vos exigences :"]},
+  es: {hTitle: "RTL Maroc – Su socio en transporte internacional por carretera", hIntro: [
+    "Fundada por un equipo joven y dinámico, RTL Maroc está especializada en el transporte internacional por carretera entre Marruecos y Europa, principalmente con origen y destino Italia, Francia, España y Portugal.",
+    "Gracias a una red de socios sólidos, también cubrimos Europa del Este, Alemania, el Benelux y los países escandinavos a través de nuestras líneas de grupaje directo.",
+    "Ofrecemos una gama completa de servicios, pensada para adaptarse a sus necesidades y responder a sus exigencias:"]},
+  pt: {hTitle: "RTL Maroc – O seu parceiro em transporte rodoviário internacional", hIntro: [
+    "Fundada por uma equipa jovem e dinâmica, a RTL Maroc é especializada no transporte rodoviário internacional entre Marrocos e a Europa, principalmente de e para Itália, França, Espanha e Portugal.",
+    "Graças a uma rede de parceiros sólidos, servimos também a Europa de Leste, a Alemanha, o Benelux e os países escandinavos através das nossas linhas de grupagem direta.",
+    "Propomos uma gama completa de serviços, pensada para se adaptar às suas necessidades e responder às suas exigências:"]},
+  it: {hTitle: "RTL Maroc – Il vostro partner nel trasporto stradale internazionale", hIntro: [
+    "Fondata da un team giovane e dinamico, RTL Maroc è specializzata nel trasporto stradale internazionale tra il Marocco e l’Europa, principalmente da e per Italia, Francia, Spagna e Portogallo.",
+    "Grazie a una rete di partner solidi, serviamo anche l’Europa dell’Est, la Germania, il Benelux e i paesi scandinavi attraverso le nostre linee di groupage diretto.",
+    "Offriamo una gamma completa di servizi, pensata per adattarsi alle vostre esigenze e rispondere alle vostre richieste:"]},
+  en: {hTitle: "RTL Maroc – Your partner in international road transport", hIntro: [
+    "Founded by a young, driven team, RTL Maroc specialises in international road transport between Morocco and Europe, mainly to and from Italy, France, Spain and Portugal.",
+    "Through a network of solid partners, we also serve Eastern Europe, Germany, the Benelux and the Scandinavian countries with our direct groupage lines.",
+    "We offer a full range of services, designed to fit your needs and meet your requirements:"]},
+  ar: {hTitle: "RTL Maroc – شريككم في النقل الطرقي الدولي", hIntro: [
+    "تأسست RTL Maroc على يد فريق شاب وديناميكي، وهي متخصصة في النقل الطرقي الدولي بين المغرب وأوروبا، خصوصًا من وإلى إيطاليا وفرنسا وإسبانيا والبرتغال.",
+    "وبفضل شبكة من الشركاء الموثوقين، نخدم أيضًا أوروبا الشرقية وألمانيا ودول البنلوكس والدول الإسكندنافية عبر خطوط الشحن المجمّع المباشرة.",
+    "نقترح مجموعة متكاملة من الخدمات، مصممة للتكيف مع احتياجاتكم والاستجابة لمتطلباتكم:"]}
+};
+for (const l in EXTRA5) Object.assign(T[l], EXTRA5[l]);
+
+/* ===== State ===== */
+let lang = "fr";
+try { const s = localStorage.getItem("rtl-lang"); if (s && T[s]) lang = s; else { const n = (navigator.language || "fr").slice(0,2); if (T[n]) lang = n; } } catch (e) {}
+let preFrom = null;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const tt = (t, k) => HOURS[k] ? HOURS[k] + " " + t.h : t.lines[k].tt;
+const arrow = '<span class="arr" aria-hidden="true">→</span>';
+
+/* ===== Blocks ===== */
+function nav(t, cur) {
+  const ids = ["lignes","destinations","secteurs","flotte","societe","contact"];
+  return ids.map((id, i) => `<a href="#${id}" class="${cur === id || (i === 0 && ROUTE[cur]) ? "on" : ""}">${esc(t.navB[i])}</a>`).join("")
+    + `<a href="#devis" class="cta">${esc(t.nav[5])}</a>`;
+}
+function langOptions() { return LANGS.map(([c, n]) => `<option value="${c}" ${c === lang ? "selected" : ""}>${n}</option>`).join(""); }
+
+function footer(t) {
+  const lines = LINES.map(k => `<li><a href="#${SLUG[k]}">${esc(t.lines[k].name)}</a></li>`).join("");
+  const co = [["societe", t.navB[4]], ["flotte", t.navB[3]], ["destinations", t.navB[1]], ["secteurs", t.navB[2]], ["devis", t.nav[5]]]
+    .map(([h, l]) => `<li><a href="#${h}">${esc(l)}</a></li>`).join("");
+  const offices = CFG.offices.map(o => `<li><strong>${esc(t.offices[o.k])}</strong><br>${esc(o.addr)}</li>`).join("");
+  return `<div class="wrap foot-grid">
+      <div><img class="foot-logo" src="images/logo-dark.png" alt="Round Trip Logistics" width="620" height="169"><p>${esc(t.foot)}</p><p>${esc(t.kicker2)}</p></div>
+      <div><h4>${esc(t.footCols[0])}</h4><ul>${lines}</ul></div>
+      <div><h4>${esc(t.footCols[1])}</h4><ul>${co}</ul></div>
+      <div><h4>${esc(t.footCols[2])}</h4><ul><li><span class="v">${CFG.fixed}</span></li><li>WhatsApp <span class="v">${CFG.phone}</span></li><li><span class="v">${CFG.email}</span></li>${offices}</ul></div>
+    </div>
+    <div class="wrap foot-bottom"><span>© 2026 Round Trip Logistics · RTL Maroc</span><span>rtlmaroc.com</span></div>`;
+}
+
+function board(t) {
+  const rows = LINES.map(k => {
+    const L = t.lines[k];
+    return `<tr><td><a href="#${SLUG[k]}"><span class="code">${CODE[k]}</span><span class="ln">${esc(t.nav[LINES.indexOf(k)])}</span></a></td>
+      <td class="am">${esc(L.dep)}</td><td class="am">${esc(tt(t, k))}</td><td class="col-arr">${esc(L.del.replace("MEAD ", ""))}</td></tr>`;
+  }).join("");
+  return `<div class="board" aria-label="${esc(t.board)}">
+    <div class="board-head"><span class="board-title">${esc(t.board)}</span><span class="live"><i></i>EU ⇄ MA</span></div>
+    <div class="tbl"><table><thead><tr>${t.cols.map((c, i) => `<th class="${i === 3 ? "col-arr" : ""}">${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="board-note">${esc(t.boardNote)}</p></div>`;
+}
+
+function mapSvg() {
+  return `<svg viewBox="0 0 600 340" role="img" aria-label="Porto, Lisboa, Madrid, Barcelona, Alicante, Milano → Tanger, Casablanca">
+    <path class="sea" d="M20 238 C 150 226, 300 236, 580 222"/>
+    <path class="l-pt" d="M80 70 L66 140 L150 218 L215 262"/>
+    <path class="l-es" d="M335 78 L205 112 L208 205 L215 262"/>
+    <path class="l-es" d="M285 176 L230 215 L215 262"/>
+    <path class="l-it" d="M525 44 L430 150 L262 222 L215 262"/>
+    <path class="trunk" d="M215 262 L152 314"/>
+    <g>
+      <circle class="st" cx="80" cy="70" r="7"/><circle class="st" cx="66" cy="140" r="7"/>
+      <circle class="st" cx="205" cy="112" r="7"/><circle class="st" cx="335" cy="78" r="7"/>
+      <circle class="st" cx="285" cy="176" r="7"/><circle class="st" cx="525" cy="44" r="7"/>
+      <circle class="hub" cx="215" cy="262" r="10"/><circle class="hub" cx="152" cy="314" r="10"/>
+    </g>
+    <g class="lbl">
+      <text class="city" x="94" y="66">Porto</text><text class="city" x="80" y="136">Lisboa</text>
+      <text class="city" x="146" y="102">Madrid</text><text class="city" x="348" y="74">Barcelona</text>
+      <text class="city" x="298" y="180">Alicante</text><text class="city" x="440" y="36">Milano · Tribiano</text>
+      <text class="city" x="232" y="268">Tanger · MEAD</text><text class="city" x="170" y="324">Casablanca · MEAD</text>
+    </g></svg>`;
+}
+
+function contactBlock(t) {
+  const offices = CFG.offices.map(o => `<div class="office"><h3>${esc(t.offices[o.k])}</h3><p>${esc(o.addr)}</p></div>`).join("");
+  return `<section class="band" id="contact-block"><div class="wrap sec">
+    <div class="sec-head"><p class="eyebrow">${esc(t.contactEy)}</p><h2>${esc(t.contactH)}</h2><p>${esc(t.contactLead)}</p></div>
+    <div class="contact">
+      <div>
+        <div class="rows">
+          <div class="row"><div><small>${esc(t.std)}</small><span class="v">${CFG.fixed}</span></div><button class="copy" data-copy="${CFG.fixed}">${esc(t.copy)}</button></div>
+          <div class="row"><div><small>${esc(t.phone)} · WhatsApp</small><span class="v">${CFG.phone}</span></div><button class="copy" data-copy="${CFG.phone}">${esc(t.copy)}</button></div>
+          <div class="row"><div><small>${esc(t.email)}</small><span class="v">${CFG.email}</span></div><button class="copy" data-copy="${CFG.email}">${esc(t.copy)}</button></div>
+        </div>
+        <div class="btns"><a class="btn red" href="#devis">${esc(t.cta)} ${arrow}</a><a class="btn wa" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div>
+      </div>
+      <div><p class="eyebrow">${esc(t.officesH)}</p><div class="offices">${offices}</div></div>
+    </div></div></section>`;
+}
+
+/* ===== Pages ===== */
+const DEST_LINK = ["contact", "espagne", "portugal", "italie", "complet", "devis", "italie"];
+const DEST_CODE = ["MA", "ES", "PT", "IT", "FR", "MAGHREB", "EST"];
+function home(t) {
+  const stats = t.stats.map(([n, l], i) => i === 0 ? `<div class="stat stat-8">${eight(t, "big")}<span>${esc(t.since)}</span></div>` : `<div class="stat"><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("");
+  const agents = t.agents.map((a, i) => `<li><span class="c">${esc(t.nav[i])}</span><div><strong>${esc(AGENTS[i])}</strong><span>${esc(a)}</span></div></li>`).join("");
+  const dests = t.dests.map((d, i) => `<a class="dest" href="#${DEST_LINK[i]}"><small>${DEST_CODE[i]}</small><strong>${esc(d)}</strong><span>${esc(t.destNotes[i])}</span></a>`).join("");
+  const band = t.dests.map(d => `<span>${esc(d)}</span><i>/</i>`).join("");
+  const rows = LINES.map(k => { const L = t.lines[k];
+    return `<a class="b-row" href="#${SLUG[k]}"><span class="b-code">${CODE[k]}</span><span class="b-name">${esc(L.name)}<small>${esc(L.short)}</small></span><span class="b-v"><small>${esc(t.facts[0])}</small>${esc(L.dep)}</span><span class="b-v"><small>${esc(t.facts[1])}</small>${esc(tt(t, k))}</span><span class="b-go">${arrow}</span></a>`; }).join("");
+  const sectors = t.sectors.map(x => `<li>${esc(x)}</li>`).join("");
+  return `<section class="b-hero wrap">
+      <div>${eight(t, "e-top")}<h1 class="h-title">${esc(t.hTitle)}</h1>${t.hIntro.map(x => `<p class="h-intro">${esc(x)}</p>`).join("")}
+        <ul class="h-points">${t.pts.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join("")}</ul>
+        <p class="h-para">${esc(t.para)}</p><p class="h-close">${esc(t.close)}</p><div class="btns"><a class="btn red" href="#devis">${esc(t.cta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <figure class="b-hero-img"><img src="images/truck-red.jpg" alt="${esc(t.alt[0])}"></figure>
+    </section>
+    <div class="b-marquee"><p class="sr">${esc(t.destsH)} : ${esc(t.dests.join(", "))}</p><div class="b-track" aria-hidden="true">${band}${band}</div></div>
+    <section class="wrap b-stats">${stats}</section>
+    <section class="wrap sec" id="lignes"><div class="sec-head"><p class="eyebrow">${esc(t.transEy)}</p><h2>${esc(t.linesH)}</h2><p>${esc(t.linesSub)}</p></div>
+      <div class="b-rows">${rows}</div><p class="map-note">${esc(t.boardNote)}</p></section>
+    <section class="fleet-band" id="flotte"><img src="images/fleet.jpg" alt="${esc(t.alt[1])}" loading="lazy">
+      <div class="wrap fleet-txt"><p class="eyebrow">${esc(t.fleetEy)}</p><h2>${esc(t.fleetH)}</h2><p>${esc(t.fleetP)}</p></div></section>
+    <section class="wrap sec split about" id="societe"><div><p class="eyebrow">${esc(t.aboutEy)}</p><h2>${esc(t.aboutH)}</h2>${t.aboutP.map(x => `<p>${esc(x)}</p>`).join("")}<h3 style="margin-top:28px">${esc(t.agentsH)}</h3><ul class="agents">${agents}</ul></div>
+      <figure class="photo"><div class="ph"><img src="images/truck-jcl.jpg" alt="${esc(t.alt[2])}" loading="lazy"></div><figcaption>${esc(t.cap)}</figcaption></figure></section>
+    <section class="wrap sec" id="destinations" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.destEy)}</p><h2>${esc(t.destH)}</h2><p>${esc(t.destSub)}</p></div>
+      <div class="dest-wrap"><div class="map">${mapSvg()}<div class="legend"><span><i style="background:var(--red)"></i>${esc(t.nav[0])}</span><span><i style="background:var(--ink)"></i>${esc(t.nav[1])}</span><span><i style="background:#D99A00"></i>${esc(t.nav[2])}</span></div><p class="map-note">${esc(t.mapNote)}</p></div><div class="dests">${dests}</div></div></section>
+    <section class="wrap sec" id="secteurs" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.secEy)}</p><h2>${esc(t.secH)}</h2><p>${esc(t.secSub)}</p></div><ul class="b-tags">${sectors}</ul></section>
+    <div id="contact">${contactBlock(t)}</div>`;
+}
+
+function linePage(t, k) {
+  const L = t.lines[k];
+  const facts = [L.dep, tt(t, k), L.pick, L.del].map((v, i) => `<div><small>${esc(t.facts[i])}</small><strong>${esc(v)}</strong></div>`).join("");
+  const steps = t.steps.map(([a, b]) => `<li><h3>${esc(a)}</h3><p>${esc(b)}</p></li>`).join("");
+  const docs = t.docs.map(d => `<li>${esc(d)}</li>`).join("");
+  const faq = t.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+  return `<section class="wrap line-hero">
+      <a class="crumb" href="#lignes"><span class="arr">←</span> ${esc(t.back)}</a>
+      <p class="code-big">${CODE[k]}</p><h1>${esc(L.name)}</h1><p class="lead">${esc(L.lead)}</p>
+      <div class="btns"><a class="btn red" href="#devis" data-from="${k}">${esc(t.lineCta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div class="facts">${facts}</div>
+    </section>
+    <section class="wrap sec"><div class="sec-head"><h2>${esc(t.howH)}</h2></div><ol class="steps">${steps}</ol></section>
+    <section class="wrap sec two" style="padding-top:0">
+      <div><h2>${esc(t.docsH)}</h2><ul class="docs">${docs}</ul></div>
+      <div><h2>${esc(t.faqH)}</h2>${faq}</div>
+    </section>
+    ${contactBlock(t)}`;
+}
+
+function quotePage(t) {
+  const Q = t.q;
+  const fromIdx = {es: 0, pt: 1, it: 2}[preFrom];
+  const fromO = t.fromOpts.map((o, i) => `<option ${i === fromIdx ? "selected" : ""}>${esc(o)}</option>`).join("");
+  const toO = t.toOpts.map(o => `<option>${esc(o)}</option>`).join("");
+  const full = preFrom === "ftl";
+  const field = (id, label, type = "text", extra = "") => `<div class="f"><label for="q-${id}">${esc(label)}</label><input id="q-${id}" name="${id}" type="${type}" ${extra}></div>`;
+  return `<section class="wrap sec">
+    <div class="sec-head"><p class="eyebrow">RTL Maroc</p><h1>${esc(t.quoteH)}</h1><p class="lead" style="margin:0">${esc(t.quoteLead)}</p></div>
+    <form class="form" id="quote" novalidate>
+      ${field("company", Q.company, "text", 'autocomplete="organization"')}
+      ${field("name", Q.name, "text", 'autocomplete="name"')}
+      ${field("phone", Q.phone, "tel", 'autocomplete="tel" dir="ltr"')}
+      ${field("email", Q.email, "email", 'autocomplete="email" dir="ltr"')}
+      <div class="f"><label for="q-from">${esc(Q.from)}</label><select id="q-from" name="from"><option value="">—</option>${fromO}</select></div>
+      <div class="f"><label for="q-to">${esc(Q.to)}</label><select id="q-to" name="to">${toO}</select></div>
+      <fieldset class="f full"><legend>${esc(Q.mode)}</legend><div class="seg">
+        <label><input type="radio" name="mode" id="q-mode-g" value="${esc(Q.group)}" ${full ? "" : "checked"}> ${esc(Q.group)}</label>
+        <label><input type="radio" name="mode" id="q-mode-f" value="${esc(Q.full)}" ${full ? "checked" : ""}> ${esc(Q.full)}</label></div></fieldset>
+      <div class="f full"><div class="trio">
+        ${field("pal", Q.pal, "number", 'min="0" inputmode="numeric"')}
+        ${field("kg", Q.kg, "number", 'min="0" inputmode="decimal"')}
+        ${field("m3", Q.m3, "number", 'min="0" step="0.1" inputmode="decimal"')}
+      </div></div>
+      <div class="f full"><label for="q-goods">${esc(Q.goods)}</label><input id="q-goods" name="goods" type="text"></div>
+      <div class="f full"><label for="q-msg">${esc(Q.msg)}</label><textarea id="q-msg" name="msg"></textarea></div>
+      <p class="err" id="q-err" hidden>${esc(Q.err)}</p>
+      <div class="f full"><button class="btn red" type="submit" style="justify-content:center">${esc(Q.submit)} ${arrow}</button></div>
+    </form>
+    <div id="q-result"></div>
+    <p class="side-note" style="margin-top:24px">${esc(Q.orDirect)} <span class="v">${CFG.phone}</span> · <span class="v">${CFG.email}</span></p>
+  </section>`;
+}
+
+/* ===== Router ===== */
+const TITLES = {accueil: null};
+const SECTIONS = ["lignes", "destinations", "secteurs", "flotte", "societe", "contact"];
+let timer = null;
+function render() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  const r = (location.hash || "#accueil").slice(1);
+  $("#nav").innerHTML = nav(t, r);
+  $("#nav").classList.remove("open");
+  $("#menu-btn").setAttribute("aria-expanded", "false");
+  $("#lang-sel").innerHTML = langOptions();
+  $("#foot").innerHTML = footer(t);
+  let html, title = "Round Trip Logistics | RTL Maroc";
+  if (ROUTE[r]) { html = linePage(t, ROUTE[r]); title = t.lines[ROUTE[r]].name + " | RTL Maroc"; }
+  else if (r === "devis") { html = quotePage(t); title = t.quoteH + " | RTL Maroc"; }
+  else html = home(t);
+  $("#app").innerHTML = html;
+  document.title = title;
+  clearInterval(timer);
+  if ($(".hero-x") && !matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => goSlide(1, true), 6500);
+  if (SECTIONS.includes(r)) { const el = document.getElementById(r); if (el) el.scrollIntoView(); }
+  else window.scrollTo(0, 0);
+}
+function goSlide(n, rel) {
+  const sl = [...document.querySelectorAll(".slide")], d = [...document.querySelectorAll(".dot")];
+  if (!sl.length) return;
+  const cur = sl.findIndex(x => x.classList.contains("on"));
+  const nx = rel ? (cur + n) % sl.length : n;
+  sl.forEach((x, i) => x.classList.toggle("on", i === nx));
+  d.forEach((x, i) => x.classList.toggle("on", i === nx));
+}
+
+/* ===== Events ===== */
+window.addEventListener("hashchange", render);
+document.addEventListener("click", e => {
+  const from = e.target.closest("[data-from]");
+  if (from) preFrom = from.dataset.from;
+  const cp = e.target.closest("[data-copy]");
+  if (cp) {
+    const text = cp.dataset.copy, t = T[lang];
+    const done = () => { cp.textContent = t.copied; setTimeout(() => cp.textContent = cp.dataset.label || t.copy, 1600); };
+    try { navigator.clipboard.writeText(text).then(done, () => selectText(cp)); } catch (err) { selectText(cp); }
+  }
+  const dot = e.target.closest("[data-slide]");
+  if (dot) { clearInterval(timer); goSlide(+dot.dataset.slide, false); }
+  if (e.target.id === "menu-btn") {
+    const open = $("#nav").classList.toggle("open");
+    e.target.setAttribute("aria-expanded", String(open));
+  }
+});
+function selectText(btn) {
+  const box = btn.closest(".result, .row");
+  const v = box && box.querySelector(".v, pre");
+  if (!v) return;
+  const r = document.createRange(); r.selectNodeContents(v);
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+document.addEventListener("change", e => {
+  if (e.target.id === "lang-sel") {
+    lang = e.target.value;
+    try { localStorage.setItem("rtl-lang", lang); } catch (err) {}
+    render();
+  }
+});
+document.addEventListener("submit", e => {
+  if (e.target.id !== "quote") return;
+  e.preventDefault();
+  const t = T[lang], Q = t.q, f = e.target, v = n => (f.elements[n] && f.elements[n].value || "").trim();
+  const ok = v("name") && (v("phone") || v("email")) && v("from");
+  $("#q-err").hidden = !!ok;
+  if (!ok) return;
+  const pairs = [[Q.company, v("company")], [Q.name, v("name")], [Q.phone, v("phone")], [Q.email, v("email")],
+    [Q.from, v("from")], [Q.to, v("to")], [Q.mode, f.querySelector("input[name=mode]:checked")?.value || ""],
+    [Q.pal, v("pal")], [Q.kg, v("kg")], [Q.m3, v("m3")], [Q.goods, v("goods")], [Q.msg, v("msg")]];
+  const text = t.intro + "\n\n" + pairs.filter(p => p[1]).map(p => p[0] + " : " + p[1]).join("\n");
+  const wa = "https://wa.me/" + CFG.wa + "?text=" + encodeURIComponent(text);
+  const mail = "mailto:" + CFG.email + "?subject=" + encodeURIComponent(t.intro + (v("company") ? " – " + v("company") : "")) + "&body=" + encodeURIComponent(text);
+  $("#q-result").innerHTML = `<div class="result"><p>${esc(Q.ready)}</p><pre>${esc(text)}</pre>
+    <div class="btns"><a class="btn wa" href="${wa}" target="_blank" rel="noopener">${esc(Q.wa)}</a>
+    <a class="btn red" href="${esc(mail)}">${esc(Q.mail)}</a>
+    <button class="btn ghost" type="button" data-copy="${esc(text)}" data-label="${esc(Q.copyText)}">${esc(Q.copyText)}</button></div></div>`;
+  $("#q-result").scrollIntoView({behavior: "smooth", block: "nearest"});
+});
+
+render();
+</script>
+
+</body>
+</html>

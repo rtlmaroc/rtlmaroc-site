@@ -1,0 +1,21 @@
+[build]
+  publish = "."
+
+# Redirige rtlmaroc.com (sans www) vers https://www.rtlmaroc.com
+[[redirects]]
+  from = "https://rtlmaroc.com/*"
+  to = "https://www.rtlmaroc.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
