@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.rtlmaroc.com/">
 <link rel="icon" type="image/png" href="images/symbol.png">
-<meta property="og:image" content="https://www.rtlmaroc.com/images/truck-red.jpg">
+<meta property="og:image" content="https://www.rtlmaroc.com/images/truck-red.jpg?v=2">
 <link rel="canonical" href="https://www.rtlmaroc.com/">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <title>RTL Maroc | Groupage Europe–Maroc</title>
@@ -955,16 +955,16 @@ function home(t) {
       <div>${eight(t, "e-top")}<h1 class="h-title">${esc(t.hTitle)}</h1>${t.hIntro.map(x => `<p class="h-intro">${esc(x)}</p>`).join("")}
         <ul class="h-points">${t.pts.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join("")}</ul>
         <p class="h-para">${esc(t.para)}</p><p class="h-close">${esc(t.close)}</p><div class="btns"><a class="btn red" href="#devis">${esc(t.cta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div></div>
-      <figure class="b-hero-img"><img src="images/truck-red.jpg" alt="${esc(t.alt[0])}"></figure>
+      <figure class="b-hero-img"><img src="images/truck-red.jpg?v=2" alt="${esc(t.alt[0])}"></figure>
     </section>
     <div class="b-marquee"><p class="sr">${esc(t.destsH)} : ${esc(t.dests.join(", "))}</p><div class="b-track" aria-hidden="true">${band}${band}</div></div>
     <section class="wrap b-stats">${stats}</section>
     <section class="wrap sec" id="lignes"><div class="sec-head"><p class="eyebrow">${esc(t.transEy)}</p><h2>${esc(t.linesH)}</h2><p>${esc(t.linesSub)}</p></div>
       <div class="b-rows">${rows}</div><p class="map-note">${esc(t.boardNote)}</p></section>
-    <section class="fleet-band" id="flotte"><img src="images/fleet.jpg" alt="${esc(t.alt[1])}" loading="lazy">
+    <section class="fleet-band" id="flotte"><img src="images/fleet.jpg?v=2" alt="${esc(t.alt[1])}" loading="lazy">
       <div class="wrap fleet-txt"><p class="eyebrow">${esc(t.fleetEy)}</p><h2>${esc(t.fleetH)}</h2><p>${esc(t.fleetP)}</p></div></section>
     <section class="wrap sec split about" id="societe"><div><p class="eyebrow">${esc(t.aboutEy)}</p><h2>${esc(t.aboutH)}</h2>${t.aboutP.map(x => `<p>${esc(x)}</p>`).join("")}<h3 style="margin-top:28px">${esc(t.agentsH)}</h3><ul class="agents">${agents}</ul></div>
-      <figure class="photo"><div class="ph"><img src="images/truck-jcl.jpg" alt="${esc(t.alt[2])}" loading="lazy"></div><figcaption>${esc(t.cap)}</figcaption></figure></section>
+      <figure class="photo"><div class="ph"><img src="images/truck-jcl.jpg?v=2" alt="${esc(t.alt[2])}" loading="lazy"></div><figcaption>${esc(t.cap)}</figcaption></figure></section>
     <section class="wrap sec" id="destinations" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.destEy)}</p><h2>${esc(t.destH)}</h2><p>${esc(t.destSub)}</p></div>
       <div class="dest-wrap"><div class="map">${mapSvg(t)}<div class="legend"><span><i class="lg-main"></i>${esc(t.legMain)}</span><span><i class="lg-part"></i>${esc(t.legPart)}</span><span><i class="lg-hub"></i>${esc(t.legHub)}</span></div><p class="map-note">${esc(t.mapNote)}</p></div><div class="dests">${dests}</div></div></section>
     <section class="wrap sec" id="secteurs" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.secEy)}</p><h2>${esc(t.secH)}</h2><p>${esc(t.secSub)}</p></div><ul class="b-tags">${sectors}</ul></section>
