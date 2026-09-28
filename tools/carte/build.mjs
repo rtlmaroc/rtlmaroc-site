@@ -9,8 +9,8 @@ const byId = id => geoms.filter(g => +g.id === +id);
 const feat = ids => topo.merge(world, ids.flatMap(byId));
 
 const W = 800;
-const frame = { type: "MultiPoint", coordinates: [[-17.5, 21], [31, 21], [-12, 62.5], [30, 62.5], [9, 64]] };
-const proj = d3.geoConicConformal().parallels([30, 55]).rotate([-7, 0]);
+const frame = { type: "MultiPoint", coordinates: [[-19.2, 19.6], [30.2, 19.6], [-19.2, 59.2], [30.2, 59.2]] };
+const proj = d3.geoMercator(); // carte « droite » : nord en haut, Maroc aligné
 proj.fitWidth(W, frame);
 const [[, y0], [, y1]] = d3.geoPath(proj).bounds(frame);
 const H = Math.round(y1 - y0 + 10);
@@ -64,7 +64,7 @@ function flagSvg(code, f, [[x0, y0], [x1, y1]]) {
     if (f.inner) { const t2 = t * .5; s += r(cx - t2 / 2, y0, t2, h, f.inner) + r(x0, cy - t2 / 2, w, t2, f.inner); }
   } else if (f.type === "ma") {
     s += r(x0, y0, w, h, C.red);
-    const [sx, sy] = P([-6.4, 31.6]); const R = 34;
+    const [sx, sy] = P([-6.4, 31.4]); const R = 38;
     const pts = [...Array(5)].map((_, i) => { const a = -Math.PI / 2 + i * 4 * Math.PI / 5; return [sx + R * Math.cos(a), sy + R * Math.sin(a)]; });
     s += `<path d="M${pts.map(p => p.map(v => v.toFixed(1)).join(" ")).join("L")}Z" fill="none" stroke="${C.green}" stroke-width="5.5" stroke-linejoin="miter"/>`;
   }
