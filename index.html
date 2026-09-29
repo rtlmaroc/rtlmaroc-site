@@ -524,7 +524,8 @@ const CFG = {
     {k: "tng", addr: "Rue Jordanie, Résidence Yamna 2, E.S n° 24, Tanger"}
   ]
 };
-const LINES = ["es", "pt", "it", "ftl"];
+const LINES = ["it", "es", "pt", "ftl"];
+const NAV_IDX = { es: 0, pt: 1, it: 2, ftl: 3 }; // position du libellé dans t.nav
 const CODE = {es: "ES", pt: "PT", it: "IT", ftl: "FTL"};
 const ROUTE = {espagne: "es", portugal: "pt", italie: "it", complet: "ftl"};
 const SLUG = {es: "espagne", pt: "portugal", it: "italie", ftl: "complet"};
@@ -917,7 +918,7 @@ function footer(t) {
 function board(t) {
   const rows = LINES.map(k => {
     const L = t.lines[k];
-    return `<tr><td><a href="#${SLUG[k]}"><span class="code">${CODE[k]}</span><span class="ln">${esc(t.nav[LINES.indexOf(k)])}</span></a></td>
+    return `<tr><td><a href="#${SLUG[k]}"><span class="code">${CODE[k]}</span><span class="ln">${esc(t.nav[NAV_IDX[k]])}</span></a></td>
       <td class="am">${esc(L.dep)}</td><td class="am">${esc(tt(t, k))}</td><td class="col-arr">${esc(L.del.replace("MEAD ", ""))}</td></tr>`;
   }).join("");
   return `<div class="board" aria-label="${esc(t.board)}">
