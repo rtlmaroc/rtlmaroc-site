@@ -395,6 +395,10 @@ h3,.b-name,.agents strong,.dest strong{font-weight:500!important}
 /* ===== 8 ans déjà ===== */
 .eight{display:inline-block;white-space:nowrap;font:400 1em/1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
 .eight img{display:inline-block;height:.8em;width:auto;vertical-align:baseline;margin-inline-end:.2em}
+.eight svg.e8{display:inline-block;height:.8em;width:.42em;vertical-align:baseline;margin-inline-end:.2em;overflow:visible}
+.e8-trace{stroke-dasharray:1 1;stroke-dashoffset:1;animation:e8draw 2.2s cubic-bezier(.55,.1,.35,1) .3s forwards}
+@keyframes e8draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.e8-trace{animation:none;stroke-dashoffset:0}}
 .eight-t{font:inherit}
 .eight.e-top{font-size:clamp(2rem,3.2vw,2.8rem);margin-bottom:14px}
 .eight.big{font-size:clamp(2.2rem,3.8vw,3.3rem);font-weight:300}
@@ -830,7 +834,8 @@ const EXTRA3 = {
   ar: {years: "سنوات من العطاء", kicker2: "Round Trip Logistics · 8 سنوات من العطاء", since: "تأسست في 29 ماي 2018"}
 };
 for (const l in EXTRA3) Object.assign(T[l], EXTRA3[l]);
-const eight = (t, cls) => `<span class="eight ${cls || ""}"><img src="images/eight.png" alt="8" width="210" height="400"><span class="eight-t">${esc(t.years)}</span></span>`;
+let eightN = 0;
+const eight = (t, cls) => { const id = "e8m" + (++eightN); return `<span class="eight ${cls || ""}"><svg class="e8" viewBox="0 0 210 400" width="210" height="400" role="img" aria-label="8"><defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="400"><path class="e8-trace" pathLength="1" d="M81 173 A70 70 0 1 1 158.6 152.5 L49.5 248.4 A72.5 72.5 0 1 0 141 232" fill="none" stroke="#fff" stroke-width="90"/></mask></defs><image href="images/eight.png" width="210" height="400" mask="url(#${id})"/></svg><span class="eight-t">${esc(t.years)}</span></span>`; };
 
 const EXTRA4 = {
   fr: {pts: [["Du colis au complet","Groupage, lot partiel ou remorque complète"],["Un équipement adapté","Semi-remorques tôlées ou bâchées"],["Une flotte fiable","Véhicules en propre ou en partenariat exclusif avec des opérateurs internationaux reconnus"]],
