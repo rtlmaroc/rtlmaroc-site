@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rtlmaroc.com/sitemap.xml
+Sitemap: https://rtlmaroc.com/sitemap.xml
