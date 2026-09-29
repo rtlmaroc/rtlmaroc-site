@@ -943,11 +943,13 @@ function contactBlock(t) {
 /* ===== Pages ===== */
 const DEST_LINK = ["contact", "espagne", "portugal", "italie", "complet", "devis", "italie"];
 const DEST_CODE = ["MA", "ES", "PT", "IT", "FR", "MAGHREB", "EST"];
+// Ordre d'affichage : Maroc, Italie, Portugal, Espagne, France, Maghreb, Europe de l'Est
+const DEST_ORDER = [0, 3, 2, 1, 4, 5, 6];
 function home(t) {
   const stats = t.stats.map(([n, l], i) => i === 0 ? `<div class="stat stat-8">${eight(t, "big")}<span>${esc(t.since)}</span></div>` : `<div class="stat"><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("");
   const agents = t.agents.map((a, i) => `<li><span class="c">${esc(t.nav[i])}</span><div><strong>${esc(AGENTS[i])}</strong><span>${esc(a)}</span></div></li>`).join("");
-  const dests = t.dests.map((d, i) => `<a class="dest" href="#${DEST_LINK[i]}"><small>${DEST_CODE[i]}</small><strong>${esc(d)}</strong><span>${esc(t.destNotes[i])}</span></a>`).join("");
-  const band = t.dests.map(d => `<span>${esc(d)}</span><i>/</i>`).join("");
+  const dests = DEST_ORDER.map(i => `<a class="dest" href="#${DEST_LINK[i]}"><small>${DEST_CODE[i]}</small><strong>${esc(t.dests[i])}</strong><span>${esc(t.destNotes[i])}</span></a>`).join("");
+  const band = DEST_ORDER.map(i => `<span>${esc(t.dests[i])}</span><i>/</i>`).join("");
   const rows = LINES.map(k => { const L = t.lines[k];
     return `<a class="b-row" href="#${SLUG[k]}"><span class="b-code">${CODE[k]}</span><span class="b-name">${esc(L.name)}<small>${esc(L.short)}</small></span><span class="b-v"><small>${esc(t.facts[0])}</small>${esc(L.dep)}</span><span class="b-v"><small>${esc(t.facts[1])}</small>${esc(tt(t, k))}</span><span class="b-go">${arrow}</span></a>`; }).join("");
   const sectors = t.sectors.map(x => `<li>${esc(x)}</li>`).join("");
