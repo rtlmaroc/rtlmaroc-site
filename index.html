@@ -503,6 +503,8 @@ main{min-height:60vh}
 .hero>*,.split>*,.lines-top>*,.contact>*,.two>*{min-width:0}
 @media (max-width:520px){.board .am{white-space:normal}.board .ln{white-space:normal}}
 .alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+.line-hero .lead:has(+ .line-about){margin-bottom:14px}
+.line-about{font-size:1.05rem}
 
 </style>
 
@@ -526,9 +528,9 @@ main{min-height:60vh}
 <p>Commissionnaire de transport international basé à Casablanca et Tanger, créé le 29 mai 2018. Groupage et camions complets depuis l’Espagne, le Portugal et l’Italie vers Casablanca et Tanger, et dans l’autre sens, du Maroc vers l’Europe. Départs à jours fixes, délais annoncés.</p>
 <h2>Nos lignes</h2>
 <ul>
-<li><a href="#italie">Groupage Italie – Maroc</a> : 2 départs par semaine, 72 h de transit. Consolidation sur notre plateforme de Tribiano (Milan), qui reçoit aussi les marchandises d’Europe de l’Est.</li>
-<li><a href="#espagne">Groupage Espagne – Maroc</a> : enlèvement dans toute l’Espagne via Madrid (Coslada), Barcelone et Alicante, 48 h de transit, livraison MEAD Tanger et Casablanca.</li>
-<li><a href="#portugal">Groupage Portugal – Maroc</a> : Porto et Lisbonne, départs mercredi et vendredi, 48 h de transit.</li>
+<li><a href="/groupage-italie-maroc/">Groupage Italie – Maroc</a> : 2 départs par semaine, 72 h de transit. Consolidation sur notre plateforme de Tribiano (Milan), qui reçoit aussi les marchandises d’Europe de l’Est.</li>
+<li><a href="/groupage-espagne-maroc/">Groupage Espagne – Maroc</a> : enlèvement dans toute l’Espagne via Madrid (Coslada), Barcelone et Alicante, 48 h de transit, livraison MEAD Tanger et Casablanca.</li>
+<li><a href="/groupage-portugal-maroc/">Groupage Portugal – Maroc</a> : Porto et Lisbonne, départs mercredi et vendredi, 48 h de transit.</li>
 <li><a href="#complet">Camion complet Europe – Maroc</a> : camion dédié, dans les deux sens, pour les volumes importants.</li>
 </ul>
 <h2>Destinations</h2>
@@ -566,6 +568,10 @@ const NAV_IDX = { es: 0, pt: 1, it: 2, ftl: 3 }; // position du libellé dans t.
 const CODE = {es: "ES", pt: "PT", it: "IT", ftl: "FTL"};
 const ROUTE = {espagne: "es", portugal: "pt", italie: "it", complet: "ftl"};
 const SLUG = {es: "espagne", pt: "portugal", it: "italie", ftl: "complet"};
+// Pages dédiées (vraies URL pour Google) ; générées par tools/pages/build.mjs
+const PAGE = {it: "groupage-italie-maroc", es: "groupage-espagne-maroc", pt: "groupage-portugal-maroc"};
+const PATH_ROUTE = {}; for (const k in PAGE) PATH_ROUTE["/" + PAGE[k] + "/"] = SLUG[k];
+const lineHref = k => PAGE[k] ? "/" + PAGE[k] + "/" : "#" + SLUG[k];
 const HOURS = {es: 48, pt: 48, it: 72};
 const LANGS = [["fr","Français"],["es","Español"],["pt","Português"],["it","Italiano"],["en","English"],["ar","العربية"]];
 
@@ -921,6 +927,35 @@ const EXTRA5 = {
 };
 for (const l in EXTRA5) Object.assign(T[l], EXTRA5[l]);
 
+/* Texte propre à chaque ligne (pages dédiées /groupage-…-maroc/) */
+const EXTRA6 = {
+  fr: {
+    it: "Notre ligne de groupage Italie – Maroc est opérée avec le Groupe Di Martino. Les marchandises sont regroupées sur la plateforme de Tribiano, près de Milan, qui reçoit aussi les envois d’Europe de l’Est. Deux départs par semaine vers Casablanca et Tanger, pour un transit de 72 h. La ligne fonctionne aussi dans l’autre sens, du Maroc vers l’Italie.",
+    es: "Notre ligne de groupage Espagne – Maroc s’appuie sur trois partenaires : Mars Logistics à Madrid (Coslada), Illaexport à Barcelone et Intraco à Alicante. Nous enlevons votre marchandise partout en Espagne et la livrons sur les MEAD de Tanger et Casablanca, en 48 h de transit. La ligne fonctionne aussi dans l’autre sens, du Maroc vers l’Espagne.",
+    pt: "Notre ligne de groupage Portugal – Maroc est opérée avec JCL Logística. Enlèvement à Porto et Lisbonne, départs le mercredi et le vendredi, livraison à Casablanca et Tanger en 48 h de transit. La ligne fonctionne aussi dans l’autre sens, du Maroc vers le Portugal."},
+  es: {
+    it: "Nuestra línea de grupaje Italia – Marruecos se opera con el Grupo Di Martino. La mercancía se consolida en la plataforma de Tribiano, cerca de Milán, que también recibe los envíos de Europa del Este. Dos salidas por semana hacia Casablanca y Tánger, con 72 h de tránsito. La línea funciona también en sentido inverso, de Marruecos a Italia.",
+    es: "Nuestra línea de grupaje España – Marruecos se apoya en tres socios: Mars Logistics en Madrid (Coslada), Illaexport en Barcelona e Intraco en Alicante. Recogemos su mercancía en toda España y la entregamos en los MEAD de Tánger y Casablanca, con 48 h de tránsito. La línea funciona también en sentido inverso, de Marruecos a España.",
+    pt: "Nuestra línea de grupaje Portugal – Marruecos se opera con JCL Logística. Recogida en Oporto y Lisboa, salidas los miércoles y viernes, entrega en Casablanca y Tánger con 48 h de tránsito. La línea funciona también en sentido inverso, de Marruecos a Portugal."},
+  pt: {
+    it: "A nossa linha de grupagem Itália – Marrocos é operada com o Grupo Di Martino. A mercadoria é consolidada na plataforma de Tribiano, perto de Milão, que também recebe os envios da Europa de Leste. Duas partidas por semana para Casablanca e Tânger, com 72 h de trânsito. A linha funciona também no sentido inverso, de Marrocos para Itália.",
+    es: "A nossa linha de grupagem Espanha – Marrocos apoia-se em três parceiros: Mars Logistics em Madrid (Coslada), Illaexport em Barcelona e Intraco em Alicante. Recolhemos a sua mercadoria em toda a Espanha e entregamo-la nos MEAD de Tânger e Casablanca, com 48 h de trânsito. A linha funciona também no sentido inverso, de Marrocos para Espanha.",
+    pt: "A nossa linha de grupagem Portugal – Marrocos é operada com a JCL Logística. Recolha no Porto e em Lisboa, partidas à quarta e à sexta-feira, entrega em Casablanca e Tânger com 48 h de trânsito. A linha funciona também no sentido inverso, de Marrocos para Portugal."},
+  it: {
+    it: "La nostra linea groupage Italia – Marocco è operata con il Gruppo Di Martino. La merce viene consolidata nella piattaforma di Tribiano, vicino a Milano, che riceve anche le spedizioni dall’Europa dell’Est. Due partenze a settimana per Casablanca e Tangeri, con 72 h di transit time. La linea funziona anche in senso inverso, dal Marocco all’Italia.",
+    es: "La nostra linea groupage Spagna – Marocco si appoggia a tre partner: Mars Logistics a Madrid (Coslada), Illaexport a Barcellona e Intraco ad Alicante. Ritiriamo la vostra merce in tutta la Spagna e la consegniamo ai MEAD di Tangeri e Casablanca, con 48 h di transit time. La linea funziona anche in senso inverso, dal Marocco alla Spagna.",
+    pt: "La nostra linea groupage Portogallo – Marocco è operata con JCL Logística. Ritiro a Porto e Lisbona, partenze il mercoledì e il venerdì, consegna a Casablanca e Tangeri con 48 h di transit time. La linea funziona anche in senso inverso, dal Marocco al Portogallo."},
+  en: {
+    it: "Our Italy – Morocco groupage line is run with Gruppo Di Martino. Goods are consolidated at the Tribiano platform near Milan, which also receives shipments from Eastern Europe. Two departures a week to Casablanca and Tangier, with 72 h transit. The line also runs the other way, from Morocco to Italy.",
+    es: "Our Spain – Morocco groupage line relies on three partners: Mars Logistics in Madrid (Coslada), Illaexport in Barcelona and Intraco in Alicante. We collect your goods anywhere in Spain and deliver them to the Tangier and Casablanca MEAD, with 48 h transit. The line also runs the other way, from Morocco to Spain.",
+    pt: "Our Portugal – Morocco groupage line is run with JCL Logística. Pickup in Porto and Lisbon, departures on Wednesday and Friday, delivery to Casablanca and Tangier with 48 h transit. The line also runs the other way, from Morocco to Portugal."},
+  ar: {
+    it: "يُشغَّل خط الشحن المجمّع إيطاليا – المغرب بالتعاون مع مجموعة Di Martino. تُجمَّع البضائع في منصة تريبيانو قرب ميلانو، التي تستقبل أيضًا الشحنات القادمة من أوروبا الشرقية. رحلتان في الأسبوع نحو الدار البيضاء وطنجة، بمدة عبور 72 ساعة. ويعمل الخط أيضًا في الاتجاه المعاكس، من المغرب إلى إيطاليا.",
+    es: "يعتمد خط الشحن المجمّع إسبانيا – المغرب على ثلاثة شركاء: Mars Logistics في مدريد (كوسلادا)، وIllaexport في برشلونة، وIntraco في أليكانتي. نستلم بضاعتكم من كل أنحاء إسبانيا ونسلّمها في MEAD طنجة والدار البيضاء، بمدة عبور 48 ساعة. ويعمل الخط أيضًا في الاتجاه المعاكس، من المغرب إلى إسبانيا.",
+    pt: "يُشغَّل خط الشحن المجمّع البرتغال – المغرب بالتعاون مع JCL Logística. استلام من بورتو ولشبونة، ورحلات يومي الأربعاء والجمعة، وتسليم في الدار البيضاء وطنجة بمدة عبور 48 ساعة. ويعمل الخط أيضًا في الاتجاه المعاكس، من المغرب إلى البرتغال."}
+};
+for (const l in EXTRA6) for (const k in EXTRA6[l]) T[l].lines[k].about = EXTRA6[l][k];
+
 /* ===== State ===== */
 let lang = "fr";
 try { const s = localStorage.getItem("rtl-lang"); if (s && T[s]) lang = s; else { const n = (navigator.language || "fr").slice(0,2); if (T[n]) lang = n; } } catch (e) {}
@@ -939,7 +974,7 @@ function nav(t, cur) {
 function langOptions() { return LANGS.map(([c, n]) => `<option value="${c}" ${c === lang ? "selected" : ""}>${n}</option>`).join(""); }
 
 function footer(t) {
-  const lines = LINES.map(k => `<li><a href="#${SLUG[k]}">${esc(t.lines[k].name)}</a></li>`).join("");
+  const lines = LINES.map(k => `<li><a href="${lineHref(k)}">${esc(t.lines[k].name)}</a></li>`).join("");
   const co = [["societe", t.navB[4]], ["flotte", t.navB[3]], ["destinations", t.navB[1]], ["secteurs", t.navB[2]], ["devis", t.nav[5]]]
     .map(([h, l]) => `<li><a href="#${h}">${esc(l)}</a></li>`).join("");
   const offices = CFG.offices.map(o => `<li><strong>${esc(t.offices[o.k])}</strong><br>${esc(o.addr)}</li>`).join("");
@@ -955,7 +990,7 @@ function footer(t) {
 function board(t) {
   const rows = LINES.map(k => {
     const L = t.lines[k];
-    return `<tr><td><a href="#${SLUG[k]}"><span class="code">${CODE[k]}</span><span class="ln">${esc(t.nav[NAV_IDX[k]])}</span></a></td>
+    return `<tr><td><a href="${lineHref(k)}"><span class="code">${CODE[k]}</span><span class="ln">${esc(t.nav[NAV_IDX[k]])}</span></a></td>
       <td class="am">${esc(L.dep)}</td><td class="am">${esc(tt(t, k))}</td><td class="col-arr">${esc(L.del.replace("MEAD ", ""))}</td></tr>`;
   }).join("");
   return `<div class="board" aria-label="${esc(t.board)}">
@@ -993,10 +1028,10 @@ const DEST_ORDER = [0, 3, 2, 1, 4, 5, 6];
 function home(t) {
   const stats = t.stats.map(([n, l], i) => i === 0 ? `<div class="stat stat-8">${eight(t, "big")}<span>${esc(t.since)}</span></div>` : `<div class="stat"><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("");
   const agents = t.agents.map((a, i) => `<li><span class="c">${esc(t.nav[i])}</span><div><strong>${esc(AGENTS[i])}</strong><span>${esc(a)}</span></div></li>`).join("");
-  const dests = DEST_ORDER.map(i => `<a class="dest" href="#${DEST_LINK[i]}"><small>${DEST_CODE[i]}</small><strong>${esc(t.dests[i])}</strong><span>${esc(t.destNotes[i])}</span></a>`).join("");
+  const dests = DEST_ORDER.map(i => `<a class="dest" href="${ROUTE[DEST_LINK[i]] ? lineHref(ROUTE[DEST_LINK[i]]) : "#" + DEST_LINK[i]}"><small>${DEST_CODE[i]}</small><strong>${esc(t.dests[i])}</strong><span>${esc(t.destNotes[i])}</span></a>`).join("");
   const band = DEST_ORDER.map(i => `<span>${esc(t.dests[i])}</span><i>/</i>`).join("");
   const rows = LINES.map(k => { const L = t.lines[k];
-    return `<a class="b-row" href="#${SLUG[k]}"><span class="b-code">${CODE[k]}</span><span class="b-name">${esc(L.name)}<small>${esc(L.short)}</small></span><span class="b-v"><small>${esc(t.facts[0])}</small>${esc(L.dep)}</span><span class="b-v"><small>${esc(t.facts[1])}</small>${esc(tt(t, k))}</span><span class="b-go">${arrow}</span></a>`; }).join("");
+    return `<a class="b-row" href="${lineHref(k)}"><span class="b-code">${CODE[k]}</span><span class="b-name">${esc(L.name)}<small>${esc(L.short)}</small></span><span class="b-v"><small>${esc(t.facts[0])}</small>${esc(L.dep)}</span><span class="b-v"><small>${esc(t.facts[1])}</small>${esc(tt(t, k))}</span><span class="b-go">${arrow}</span></a>`; }).join("");
   const sectors = t.sectors.map(x => `<li>${esc(x)}</li>`).join("");
   return `<section class="b-hero wrap">
       <div>${eight(t, "e-top")}<h1 class="h-title">${esc(t.hTitle)}</h1>${t.hIntro.map(x => `<p class="h-intro">${esc(x)}</p>`).join("")}
@@ -1026,8 +1061,8 @@ function linePage(t, k) {
   const faq = t.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
   return `<section class="wrap line-hero">
       <a class="crumb" href="#lignes"><span class="arr">←</span> ${esc(t.back)}</a>
-      <p class="code-big">${CODE[k]}</p><h1>${esc(L.name)}</h1><p class="lead">${esc(L.lead)}</p>
-      <div class="btns"><a class="btn red" href="#devis" data-from="${k}">${esc(t.lineCta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div>
+      <p class="code-big">${CODE[k]}</p><h1>${esc(L.name)}</h1><p class="lead">${esc(L.lead)}</p>${L.about ? `<p class="lead line-about">${esc(L.about)}</p>` : ""}
+      <div class="btns"><a class="btn red" href="#devis-${k}" data-from="${k}">${esc(t.lineCta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div>
       <div class="facts">${facts}</div>
     </section>
     <section class="wrap sec"><div class="sec-head"><h2>${esc(t.howH)}</h2></div><ol class="steps">${steps}</ol></section>
@@ -1080,7 +1115,10 @@ function render() {
   const t = T[lang];
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  const r = (location.hash || "#accueil").slice(1);
+  const path = location.pathname.replace(/\/?$/, "/");
+  const r = location.hash.slice(1) || PATH_ROUTE[path] || "accueil";
+  // Anciens liens #italie, #espagne, #portugal : redirigés vers la page dédiée
+  if (ROUTE[r] && PAGE[ROUTE[r]] && PATH_ROUTE[path] !== r) { location.replace(lineHref(ROUTE[r])); return; }
   $("#nav").innerHTML = nav(t, r);
   $("#nav").classList.remove("open");
   $("#menu-btn").setAttribute("aria-expanded", "false");
@@ -1088,10 +1126,10 @@ function render() {
   $("#foot").innerHTML = footer(t);
   let html, title = "Round Trip Logistics | RTL Maroc";
   if (ROUTE[r]) { html = linePage(t, ROUTE[r]); title = t.lines[ROUTE[r]].name + " | RTL Maroc"; }
-  else if (r === "devis") { html = quotePage(t); title = t.quoteH + " | RTL Maroc"; }
+  else if (r === "devis" || r.startsWith("devis-")) { if (r.length > 6) preFrom = r.slice(6); html = quotePage(t); title = t.quoteH + " | RTL Maroc"; }
   else html = home(t);
   $("#app").innerHTML = html;
-  document.title = title;
+  if (!(PATH_ROUTE[path] === r && lang === "fr")) document.title = title; // garder le titre SEO des pages dédiées
   clearInterval(timer);
   if ($(".hero-x") && !matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => goSlide(1, true), 6500);
   if (SECTIONS.includes(r)) { const el = document.getElementById(r); if (el) el.scrollIntoView(); }

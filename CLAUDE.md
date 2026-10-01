@@ -10,3 +10,4 @@ Site www.rtlmaroc.com (RTL Maroc – Round Trip Logistics). Push sur `main` = mi
 6. Aucun secret (mot de passe, clé, donnée client) dans ce dépôt : il est public.
 7. Vérifier le rendu (Playwright, 1280 px et 390 px, FR et AR) avant chaque push ; en cas de problème après publication : `git revert` + push.
 8. Images modifiées : incrémenter le `?v=` dans index.html pour contourner le cache navigateur.
+9. Pages dédiées `/groupage-italie-maroc/`, `/groupage-espagne-maroc/`, `/groupage-portugal-maroc/` : générées depuis index.html par `tools/pages/build.mjs` (Netlify le lance à chaque publication ; dossiers non versionnés). Lancer `node tools/pages/build.mjs` avant de vérifier en local. Ne pas les modifier à la main.

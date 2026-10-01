@@ -1,5 +1,7 @@
 [build]
   publish = "."
+  # Génère les pages dédiées /groupage-…-maroc/ à partir de index.html
+  command = "node tools/pages/build.mjs"
 
 # La redirection rtlmaroc.com <-> www est gérée par Netlify (domaine principal : Domain management).
 
