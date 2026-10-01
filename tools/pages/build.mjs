@@ -17,14 +17,14 @@ const src = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 
 const PAGES = [
   { k: "it", slug: "groupage-italie-maroc", country: "Italie",
-    title: "Groupage Italie – Maroc : 2 départs par semaine, 72 h | RTL Maroc",
-    desc: "Groupage Italie – Maroc avec RTL Maroc : consolidation à Tribiano (Milan), 2 départs par semaine, 72 h de transit vers Casablanca et Tanger. Aussi du Maroc vers l’Italie." },
+    title: "Transport routier Italie – Maroc : groupage en 72 h | RTL Maroc",
+    desc: "Transport routier international Italie – Maroc avec RTL Maroc : groupage consolidé à Tribiano (Milan), 2 départs par semaine, 72 h de transit vers Casablanca et Tanger. Aussi du Maroc vers l’Italie." },
   { k: "es", slug: "groupage-espagne-maroc", country: "Espagne",
-    title: "Groupage Espagne – Maroc : enlèvement toute l’Espagne, 48 h | RTL Maroc",
-    desc: "Groupage Espagne – Maroc avec RTL Maroc : enlèvement dans toute l’Espagne via Madrid, Barcelone et Alicante, 48 h de transit, livraison MEAD Tanger et Casablanca." },
+    title: "Transport routier Espagne – Maroc : groupage en 48 h | RTL Maroc",
+    desc: "Transport routier international Espagne – Maroc avec RTL Maroc : groupage, enlèvement dans toute l’Espagne via Madrid, Barcelone et Alicante, 48 h de transit, livraison MEAD Tanger et Casablanca." },
   { k: "pt", slug: "groupage-portugal-maroc", country: "Portugal",
-    title: "Groupage Portugal – Maroc : mercredi et vendredi, 48 h | RTL Maroc",
-    desc: "Groupage Portugal – Maroc avec RTL Maroc : Porto et Lisbonne, départs le mercredi et le vendredi, 48 h de transit vers Casablanca et Tanger. Aussi du Maroc vers le Portugal." }
+    title: "Transport routier Portugal – Maroc : groupage en 48 h | RTL Maroc",
+    desc: "Transport routier international Portugal – Maroc avec RTL Maroc : groupage Porto et Lisbonne, départs le mercredi et le vendredi, 48 h de transit vers Casablanca et Tanger. Aussi du Maroc vers le Portugal." }
 ];
 
 // --- Exécuter le script du site dans un faux navigateur pour obtenir le HTML rendu ---
@@ -53,7 +53,7 @@ for (const P of PAGES) {
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Service", "name": L.name, "serviceType": "Groupage routier international", "description": P.desc, "url": url,
+      { "@type": "Service", "name": L.name, "serviceType": "Transport routier international – groupage", "description": P.desc, "url": url,
         "provider": { "@id": SITE + "/#rtl" }, "areaServed": [P.country, "Maroc"] },
       { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "RTL Maroc", "item": SITE + "/" },
