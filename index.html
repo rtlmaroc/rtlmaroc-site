@@ -347,13 +347,13 @@ fieldset.f{border:0;padding:0;margin:0}
 .util{background:#000}
 .top{background:rgba(13,14,17,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .nav a:hover{background:var(--surface)}
-.b-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px}
+.b-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-block:56px}
 .b-hero>*{min-width:0}
 .b-hero h1{font:400 clamp(2.8rem,6.4vw,5.8rem)/.93 var(--display);text-transform:uppercase;margin:0 0 22px}
 [dir="rtl"] .b-hero h1{font:700 clamp(2.1rem,4.4vw,3.5rem)/1.25 var(--sans)}
-.b-hero-img{margin:0;aspect-ratio:4/5;border-radius:4px;overflow:hidden;max-width:100%}
-.b-hero-img img{width:100%;height:100%;object-fit:cover;object-position:68% center}
-@media (max-width:900px){.b-hero{grid-template-columns:1fr;gap:28px;padding-block:36px}.b-hero-img{aspect-ratio:4/3}}
+.b-hero-img{margin:0;aspect-ratio:4/3;border-radius:4px;overflow:hidden;max-width:100%}
+.b-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media (max-width:900px){.b-hero{grid-template-columns:1fr;gap:28px;padding-block:36px}}
 .b-marquee{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding-block:16px}
 .b-track{display:inline-flex;gap:28px;padding-inline-end:28px;animation:mq 38s linear infinite;font:400 clamp(1.5rem,2.8vw,2.2rem)/1 var(--display);text-transform:uppercase}
 [dir="rtl"] .b-track{font:700 1.4rem/1.2 var(--sans);animation-direction:reverse}
