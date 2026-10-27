@@ -20,6 +20,9 @@
 <link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/">
 <meta name="google-site-verification" content="d_zcUxJvFKrrZvmLcxqV_xm2I3h4PxeNgnh7KemScoQ" />
 <meta name="msvalidate.01" content="E148B6F0AB1B014B251C3B98FE96E1F3" />
+<!-- Google Analytics 4 : configuration dans /analytics.js (consentement refusé par défaut dans l’EEE, bandeau à ajouter) -->
+<script src="/analytics.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVC0Q6971G"></script>
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Transport routier international Maroc – Europe | RTL Maroc</title>
 <script type="application/ld+json">
@@ -269,6 +272,7 @@ fieldset.f{border:0;padding:0;margin:0}
 .util{background:var(--board);color:var(--board-dim);font:500 12px var(--mono)}
 .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:38px}
 .util .v{direction:ltr;unicode-bidi:embed}
+.util .v a,.row .v a{color:inherit;text-decoration:none}
 .util .sep{margin-inline:8px}
 .util select{background:transparent;color:var(--board-ink);border:1px solid var(--board-line);font:500 12px var(--mono);padding:5px 6px;border-radius:4px}
 .util select option{color:#15171B;background:#fff}
@@ -518,7 +522,7 @@ main{min-height:60vh}
 </style>
 
 <div class="util"><div class="wrap">
-  <span class="util-c"><span class="v">+212 522 240 435</span><span class="sep">·</span><span class="v">sales.manager@rtlmaroc.com</span></span>
+  <span class="util-c"><span class="v"><a href="tel:+212522240435">+212 522 240 435</a></span><span class="sep">·</span><span class="v">sales.manager@rtlmaroc.com</span></span>
   <span class="lang"><label for="lang-sel" class="sr">Langue</label><select id="lang-sel"></select></span>
 </div></div>
 <header class="top">
@@ -578,6 +582,8 @@ const CFG = {
     {k: "tng", addr: "Rue Jordanie, Résidence Yamna 2, E.S n° 24, Tanger"}
   ]
 };
+// Numéros fixes cliquables (appel direct sur téléphone) : même texte qu’avant, avec lien tel:
+CFG.fixedLinks = CFG.fixed.split(" / ").map(n => `<a href="tel:${n.replace(/\s/g, "")}">${n}</a>`).join(" / ");
 const LINES = ["it", "pt", "es", "ftl"];
 const NAV_IDX = { es: 0, pt: 1, it: 2, ftl: 3 }; // position du libellé dans t.nav
 const CODE = {es: "ES", pt: "PT", it: "IT", ftl: "FTL"};
@@ -1025,7 +1031,7 @@ function footer(t) {
       <div><img class="foot-logo" src="images/logo-dark.png" alt="Round Trip Logistics" width="620" height="169"><p>${esc(t.foot)}</p><p>${esc(t.kicker2)}</p></div>
       <div><h4>${esc(t.footCols[0])}</h4><ul>${lines}</ul></div>
       <div><h4>${esc(t.footCols[1])}</h4><ul>${co}</ul></div>
-      <div><h4>${esc(t.footCols[2])}</h4><ul><li><span class="v">${CFG.fixed}</span></li><li>WhatsApp <span class="v">${CFG.phone}</span></li><li><span class="v">${CFG.email}</span></li>${offices}</ul></div>
+      <div><h4>${esc(t.footCols[2])}</h4><ul><li><span class="v">${CFG.fixedLinks}</span></li><li>WhatsApp <span class="v">${CFG.phone}</span></li><li><span class="v">${CFG.email}</span></li>${offices}</ul></div>
     </div>
     <div class="wrap foot-legal"><p style="margin:0">${esc(t.legal)}</p></div>
     <div class="wrap foot-bottom"><span>© 2026 Round Trip Logistics · RTL Maroc</span><span>rtlmaroc.com</span></div>`;
@@ -1054,7 +1060,7 @@ function contactBlock(t) {
     <div class="contact">
       <div>
         <div class="rows">
-          <div class="row"><div><small>${esc(t.std)}</small><span class="v">${CFG.fixed}</span></div><button class="copy" data-copy="${CFG.fixed}">${esc(t.copy)}</button></div>
+          <div class="row"><div><small>${esc(t.std)}</small><span class="v">${CFG.fixedLinks}</span></div><button class="copy" data-copy="${CFG.fixed}">${esc(t.copy)}</button></div>
           <div class="row"><div><small>${esc(t.phone)} · WhatsApp</small><span class="v">${CFG.phone}</span></div><button class="copy" data-copy="${CFG.phone}">${esc(t.copy)}</button></div>
           <div class="row"><div><small>${esc(t.email)}</small><span class="v">${CFG.email}</span></div><button class="copy" data-copy="${CFG.email}">${esc(t.copy)}</button></div>
         </div>
@@ -1231,8 +1237,8 @@ document.addEventListener("click", e => {
   const a = e.target.closest('a[href^="#"]');
   if (a && pfx() && a.getAttribute("href").length > 1) { e.preventDefault(); location.hash = a.getAttribute("href").slice(1); }
 });
-// Suivi : prépare les événements pour Google Analytics / Google Ads (aucun script externe tant que l’identifiant n’est pas posé)
-const track = (name, extra) => { try { (window.dataLayer = window.dataLayer || []).push(Object.assign({event: name, lang: lang}, extra || {})); } catch (err) {} };
+// Suivi : événements envoyés à Google Analytics 4 (clic WhatsApp, clic téléphone, clic e-mail, devis envoyé)
+const track = (name, extra) => { try { if (window.gtag) gtag("event", name, Object.assign({lang: lang}, extra || {})); } catch (err) {} };
 document.addEventListener("click", e => {
   const a = e.target.closest("a[href]");
   if (!a) return;
