@@ -1279,7 +1279,11 @@ document.addEventListener("submit", e => {
   });
   fetch("/", {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: body.toString()})
     .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml); })
-    .catch(() => show(failHtml))
+    .catch(err => {
+      const why = String(err && err.message || err).slice(0, 60);
+      track("quote_error", {reason: why});
+      show(failHtml + `<p dir="ltr" style="opacity:.55;font-size:12px;margin-top:10px">[${esc(why)}]</p>`);
+    })
     .finally(() => { btn.disabled = false; btn.innerHTML = label; });
 });
 
