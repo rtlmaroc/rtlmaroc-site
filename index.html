@@ -1277,20 +1277,29 @@ document.addEventListener("submit", e => {
     pal: v("pal"), kg: v("kg"), m3: v("m3"), goods: v("goods"), msg: v("msg"), resume: text,
     lang: lang, page: location.pathname + location.hash
   });
-  fetch("/", {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: body.toString()})
-    .then(r => {
-      if (!r.ok) {
-        // Diagnostic : qui répond ? (serveur, identifiant de requête Netlify, début de la page renvoyée)
-        const srv = r.headers.get("server") || "?", rid = (r.headers.get("x-nf-request-id") || "").slice(0, 8);
-        return r.text().catch(() => "").then(b => {
-          const e = new Error("HTTP " + r.status);
-          e.detail = "server=" + srv + (rid ? " id=" + rid : " id=aucun") + " | " + b.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 90);
-          e.server = srv;
-          throw e;
-        });
-      }
-      track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml);
+  const opts = {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: body.toString()};
+  // Envoi à l’adresse habituelle ; si Netlify répond par une erreur HTTP, nouvel essai via une seconde adresse du même formulaire
+  const send = url => fetch(url, opts).then(r => {
+    if (r.ok) return url;
+    // Diagnostic : qui répond ? (serveur, identifiant de requête Netlify, début de la page renvoyée)
+    const srv = r.headers.get("server") || "?", rid = (r.headers.get("x-nf-request-id") || "").slice(0, 8);
+    return r.text().catch(() => "").then(b => {
+      const e = new Error("HTTP " + r.status);
+      e.http = true;
+      e.detail = "server=" + srv + (rid ? " id=" + rid : " id=aucun") + " | " + b.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 60);
+      e.server = srv;
+      throw e;
+    });
+  });
+  send("/")
+    .catch(e1 => {
+      if (!e1.http) throw e1;
+      return send("/merci/").then(
+        url => { track("quote_retry_ok", {first: e1.message}); return url; },
+        e2 => { e2.detail = "1/ " + e1.message + " " + e1.detail + " // 2/ " + e2.message + " " + e2.detail; throw e2; }
+      );
     })
+    .then(() => { track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml); })
     .catch(err => {
       const why = String(err && err.message || err).slice(0, 60);
       track("quote_error", {reason: why, server: String(err && err.server || "").slice(0, 40)});
