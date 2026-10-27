@@ -1278,11 +1278,23 @@ document.addEventListener("submit", e => {
     lang: lang, page: location.pathname + location.hash
   });
   fetch("/", {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: body.toString()})
-    .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml); })
+    .then(r => {
+      if (!r.ok) {
+        // Diagnostic : qui répond ? (serveur, identifiant de requête Netlify, début de la page renvoyée)
+        const srv = r.headers.get("server") || "?", rid = (r.headers.get("x-nf-request-id") || "").slice(0, 8);
+        return r.text().catch(() => "").then(b => {
+          const e = new Error("HTTP " + r.status);
+          e.detail = "server=" + srv + (rid ? " id=" + rid : " id=aucun") + " | " + b.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 90);
+          e.server = srv;
+          throw e;
+        });
+      }
+      track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml);
+    })
     .catch(err => {
       const why = String(err && err.message || err).slice(0, 60);
-      track("quote_error", {reason: why});
-      show(failHtml + `<p dir="ltr" style="opacity:.55;font-size:12px;margin-top:10px">[${esc(why)}]</p>`);
+      track("quote_error", {reason: why, server: String(err && err.server || "").slice(0, 40)});
+      show(failHtml + `<p dir="ltr" style="opacity:.55;font-size:12px;margin-top:10px">[${esc(why)}${err && err.detail ? " · " + esc(err.detail) : ""}]</p>`);
     })
     .finally(() => { btn.disabled = false; btn.innerHTML = label; });
 });
