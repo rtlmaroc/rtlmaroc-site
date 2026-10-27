@@ -11,6 +11,13 @@
 <link rel="icon" type="image/png" href="images/symbol.png">
 <meta property="og:image" content="https://rtlmaroc.com/images/truck-red.jpg?v=2">
 <link rel="canonical" href="https://rtlmaroc.com/">
+<link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/">
+<link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/">
+<link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/">
+<link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/">
+<link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/">
+<link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/">
+<link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/">
 <meta name="google-site-verification" content="d_zcUxJvFKrrZvmLcxqV_xm2I3h4PxeNgnh7KemScoQ" />
 <meta name="msvalidate.01" content="E148B6F0AB1B014B251C3B98FE96E1F3" />
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
@@ -20,7 +27,7 @@
 "name":"RTL Maroc – Round Trip Logistics","alternateName":["RTL Maroc","Round Trip Logistics"],
 "description":"Commissionnaire de transport international : groupage et camions complets entre l’Europe et le Maroc (Espagne et Portugal en 48 h, Italie en 72 h), livraison MEAD Tanger et Casablanca.",
 "url":"https://rtlmaroc.com/","logo":"https://rtlmaroc.com/images/logo.png","image":"https://rtlmaroc.com/images/truck-red.jpg",
-"foundingDate":"2018-05-29","telephone":"+212661078358","email":"sales.manager@rtlmaroc.com",
+"foundingDate":"2018-05-29","legalName":"Round Trip Logistics","identifier":{"@type":"PropertyValue","name":"ICE","value":"002075433000015"},"telephone":"+212661078358","email":"sales.manager@rtlmaroc.com",
 "address":{"@type":"PostalAddress","streetAddress":"Espace Idriss, 353 Boulevard Mohammed V, Étage 4, Appt 6","addressLocality":"Casablanca","addressCountry":"MA"},
 "department":[{"@type":"LocalBusiness","name":"RTL Maroc – Bureau de Tanger","address":{"@type":"PostalAddress","streetAddress":"Rue Jordanie, Résidence Yamna 2, E.S n° 24","addressLocality":"Tanger","addressCountry":"MA"},"telephone":"+212661078358"}],
 "contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+212661078358","email":"sales.manager@rtlmaroc.com","availableLanguage":["fr","es","pt","it","en","ar"]},
@@ -338,6 +345,8 @@ fieldset.f{border:0;padding:0;margin:0}
 .foot p{margin:0 0 8px}
 .foot strong{color:var(--board-ink)}
 .foot .v{direction:ltr;unicode-bidi:embed;color:var(--board-ink)}
+.foot-legal{border-top:1px solid var(--board-line);padding-block:16px 0;font-size:12.5px;line-height:1.6;color:var(--board-dim)}
+.foot-legal+.foot-bottom{border-top:0;padding-top:8px}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--board-line);padding-block:20px calc(20px + env(safe-area-inset-bottom,0px))}
 
 
@@ -536,7 +545,7 @@ main{min-height:60vh}
 <h2>Destinations</h2>
 <p>Maroc, Italie, Portugal, Espagne, France, Maghreb, Europe de l’Est. Via nos partenaires : Allemagne, Benelux, Scandinavie.</p>
 <h2>Flotte et services</h2>
-<p>Une vingtaine de camions en propre. Semi-remorques tôlées ou bâchées. Groupage, lot partiel ou remorque complète.</p>
+<p>Tracteurs en propre et remorques partenaires. Semi-remorques tôlées ou bâchées. Groupage, lot partiel ou remorque complète.</p>
 <h2>Secteurs</h2>
 <p>Automobile et pièces, agroalimentaire, textile et habillement, mobilier et décoration, équipements industriels, matériel médical, optique, matériaux de construction.</p>
 <h2>Contact</h2>
@@ -545,6 +554,12 @@ main{min-height:60vh}
 <p><a href="#devis">Demander un devis</a></p>
 </div>
 </main>
+<form name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="devis">
+  <input name="bot-field"><input name="subject"><input name="company"><input name="name"><input name="phone"><input name="email">
+  <input name="from"><input name="to"><input name="mode"><input name="pal"><input name="kg"><input name="m3"><input name="goods">
+  <textarea name="msg"></textarea><textarea name="resume"></textarea><input name="lang"><input name="page">
+</form>
 <footer class="foot" id="foot"></footer>
 <a class="float" id="float" href="https://wa.me/212661078358" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
@@ -571,7 +586,7 @@ const SLUG = {es: "espagne", pt: "portugal", it: "italie", ftl: "complet"};
 // Pages dédiées (vraies URL pour Google) ; générées par tools/pages/build.mjs
 const PAGE = {it: "groupage-italie-maroc", es: "groupage-espagne-maroc", pt: "groupage-portugal-maroc"};
 const PATH_ROUTE = {}; for (const k in PAGE) PATH_ROUTE["/" + PAGE[k] + "/"] = SLUG[k];
-const lineHref = k => PAGE[k] ? "/" + PAGE[k] + "/" : "#" + SLUG[k];
+const lineHref = k => PAGE[k] ? (pfx() ? "/" + pfx() : "") + "/" + PAGE[k] + "/" : "#" + SLUG[k];
 const HOURS = {es: 48, pt: 48, it: 72};
 const LANGS = [["fr","Français"],["es","Español"],["pt","Português"],["it","Italiano"],["en","English"],["ar","العربية"]];
 
@@ -772,7 +787,7 @@ fr: {kicker2: "Round Trip Logistics · Depuis 2018", aboutEy: "Qui sommes-nous",
   aboutP: ["Round Trip Logistics (RTL Maroc) a été créée le 29 mai 2018 à Casablanca par une équipe jeune et dynamique.","Ses dirigeants cumulent plus de 20 ans d’expérience à des postes de responsabilité au sein de multinationales du transport et de la logistique.","Cette expérience est au service des importateurs et des exportateurs qui attendent un transport fiable, suivi et à l’heure."],
   stats: [["2018","Création, le 29 mai"],["20+","Années d’expérience en multinationales"],["20","Camions en propre, environ"],["7","Destinations desservies"]],
   destsH: "Nos destinations", dests: ["Maroc","Espagne","Portugal","Italie","France","Maghreb","Europe de l’Est"],
-  fleetEy: "Notre flotte", fleetH: "Une vingtaine de camions en propre", fleetP: "Des tracteurs récents, à nos couleurs, qui roulent chaque semaine entre l’Europe et le Maroc. Avoir nos propres camions nous permet de tenir les jours de départ et les délais annoncés.",
+  fleetEy: "Notre flotte", fleetH: "Des tracteurs en propre et un réseau de remorques partenaires", fleetP: "Des tracteurs récents, à nos couleurs, qui roulent chaque semaine entre l’Europe et le Maroc, complétés par les remorques de nos partenaires. Ce réseau nous permet de tenir les jours de départ et les délais annoncés.",
   agentsEy: "Notre réseau", agentsH: "Des agents solides, de renommée internationale", agentsP: "En Europe, des partenaires reconnus enlèvent, consolident et chargent votre marchandise sur nos camions.",
   agents: ["Madrid (Coslada) · Barcelone · Alicante","Porto · Lisbonne","Tribiano (Milan) · Europe de l’Est"],
   alt: ["Camion Round Trip Logistics avec semi-remorque rouge","Trois tracteurs Round Trip Logistics","Camion Round Trip Logistics tractant une remorque de notre partenaire JCL Logística"],
@@ -781,7 +796,7 @@ es: {kicker2: "Round Trip Logistics · Desde 2018", aboutEy: "Quiénes somos", a
   aboutP: ["Round Trip Logistics (RTL Maroc) fue creada el 29 de mayo de 2018 en Casablanca por un equipo joven y dinámico.","Sus directivos suman más de 20 años de experiencia en puestos de responsabilidad en multinacionales del transporte y la logística.","Esa experiencia está al servicio de importadores y exportadores que esperan un transporte fiable, seguido y puntual."],
   stats: [["2018","Fundación, el 29 de mayo"],["20+","Años de experiencia en multinacionales"],["20","Camiones propios, aproximadamente"],["7","Destinos servidos"]],
   destsH: "Nuestros destinos", dests: ["Marruecos","España","Portugal","Italia","Francia","Magreb","Europa del Este"],
-  fleetEy: "Nuestra flota", fleetH: "Una veintena de camiones propios", fleetP: "Tractoras recientes, con nuestros colores, que circulan cada semana entre Europa y Marruecos. Tener camiones propios nos permite cumplir los días de salida y los plazos anunciados.",
+  fleetEy: "Nuestra flota", fleetH: "Tractoras propias y una red de remolques asociados", fleetP: "Tractoras recientes, con nuestros colores, que circulan cada semana entre Europa y Marruecos, completadas con los remolques de nuestros socios. Esta red nos permite cumplir los días de salida y los plazos anunciados.",
   agentsEy: "Nuestra red", agentsH: "Agentes sólidos, de renombre internacional", agentsP: "En Europa, socios reconocidos recogen, consolidan y cargan su mercancía en nuestros camiones.",
   agents: ["Madrid (Coslada) · Barcelona · Alicante","Oporto · Lisboa","Tribiano (Milán) · Europa del Este"],
   alt: ["Camión Round Trip Logistics con semirremolque rojo","Tres tractoras Round Trip Logistics","Camión Round Trip Logistics con un remolque de nuestro socio JCL Logística"],
@@ -790,7 +805,7 @@ pt: {kicker2: "Round Trip Logistics · Desde 2018", aboutEy: "Quem somos", about
   aboutP: ["A Round Trip Logistics (RTL Maroc) foi criada a 29 de maio de 2018 em Casablanca por uma equipa jovem e dinâmica.","Os seus dirigentes somam mais de 20 anos de experiência em cargos de responsabilidade em multinacionais do transporte e da logística.","Essa experiência está ao serviço de importadores e exportadores que esperam um transporte fiável, acompanhado e pontual."],
   stats: [["2018","Criação, a 29 de maio"],["20+","Anos de experiência em multinacionais"],["20","Camiões próprios, aproximadamente"],["7","Destinos servidos"]],
   destsH: "Os nossos destinos", dests: ["Marrocos","Espanha","Portugal","Itália","França","Magrebe","Europa de Leste"],
-  fleetEy: "A nossa frota", fleetH: "Cerca de vinte camiões próprios", fleetP: "Tratores recentes, com as nossas cores, que circulam todas as semanas entre a Europa e Marrocos. Ter camiões próprios permite-nos cumprir os dias de partida e os prazos anunciados.",
+  fleetEy: "A nossa frota", fleetH: "Tratores próprios e uma rede de reboques parceiros", fleetP: "Tratores recentes, com as nossas cores, que circulam todas as semanas entre a Europa e Marrocos, completados pelos reboques dos nossos parceiros. Esta rede permite-nos cumprir os dias de partida e os prazos anunciados.",
   agentsEy: "A nossa rede", agentsH: "Agentes sólidos, de renome internacional", agentsP: "Na Europa, parceiros reconhecidos recolhem, consolidam e carregam a sua mercadoria nos nossos camiões.",
   agents: ["Madrid (Coslada) · Barcelona · Alicante","Porto · Lisboa","Tribiano (Milão) · Europa de Leste"],
   alt: ["Camião Round Trip Logistics com semirreboque vermelho","Três tratores Round Trip Logistics","Camião Round Trip Logistics com um reboque do nosso parceiro JCL Logística"],
@@ -799,7 +814,7 @@ it: {kicker2: "Round Trip Logistics · Dal 2018", aboutEy: "Chi siamo", aboutH: 
   aboutP: ["Round Trip Logistics (RTL Maroc) è stata fondata il 29 maggio 2018 a Casablanca da un team giovane e dinamico.","I suoi dirigenti hanno oltre 20 anni di esperienza in ruoli di responsabilità presso multinazionali del trasporto e della logistica.","Questa esperienza è al servizio di importatori ed esportatori che vogliono un trasporto affidabile, seguito e puntuale."],
   stats: [["2018","Fondazione, il 29 maggio"],["20+","Anni di esperienza in multinazionali"],["20","Camion di proprietà, circa"],["7","Destinazioni servite"]],
   destsH: "Le nostre destinazioni", dests: ["Marocco","Spagna","Portogallo","Italia","Francia","Maghreb","Europa dell’Est"],
-  fleetEy: "La nostra flotta", fleetH: "Una ventina di camion di proprietà", fleetP: "Trattori recenti, con i nostri colori, che viaggiano ogni settimana tra Europa e Marocco. Avere camion di proprietà ci permette di rispettare i giorni di partenza e i tempi dichiarati.",
+  fleetEy: "La nostra flotta", fleetH: "Trattori di proprietà e una rete di rimorchi partner", fleetP: "Trattori recenti, con i nostri colori, che viaggiano ogni settimana tra Europa e Marocco, integrati dai rimorchi dei nostri partner. Questa rete ci permette di rispettare i giorni di partenza e i tempi dichiarati.",
   agentsEy: "La nostra rete", agentsH: "Agenti solidi, di fama internazionale", agentsP: "In Europa, partner riconosciuti ritirano, consolidano e caricano la vostra merce sui nostri camion.",
   agents: ["Madrid (Coslada) · Barcellona · Alicante","Porto · Lisbona","Tribiano (Milano) · Europa dell’Est"],
   alt: ["Camion Round Trip Logistics con semirimorchio rosso","Tre trattori Round Trip Logistics","Camion Round Trip Logistics con un rimorchio del nostro partner JCL Logística"],
@@ -808,7 +823,7 @@ en: {kicker2: "Round Trip Logistics · Since 2018", aboutEy: "About us", aboutH:
   aboutP: ["Round Trip Logistics (RTL Maroc) was founded on 29 May 2018 in Casablanca by a young, driven team.","Its managers bring more than 20 years of experience in senior roles at multinational transport and logistics companies.","That experience serves importers and exporters who expect reliable, tracked and on-time transport."],
   stats: [["2018","Founded on 29 May"],["20+","Years of experience at multinationals"],["20","Trucks we own, approximately"],["7","Destinations served"]],
   destsH: "Our destinations", dests: ["Morocco","Spain","Portugal","Italy","France","Maghreb","Eastern Europe"],
-  fleetEy: "Our fleet", fleetH: "About twenty trucks of our own", fleetP: "Recent tractor units in our colours, on the road every week between Europe and Morocco. Owning our trucks lets us keep to departure days and stated transit times.",
+  fleetEy: "Our fleet", fleetH: "Our own tractor units and a network of partner trailers", fleetP: "Recent tractor units in our colours, on the road every week between Europe and Morocco, complemented by our partners’ trailers. This network lets us keep to departure days and stated transit times.",
   agentsEy: "Our network", agentsH: "Solid agents with an international reputation", agentsP: "In Europe, well-known partners collect, consolidate and load your goods onto our trucks.",
   agents: ["Madrid (Coslada) · Barcelona · Alicante","Porto · Lisbon","Tribiano (Milan) · Eastern Europe"],
   alt: ["Round Trip Logistics truck with a red semi-trailer","Three Round Trip Logistics tractor units","Round Trip Logistics truck pulling a trailer from our partner JCL Logística"],
@@ -817,7 +832,7 @@ ar: {kicker2: "Round Trip Logistics · منذ 2018", aboutEy: "من نحن", abo
   aboutP: ["تأسست شركة Round Trip Logistics (RTL Maroc) في 29 ماي 2018 بالدار البيضاء على يد فريق شاب وديناميكي.","يتمتع مسيّروها بأكثر من 20 سنة من الخبرة في مناصب المسؤولية داخل شركات متعددة الجنسيات في قطاع النقل واللوجستيك.","نضع هذه الخبرة في خدمة المستوردين والمصدّرين الذين يبحثون عن نقل موثوق ومتابَع وفي الموعد."],
   stats: [["2018","سنة التأسيس، 29 ماي"],["+20","سنة من الخبرة في شركات متعددة الجنسيات"],["20","شاحنة في ملكيتنا تقريبًا"],["7","وجهات نخدمها"]],
   destsH: "وجهاتنا", dests: ["المغرب","إسبانيا","البرتغال","إيطاليا","فرنسا","المغرب العربي","أوروبا الشرقية"],
-  fleetEy: "أسطولنا", fleetH: "حوالي عشرين شاحنة في ملكيتنا", fleetP: "جرارات حديثة بألواننا تسير كل أسبوع بين أوروبا والمغرب. امتلاكنا لشاحناتنا يمكّننا من احترام أيام الانطلاق والآجال المعلنة.",
+  fleetEy: "أسطولنا", fleetH: "جرارات في ملكيتنا وشبكة مقطورات شريكة", fleetP: "جرارات حديثة بألواننا تسير كل أسبوع بين أوروبا والمغرب، تكمّلها مقطورات شركائنا. تتيح لنا هذه الشبكة احترام أيام الانطلاق والآجال المعلنة.",
   agentsEy: "شبكتنا", agentsH: "وكلاء موثوقون ذوو سمعة دولية", agentsP: "في أوروبا، يتكفل شركاء معروفون باستلام بضاعتكم وتجميعها وشحنها على شاحناتنا.",
   agents: ["مدريد (كوسلادا) · برشلونة · أليكانتي","بورتو · لشبونة","تريبيانو (ميلانو) · أوروبا الشرقية"],
   alt: ["شاحنة Round Trip Logistics بمقطورة حمراء","ثلاث جرارات Round Trip Logistics","شاحنة Round Trip Logistics تجر مقطورة شريكنا JCL Logística"],
@@ -827,42 +842,42 @@ for (const l in EXTRA) Object.assign(T[l], EXTRA[l]);
 
 const EXTRA2 = {
 fr: {navB: ["Nos lignes","Destinations","Secteurs","Flotte","Société","Contact"], transEy: "Transports",
-  slides: [["Transport et logistique entre l’Europe et le Maroc","Groupage et camions complets, départs à jours fixes depuis l’Espagne, le Portugal et l’Italie."],["Une vingtaine de camions en propre","Nos tracteurs roulent chaque semaine sur le corridor Europe–Maroc."],["Des agents de renommée internationale","Des partenaires solides en Espagne, au Portugal et en Italie."]],
+  slides: [["Transport et logistique entre l’Europe et le Maroc","Groupage et camions complets, départs à jours fixes depuis l’Espagne, le Portugal et l’Italie."],["Des tracteurs en propre, des remorques partenaires","Nos tracteurs roulent chaque semaine sur le corridor Europe–Maroc."],["Des agents de renommée internationale","Des partenaires solides en Espagne, au Portugal et en Italie."]],
   destEy: "Lignes et destinations", destH: "Nos destinations", destSub: "Des lignes régulières vers le Maroc et un réseau qui couvre l’Europe et le Maghreb.",
   destNotes: ["Casablanca, Tanger et tout le Maroc","Enlèvement partout, 48 h","Mercredi et vendredi, 48 h","2 départs par semaine, 72 h","Camion complet sur demande","Sur demande","Via notre plateforme de Milan"],
   secEy: "Secteurs", secH: "Des solutions pour chaque secteur", secSub: "Nous transportons pour les importateurs, distributeurs et industriels, quelle que soit leur activité.",
   sectors: ["Automobile et pièces","Agroalimentaire","Textile et habillement","Mobilier et décoration","Équipements industriels","Matériel médical","Optique","Matériaux de construction"],
   footCols: ["Nos lignes","La société","Contact"]},
 es: {navB: ["Nuestras líneas","Destinos","Sectores","Flota","Empresa","Contacto"], transEy: "Transportes",
-  slides: [["Transporte y logística entre Europa y Marruecos","Grupaje y camiones completos, salidas en días fijos desde España, Portugal e Italia."],["Una veintena de camiones propios","Nuestras tractoras circulan cada semana por el corredor Europa–Marruecos."],["Agentes de renombre internacional","Socios sólidos en España, Portugal e Italia."]],
+  slides: [["Transporte y logística entre Europa y Marruecos","Grupaje y camiones completos, salidas en días fijos desde España, Portugal e Italia."],["Tractoras propias y remolques asociados","Nuestras tractoras circulan cada semana por el corredor Europa–Marruecos."],["Agentes de renombre internacional","Socios sólidos en España, Portugal e Italia."]],
   destEy: "Líneas y destinos", destH: "Nuestros destinos", destSub: "Líneas regulares hacia Marruecos y una red que cubre Europa y el Magreb.",
   destNotes: ["Casablanca, Tánger y todo Marruecos","Recogida en toda España, 48 h","Miércoles y viernes, 48 h","2 salidas por semana, 72 h","Camión completo a petición","A petición","Vía nuestra plataforma de Milán"],
   secEy: "Sectores", secH: "Soluciones para cada sector", secSub: "Transportamos para importadores, distribuidores e industriales, sea cual sea su actividad.",
   sectors: ["Automoción y recambios","Agroalimentario","Textil y moda","Mueble y decoración","Equipos industriales","Material médico","Óptica","Materiales de construcción"],
   footCols: ["Nuestras líneas","La empresa","Contacto"]},
 pt: {navB: ["As nossas linhas","Destinos","Setores","Frota","Empresa","Contacto"], transEy: "Transportes",
-  slides: [["Transporte e logística entre a Europa e Marrocos","Grupagem e camiões completos, partidas em dias fixos de Espanha, Portugal e Itália."],["Cerca de vinte camiões próprios","Os nossos tratores circulam todas as semanas no corredor Europa–Marrocos."],["Agentes de renome internacional","Parceiros sólidos em Espanha, Portugal e Itália."]],
+  slides: [["Transporte e logística entre a Europa e Marrocos","Grupagem e camiões completos, partidas em dias fixos de Espanha, Portugal e Itália."],["Tratores próprios e reboques parceiros","Os nossos tratores circulam todas as semanas no corredor Europa–Marrocos."],["Agentes de renome internacional","Parceiros sólidos em Espanha, Portugal e Itália."]],
   destEy: "Linhas e destinos", destH: "Os nossos destinos", destSub: "Linhas regulares para Marrocos e uma rede que cobre a Europa e o Magrebe.",
   destNotes: ["Casablanca, Tânger e todo Marrocos","Recolha em toda a Espanha, 48 h","Quarta e sexta-feira, 48 h","2 partidas por semana, 72 h","Camião completo a pedido","A pedido","Via a nossa plataforma de Milão"],
   secEy: "Setores", secH: "Soluções para cada setor", secSub: "Transportamos para importadores, distribuidores e industriais, seja qual for a sua atividade.",
   sectors: ["Automóvel e peças","Agroalimentar","Têxtil e vestuário","Mobiliário e decoração","Equipamentos industriais","Material médico","Ótica","Materiais de construção"],
   footCols: ["As nossas linhas","A empresa","Contacto"]},
 it: {navB: ["Le nostre linee","Destinazioni","Settori","Flotta","Azienda","Contatti"], transEy: "Trasporti",
-  slides: [["Trasporti e logistica tra Europa e Marocco","Groupage e carichi completi, partenze a giorni fissi da Spagna, Portogallo e Italia."],["Una ventina di camion di proprietà","I nostri trattori viaggiano ogni settimana sul corridoio Europa–Marocco."],["Agenti di fama internazionale","Partner solidi in Spagna, Portogallo e Italia."]],
+  slides: [["Trasporti e logistica tra Europa e Marocco","Groupage e carichi completi, partenze a giorni fissi da Spagna, Portogallo e Italia."],["Trattori di proprietà e rimorchi partner","I nostri trattori viaggiano ogni settimana sul corridoio Europa–Marocco."],["Agenti di fama internazionale","Partner solidi in Spagna, Portogallo e Italia."]],
   destEy: "Linee e destinazioni", destH: "Le nostre destinazioni", destSub: "Linee regolari verso il Marocco e una rete che copre Europa e Maghreb.",
   destNotes: ["Casablanca, Tangeri e tutto il Marocco","Ritiro in tutta la Spagna, 48 h","Mercoledì e venerdì, 48 h","2 partenze a settimana, 72 h","Carico completo su richiesta","Su richiesta","Tramite la nostra piattaforma di Milano"],
   secEy: "Settori", secH: "Soluzioni per ogni settore", secSub: "Trasportiamo per importatori, distributori e industrie, qualunque sia la loro attività.",
   sectors: ["Automotive e ricambi","Agroalimentare","Tessile e abbigliamento","Arredamento e design","Macchinari industriali","Dispositivi medici","Ottica","Materiali da costruzione"],
   footCols: ["Le nostre linee","L’azienda","Contatti"]},
 en: {navB: ["Our lines","Destinations","Sectors","Fleet","Company","Contact"], transEy: "Transport",
-  slides: [["Transport and logistics between Europe and Morocco","Groupage and full truckloads, fixed departure days from Spain, Portugal and Italy."],["About twenty trucks of our own","Our tractor units run the Europe–Morocco corridor every week."],["Agents with an international reputation","Solid partners in Spain, Portugal and Italy."]],
+  slides: [["Transport and logistics between Europe and Morocco","Groupage and full truckloads, fixed departure days from Spain, Portugal and Italy."],["Our own tractors and partner trailers","Our tractor units run the Europe–Morocco corridor every week."],["Agents with an international reputation","Solid partners in Spain, Portugal and Italy."]],
   destEy: "Lines and destinations", destH: "Our destinations", destSub: "Regular lines to Morocco and a network covering Europe and the Maghreb.",
   destNotes: ["Casablanca, Tangier and all of Morocco","Pickup anywhere in Spain, 48 h","Wednesday and Friday, 48 h","2 departures a week, 72 h","Full truck on request","On request","Through our Milan platform"],
   secEy: "Sectors", secH: "Solutions for every sector", secSub: "We move goods for importers, distributors and manufacturers in every line of business.",
   sectors: ["Automotive and parts","Food and beverage","Textiles and fashion","Furniture and decor","Industrial equipment","Medical equipment","Optics","Building materials"],
   footCols: ["Our lines","Company","Contact"]},
 ar: {navB: ["خطوطنا","الوجهات","القطاعات","الأسطول","الشركة","اتصل بنا"], transEy: "النقل",
-  slides: [["النقل واللوجستيك بين أوروبا والمغرب","شحن مجمّع وشاحنات كاملة، بمواعيد انطلاق ثابتة من إسبانيا والبرتغال وإيطاليا."],["حوالي عشرين شاحنة في ملكيتنا","جراراتنا تسير كل أسبوع على ممر أوروبا–المغرب."],["وكلاء ذوو سمعة دولية","شركاء موثوقون في إسبانيا والبرتغال وإيطاليا."]],
+  slides: [["النقل واللوجستيك بين أوروبا والمغرب","شحن مجمّع وشاحنات كاملة، بمواعيد انطلاق ثابتة من إسبانيا والبرتغال وإيطاليا."],["جرارات في ملكيتنا ومقطورات شريكة","جراراتنا تسير كل أسبوع على ممر أوروبا–المغرب."],["وكلاء ذوو سمعة دولية","شركاء موثوقون في إسبانيا والبرتغال وإيطاليا."]],
   destEy: "الخطوط والوجهات", destH: "وجهاتنا", destSub: "خطوط منتظمة نحو المغرب وشبكة تغطي أوروبا والمغرب العربي.",
   destNotes: ["الدار البيضاء وطنجة وكل المغرب","استلام من كل إسبانيا، 48 ساعة","الأربعاء والجمعة، 48 ساعة","رحلتان في الأسبوع، 72 ساعة","شاحنة كاملة حسب الطلب","حسب الطلب","عبر منصتنا في ميلانو"],
   secEy: "القطاعات", secH: "حلول لكل قطاع", secSub: "ننقل لفائدة المستوردين والموزعين والصناعيين مهما كان نشاطهم.",
@@ -956,11 +971,37 @@ const EXTRA6 = {
 };
 for (const l in EXTRA6) for (const k in EXTRA6[l]) T[l].lines[k].about = EXTRA6[l][k];
 
+/* Formulaire d'envoi direct (Netlify Forms) et mentions légales */
+const EXTRA7 = {
+  fr: {quoteLead: "Remplissez ce formulaire : votre demande est transmise directement à notre équipe commerciale, qui vous répond avec un devis.",
+       q: {submit: "Envoyer ma demande", sending: "Envoi…", sentH: "Demande envoyée", sentP: "Un commercial RTL vous répond avec un devis. Pour aller plus vite, écrivez-nous aussi sur WhatsApp.", fail: "L’envoi automatique a échoué. Utilisez WhatsApp ou l’e-mail : votre message est prêt."},
+       legal: "Round Trip Logistics SARL · Capital 500 000 MAD · RC Casablanca 404781 · ICE 002075433000015"},
+  es: {quoteLead: "Rellene este formulario: su solicitud se envía directamente a nuestro equipo comercial, que le responde con un presupuesto.",
+       q: {submit: "Enviar mi solicitud", sending: "Enviando…", sentH: "Solicitud enviada", sentP: "Un comercial de RTL le responderá con un presupuesto. Para ir más rápido, escríbanos también por WhatsApp.", fail: "El envío automático ha fallado. Use WhatsApp o el correo: su mensaje está listo."},
+       legal: "Round Trip Logistics SARL · Capital 500 000 MAD · RC Casablanca 404781 · ICE 002075433000015"},
+  pt: {quoteLead: "Preencha este formulário: o seu pedido é enviado diretamente à nossa equipa comercial, que lhe responde com um orçamento.",
+       q: {submit: "Enviar o meu pedido", sending: "A enviar…", sentH: "Pedido enviado", sentP: "Um comercial da RTL responde-lhe com um orçamento. Para ir mais depressa, escreva-nos também no WhatsApp.", fail: "O envio automático falhou. Use o WhatsApp ou o e-mail: a mensagem está pronta."},
+       legal: "Round Trip Logistics SARL · Capital 500 000 MAD · RC Casablanca 404781 · ICE 002075433000015"},
+  it: {quoteLead: "Compili questo modulo: la sua richiesta arriva direttamente al nostro team commerciale, che le risponde con un preventivo.",
+       q: {submit: "Invia la richiesta", sending: "Invio in corso…", sentH: "Richiesta inviata", sentP: "Un commerciale RTL le risponderà con un preventivo. Per fare prima, ci scriva anche su WhatsApp.", fail: "L’invio automatico non è riuscito. Usi WhatsApp o l’e-mail: il messaggio è pronto."},
+       legal: "Round Trip Logistics SARL · Capitale 500 000 MAD · RC Casablanca 404781 · ICE 002075433000015"},
+  en: {quoteLead: "Fill in this form: your request goes straight to our sales team, who will reply with a quote.",
+       q: {submit: "Send my request", sending: "Sending…", sentH: "Request sent", sentP: "An RTL sales rep will reply with a quote. To go faster, message us on WhatsApp too.", fail: "Automatic sending failed. Use WhatsApp or email below: your message is ready."},
+       legal: "Round Trip Logistics SARL · Share capital MAD 500,000 · Casablanca trade register 404781 · ICE 002075433000015"},
+  ar: {quoteLead: "املؤوا هذه الاستمارة: يصل طلبكم مباشرة إلى فريقنا التجاري الذي يرد عليكم بعرض سعر.",
+       q: {submit: "إرسال طلبي", sending: "جارٍ الإرسال…", sentH: "تم إرسال الطلب", sentP: "سيرد عليكم أحد مسؤولي المبيعات في RTL بعرض سعر. للتسريع، راسلونا أيضًا عبر واتساب.", fail: "فشل الإرسال التلقائي. استخدموا واتساب أو البريد الإلكتروني أدناه: رسالتكم جاهزة."},
+       legal: "Round Trip Logistics · شركة ذات مسؤولية محدودة · رأس المال 500 000 درهم · السجل التجاري بالدار البيضاء 404781 · ICE 002075433000015"}
+};
+for (const l in EXTRA7) { const e = EXTRA7[l]; T[l].quoteLead = e.quoteLead; Object.assign(T[l].q, e.q); T[l].legal = e.legal; }
+
 /* ===== State ===== */
 let lang = "fr";
+// Pages par langue : /es/, /pt/, /it/, /en/, /ar/ (une vraie URL par langue pour Google). Le français reste à la racine.
+const pfx = () => (location.pathname.match(/^\/(es|pt|it|en|ar)(?=\/|$)/) || [])[1] || "";
 // Les robots d’indexation (Google, Bing…) se présentent en anglais : on leur montre le français, langue de référence du site.
 const BOT = /bot|crawl|spider|slurp|bingpreview|inspectiontool|lighthouse/i.test(navigator.userAgent || "");
 try { const s = localStorage.getItem("rtl-lang"); if (s && T[s]) lang = s; else if (!BOT) { const n = (navigator.language || "fr").slice(0,2); if (T[n]) lang = n; } } catch (e) {}
+{ const p = pfx(); if (p && T[p]) { lang = p; try { localStorage.setItem("rtl-lang", p); } catch (e) {} } }
 let preFrom = null;
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
@@ -986,6 +1027,7 @@ function footer(t) {
       <div><h4>${esc(t.footCols[1])}</h4><ul>${co}</ul></div>
       <div><h4>${esc(t.footCols[2])}</h4><ul><li><span class="v">${CFG.fixed}</span></li><li>WhatsApp <span class="v">${CFG.phone}</span></li><li><span class="v">${CFG.email}</span></li>${offices}</ul></div>
     </div>
+    <div class="wrap foot-legal"><p style="margin:0">${esc(t.legal)}</p></div>
     <div class="wrap foot-bottom"><span>© 2026 Round Trip Logistics · RTL Maroc</span><span>rtlmaroc.com</span></div>`;
 }
 
@@ -1118,7 +1160,7 @@ function render() {
   const t = T[lang];
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  const path = location.pathname.replace(/\/?$/, "/");
+  const path = location.pathname.replace(/^\/(es|pt|it|en|ar)(?=\/|$)/, "").replace(/index\.html$/, "").replace(/\/?$/, "/");
   const r = location.hash.slice(1) || PATH_ROUTE[path] || "accueil";
   // Anciens liens #italie, #espagne, #portugal : redirigés vers la page dédiée
   if (ROUTE[r] && PAGE[ROUTE[r]] && PATH_ROUTE[path] !== r) { location.replace(lineHref(ROUTE[r])); return; }
@@ -1130,9 +1172,10 @@ function render() {
   let html, title = "Round Trip Logistics | RTL Maroc";
   if (ROUTE[r]) { html = linePage(t, ROUTE[r]); title = t.lines[ROUTE[r]].name + " | RTL Maroc"; }
   else if (r === "devis" || r.startsWith("devis-")) { if (r.length > 6) preFrom = r.slice(6); html = quotePage(t); title = t.quoteH + " | RTL Maroc"; }
-  else { html = home(t); if (lang === "fr" && path === "/") title = SEO_TITLE; }
+  else { html = home(t); }
   $("#app").innerHTML = html;
-  if (!(PATH_ROUTE[path] === r && lang === "fr")) document.title = title; // garder le titre SEO des pages dédiées
+  if ((PATH_ROUTE[path] === r || (r === "accueil" && path === "/")) && lang === (pfx() || "fr")) title = SEO_TITLE; // garder le titre SEO de la page
+  document.title = title;
   clearInterval(timer);
   if ($(".hero-x") && !matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => goSlide(1, true), 6500);
   if (SECTIONS.includes(r)) { const el = document.getElementById(r); if (el) el.scrollIntoView(); }
@@ -1174,10 +1217,29 @@ function selectText(btn) {
 }
 document.addEventListener("change", e => {
   if (e.target.id === "lang-sel") {
-    lang = e.target.value;
-    try { localStorage.setItem("rtl-lang", lang); } catch (err) {}
-    render();
+    const nl = e.target.value;
+    try { localStorage.setItem("rtl-lang", nl); } catch (err) {}
+    // Chaque langue a sa propre adresse (/es/, /pt/…) : on y va, en gardant la page en cours
+    const base = location.pathname.replace(/^\/(es|pt|it|en|ar)(?=\/|$)/, "").replace(/index\.html$/, "") || "/";
+    const target = (nl === "fr" ? "" : "/" + nl) + base;
+    if (target !== location.pathname) { location.href = target + location.hash; return; }
+    lang = nl; render();
   }
+});
+// Sur une page /es/…, les liens #section restent dans la même langue (la balise base pointe vers la racine)
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (a && pfx() && a.getAttribute("href").length > 1) { e.preventDefault(); location.hash = a.getAttribute("href").slice(1); }
+});
+// Suivi : prépare les événements pour Google Analytics / Google Ads (aucun script externe tant que l’identifiant n’est pas posé)
+const track = (name, extra) => { try { (window.dataLayer = window.dataLayer || []).push(Object.assign({event: name, lang: lang}, extra || {})); } catch (err) {} };
+document.addEventListener("click", e => {
+  const a = e.target.closest("a[href]");
+  if (!a) return;
+  const h = a.getAttribute("href") || "";
+  if (h.startsWith("https://wa.me/")) track("whatsapp_click");
+  else if (h.startsWith("tel:")) track("phone_click");
+  else if (h.startsWith("mailto:")) track("email_click");
 });
 document.addEventListener("submit", e => {
   if (e.target.id !== "quote") return;
@@ -1186,17 +1248,33 @@ document.addEventListener("submit", e => {
   const ok = v("name") && (v("phone") || v("email")) && v("from");
   $("#q-err").hidden = !!ok;
   if (!ok) return;
+  const mode = f.querySelector("input[name=mode]:checked")?.value || "";
   const pairs = [[Q.company, v("company")], [Q.name, v("name")], [Q.phone, v("phone")], [Q.email, v("email")],
-    [Q.from, v("from")], [Q.to, v("to")], [Q.mode, f.querySelector("input[name=mode]:checked")?.value || ""],
+    [Q.from, v("from")], [Q.to, v("to")], [Q.mode, mode],
     [Q.pal, v("pal")], [Q.kg, v("kg")], [Q.m3, v("m3")], [Q.goods, v("goods")], [Q.msg, v("msg")]];
   const text = t.intro + "\n\n" + pairs.filter(p => p[1]).map(p => p[0] + " : " + p[1]).join("\n");
   const wa = "https://wa.me/" + CFG.wa + "?text=" + encodeURIComponent(text);
   const mail = "mailto:" + CFG.email + "?subject=" + encodeURIComponent(t.intro + (v("company") ? " – " + v("company") : "")) + "&body=" + encodeURIComponent(text);
-  $("#q-result").innerHTML = `<div class="result"><p>${esc(Q.ready)}</p><pre>${esc(text)}</pre>
+  const sentHtml = `<div class="result"><p>${esc(Q.sentH)}</p><p style="font-weight:400">${esc(Q.sentP)}</p>
+    <div class="btns"><a class="btn wa" href="${wa}" target="_blank" rel="noopener">${esc(Q.wa)}</a></div></div>`;
+  const failHtml = `<div class="result"><p>${esc(Q.fail)}</p><pre>${esc(text)}</pre>
     <div class="btns"><a class="btn wa" href="${wa}" target="_blank" rel="noopener">${esc(Q.wa)}</a>
     <a class="btn red" href="${esc(mail)}">${esc(Q.mail)}</a>
     <button class="btn ghost" type="button" data-copy="${esc(text)}" data-label="${esc(Q.copyText)}">${esc(Q.copyText)}</button></div></div>`;
-  $("#q-result").scrollIntoView({behavior: "smooth", block: "nearest"});
+  const show = html => { $("#q-result").innerHTML = html; $("#q-result").scrollIntoView({behavior: "smooth", block: "nearest"}); };
+  const btn = f.querySelector("button[type=submit]"), label = btn.innerHTML;
+  btn.disabled = true; btn.textContent = Q.sending;
+  const body = new URLSearchParams({
+    "form-name": "devis", "bot-field": "",
+    subject: "[Site RTL Maroc] Demande de devis – " + (v("company") || v("name")) + " – " + v("from") + " → " + v("to"),
+    company: v("company"), name: v("name"), phone: v("phone"), email: v("email"), from: v("from"), to: v("to"), mode: mode,
+    pal: v("pal"), kg: v("kg"), m3: v("m3"), goods: v("goods"), msg: v("msg"), resume: text,
+    lang: lang, page: location.pathname + location.hash
+  });
+  fetch("/", {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: body.toString()})
+    .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); track("quote_submit", {mode: mode, from: v("from"), to: v("to")}); f.reset(); show(sentHtml); })
+    .catch(() => show(failHtml))
+    .finally(() => { btn.disabled = false; btn.innerHTML = label; });
 });
 
 render();

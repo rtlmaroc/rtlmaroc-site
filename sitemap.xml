@@ -1,7 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rtlmaroc.com/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://rtlmaroc.com/groupage-italie-maroc/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rtlmaroc.com/groupage-espagne-maroc/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://rtlmaroc.com/groupage-portugal-maroc/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://rtlmaroc.com/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/es/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/pt/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/it/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/en/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/ar/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/es/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/pt/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/it/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/en/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/ar/groupage-italie-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-italie-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-italie-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/es/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/pt/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/it/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/en/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/ar/groupage-espagne-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-espagne-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-espagne-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/es/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/pt/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/it/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/en/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
+  <url><loc>https://rtlmaroc.com/ar/groupage-portugal-maroc/</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rtlmaroc.com/es/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://rtlmaroc.com/pt/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://rtlmaroc.com/it/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rtlmaroc.com/en/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rtlmaroc.com/ar/groupage-portugal-maroc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/groupage-portugal-maroc/"/>
+  </url>
 </urlset>
