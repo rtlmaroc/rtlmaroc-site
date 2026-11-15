@@ -104,6 +104,8 @@ const ctx = vm.createContext({
   setInterval: () => 0, clearInterval() {}, setTimeout: () => 0, getSelection: () => ({}), console
 });
 ctx.window.document = ctx.document;
+// Textes légaux (conformite.js) : chargés dans un faux navigateur à part, seul window.LEGAL nous intéresse
+{ const w = {}; vm.runInNewContext(fs.readFileSync(new URL("../../conformite.js", import.meta.url), "utf8"), { window: w, localStorage: { getItem: () => null, setItem() {} }, MutationObserver: class { observe() {} }, document: { readyState: "loading", documentElement: {}, head: { appendChild() {} }, createElement: () => ({}), addEventListener() {}, getElementById: () => null } }); ctx.LEGAL = w.LEGAL; }
 vm.runInContext(scripts[0], ctx);
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c]));
