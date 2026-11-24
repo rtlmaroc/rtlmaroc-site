@@ -19,7 +19,8 @@
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    # 30 jours : après toute modification d'image, incrémenter le ?v= dans index.html
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "/fonts/*"

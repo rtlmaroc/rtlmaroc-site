@@ -20,10 +20,7 @@
 <link rel="alternate" hreflang="x-default" href="https://rtlmaroc.com/">
 <meta name="google-site-verification" content="d_zcUxJvFKrrZvmLcxqV_xm2I3h4PxeNgnh7KemScoQ" />
 <meta name="msvalidate.01" content="E148B6F0AB1B014B251C3B98FE96E1F3" />
-<!-- Google Analytics 4 : configuration dans /analytics.js (consentement refusé par défaut) ; bandeau et textes légaux dans /conformite.js -->
-<script src="/analytics.js"></script>
-<script src="/conformite.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVC0Q6971G"></script>
+<!-- Google Analytics 4 : /analytics.js (consentement refusé par défaut, chargé après l'affichage) et /conformite.js (bandeau, textes légaux) sont appelés en fin de page -->
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Transport routier international Maroc – Europe | RTL Maroc</title>
 <script type="application/ld+json">
@@ -39,9 +36,13 @@
 "areaServed":["Maroc","Espagne","Portugal","Italie","France","Maghreb","Europe de l’Est"],
 "knowsAbout":["Groupage Europe–Maroc","Camion complet","Transport routier international","Commissionnaire de transport"]}
 </script>
+<!-- Polices du haut de page préchargées (le texte s'affiche plus vite) -->
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/barlow-condensed-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
-<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root{
   --bg:#F2F3F5; --surface:#FFFFFF; --ink:#15171B; --muted:#586070; --line:#D9DCE1;
@@ -401,6 +402,7 @@ h2{font-size:clamp(2rem,3.4vw,2.9rem)!important;line-height:1.05!important}
 h3,.b-name,.agents strong,.dest strong{font-weight:500!important}
 .b-name{font-size:1.15rem}
 .b-name small,.sec-head p,.about p+p,.agents span,.dest span,.map-note,.why p,.steps p,.docs li,details p{color:var(--muted)!important;font-weight:400}
+.dest:first-child span,.dest:first-child small{color:#fff!important} /* carte rouge (Maroc) : texte blanc lisible */
 .about p:first-of-type{font-weight:300;font-size:1.25rem;color:var(--ink)}
 .b-stats .stat b{font:300 clamp(3rem,5.4vw,4.8rem)/1 var(--display)!important;color:var(--ink)!important;-webkit-text-stroke:0!important}
 .b-stats .stat:first-child b{color:var(--red)!important}
@@ -568,6 +570,8 @@ main{min-height:60vh}
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
   <span>WhatsApp</span>
 </a>
+<script src="/analytics.js"></script>
+<script src="/conformite.js"></script>
 
 <script>
 /* ===== Coordonnées : à modifier ici si besoin ===== */
@@ -901,7 +905,9 @@ const EXTRA3 = {
 };
 for (const l in EXTRA3) Object.assign(T[l], EXTRA3[l]);
 let eightN = 0;
-const eight = (t, cls) => { const id = "e8m" + (++eightN); return `<span class="eight ${cls || ""}"><svg class="e8" viewBox="0 0 210 400" width="210" height="400" role="img" aria-label="8"><defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="400"><path class="e8-trace" pathLength="1" d="M81 173 A70 70 0 1 1 158.6 152.5 L49.5 248.4 A72.5 72.5 0 1 0 141 232" fill="none" stroke="#fff" stroke-width="90"/></mask></defs><image href="images/eight.png" width="210" height="400" mask="url(#${id})"/></svg><span class="eight-t">${esc(t.years)}</span></span>`; };
+/* Photo WebP (800 px mobile / 1600 px ordinateur), JPG pour les vieux navigateurs */
+const pic = (f, alt, sizes, w, h, more) => `<picture><source type="image/webp" srcset="images/${f}-800.webp?v=3 800w, images/${f}-1600.webp?v=3 1600w" sizes="${sizes}"><img src="images/${f}.jpg?v=3" alt="${alt}" width="${w}" height="${h}" ${more}></picture>`;
+const eight = (t, cls) => { const id = "e8m" + (++eightN); return `<span class="eight ${cls || ""}"><svg class="e8" viewBox="0 0 210 400" width="210" height="400" role="img" aria-label="8"><defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="210" height="400"><path class="e8-trace" pathLength="1" d="M81 173 A70 70 0 1 1 158.6 152.5 L49.5 248.4 A72.5 72.5 0 1 0 141 232" fill="none" stroke="#fff" stroke-width="90"/></mask></defs><image href="images/eight.webp?v=3" width="210" height="400" mask="url(#${id})"/></svg><span class="eight-t">${esc(t.years)}</span></span>`; };
 
 const EXTRA4 = {
   fr: {pts: [["Du colis au complet","Groupage, lot partiel ou remorque complète"],["Un équipement adapté","Semi-remorques tôlées ou bâchées"],["Une flotte fiable","Véhicules en propre ou en partenariat exclusif avec des opérateurs internationaux reconnus"]],
@@ -1086,16 +1092,16 @@ function home(t) {
       <div>${eight(t, "e-top")}<h1 class="h-title">${esc(t.hTitle)}</h1>${t.hIntro.map(x => `<p class="h-intro">${esc(x)}</p>`).join("")}
         <ul class="h-points">${t.pts.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join("")}</ul>
         <p class="h-para">${esc(t.para)}</p><p class="h-close">${esc(t.close)}</p><div class="btns"><a class="btn red" href="#devis">${esc(t.cta)} ${arrow}</a><a class="btn ghost" href="https://wa.me/${CFG.wa}" target="_blank" rel="noopener">WhatsApp</a></div></div>
-      <figure class="b-hero-img"><img src="images/truck-red.jpg?v=2" alt="${esc(t.alt[0])}"></figure>
+      <figure class="b-hero-img">${pic("truck-red", esc(t.alt[0]), "(max-width:900px) 100vw, 50vw", 1600, 1200, 'fetchpriority="high"')}</figure>
     </section>
     <div class="b-marquee"><p class="sr">${esc(t.destsH)} : ${esc(t.dests.join(", "))}</p><div class="b-track" aria-hidden="true">${band}${band}</div></div>
     <section class="wrap b-stats">${stats}</section>
     <section class="wrap sec" id="lignes"><div class="sec-head"><p class="eyebrow">${esc(t.transEy)}</p><h2>${esc(t.linesH)}</h2><p>${esc(t.linesSub)}</p></div>
       <div class="b-rows">${rows}</div><p class="map-note">${esc(t.boardNote)}</p></section>
-    <section class="fleet-band" id="flotte"><img src="images/fleet.jpg?v=2" alt="${esc(t.alt[1])}" loading="lazy">
+    <section class="fleet-band" id="flotte">${pic("fleet", esc(t.alt[1]), "100vw", 1600, 994, 'loading="lazy"')}
       <div class="wrap fleet-txt"><p class="eyebrow">${esc(t.fleetEy)}</p><h2>${esc(t.fleetH)}</h2><p>${esc(t.fleetP)}</p></div></section>
     <section class="wrap sec split about" id="societe"><div><p class="eyebrow">${esc(t.aboutEy)}</p><h2>${esc(t.aboutH)}</h2>${t.aboutP.map(x => `<p>${esc(x)}</p>`).join("")}<h3 style="margin-top:28px">${esc(t.agentsH)}</h3><ul class="agents">${agents}</ul></div>
-      <figure class="photo"><div class="ph"><img src="images/truck-jcl.jpg?v=2" alt="${esc(t.alt[2])}" loading="lazy"></div><figcaption>${esc(t.cap)}</figcaption></figure></section>
+      <figure class="photo"><div class="ph">${pic("truck-jcl", esc(t.alt[2]), "(max-width:900px) 100vw, 50vw", 1600, 1200, 'loading="lazy"')}</div><figcaption>${esc(t.cap)}</figcaption></figure></section>
     <section class="wrap sec" id="destinations" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.destEy)}</p><h2>${esc(t.destH)}</h2><p>${esc(t.destSub)}</p></div>
       <div class="dest-wrap"><div class="map">${mapSvg(t)}<div class="legend"><span><i class="lg-main"></i>${esc(t.legMain)}</span><span><i class="lg-part"></i>${esc(t.legPart)}</span><span><i class="lg-hub"></i>${esc(t.legHub)}</span></div><p class="map-note">${esc(t.mapNote)}</p></div><div class="dests">${dests}</div></div></section>
     <section class="wrap sec" id="secteurs" style="padding-top:0"><div class="sec-head"><p class="eyebrow">${esc(t.secEy)}</p><h2>${esc(t.secH)}</h2><p>${esc(t.secSub)}</p></div><ul class="b-tags">${sectors}</ul></section>
